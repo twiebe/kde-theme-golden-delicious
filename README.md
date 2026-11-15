@@ -73,20 +73,30 @@ rc files, kdedefaults, gtk-3.0, gtk-4.0) to
 ./restore.sh <dir>    # restore that one
 ```
 
-A restore backs up the current state first, so it can be undone the same way.
+A restore puts back whole files and backs up the current state first, so it
+can be undone the same way. To undo the theme, uninstall.sh is the better fit
+(see Revert): from the second install on, the backups already hold the theme.
 
 ## Revert
 
 ```sh
-./uninstall.sh            # back to Breeze Dark, Breeze window buttons
-./uninstall.sh --layout   # also reset the panels (if you installed with --layout)
+./uninstall.sh            # put back your settings from before the first install
+./uninstall.sh --layout   # also your panels (if you installed with --layout)
 ```
 
-This removes the theme's files and the tile service, puts the window buttons
-back on the right (KDE and GTK), drops our GTK CSS and takes back the Flatpak
-access install.sh gave. Your backups stay. The Breeze GTK theme for Flatpak
-apps stays installed; `flatpak uninstall --user org.gtk.Gtk3theme.Breeze`
-removes it.
+The first install records every setting it changes as it was before, in
+`~/.local/state/golden-delicious/original`; later installs (updates) keep that
+record. uninstall.sh puts each setting back from it, key by key, so changes you
+made elsewhere in the meantime stay: global theme, colors, icons, Plasma style,
+window decoration and buttons, blur, GTK theme and buttons, GNOME's button
+layout, the Flatpak access to the GTK config and the Breeze GTK theme for
+Flatpak apps (removed only if install.sh added it). With `--layout` it puts
+back the panels from before the first install with `--layout`. It also removes
+the theme's files, the tile service and our GTK CSS. Your backups stay.
+
+Installed with an older install.sh, there is no record: uninstall.sh then
+switches to Breeze Dark with Breeze's window buttons instead, and restore.sh
+can bring back a backup.
 
 ## Develop
 

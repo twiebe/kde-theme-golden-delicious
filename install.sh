@@ -51,7 +51,7 @@ if [[ $yes == 0 ]]; then
   echo "    theme for them from Flathub"
   echo
   echo "No warranty: this changes your desktop settings, at your own risk."
-  echo "uninstall.sh and restore.sh undo it."
+  echo "uninstall.sh puts back what you had before the first install."
   if [[ ! -t 0 ]]; then
     echo "No terminal to ask: run with --yes to go ahead." >&2
     exit 1
@@ -59,6 +59,62 @@ if [[ $yes == 0 ]]; then
   read -rp "Continue? [y/N] " answer
   [[ ${answer,,} == y* ]] || { echo "Nothing changed."; exit 0; }
   echo
+fi
+
+# Remember the settings this script changes, as they were before the first
+# install, so uninstall.sh can put each one back. Later installs (updates)
+# keep that record; the rotating backups below would lose it after a few.
+orig=$state/golden-delicious/original
+unset_mark=__unset__
+rec() {  # file group key: one line with the current value, or unset_mark
+  printf 'kcfg\t%s\t%s\t%s\t%s\n' "$1" "$2" "$3" \
+    "$(kreadconfig6 --file "$1" --group "$2" --key "$3" --default "$unset_mark")"
+}
+if [[ ! -e $orig/values ]]; then
+  if [[ $(kreadconfig6 --file kdeglobals --group KDE --key LookAndFeelPackage) == golden-delicious ]]; then
+    log "Installed before by an older install.sh: your earlier settings are unknown,"
+    echo "    uninstall.sh will fall back to Breeze Dark"
+  else
+    log "Recording your current settings for uninstall.sh in $orig"
+    mkdir -p "$orig"
+    {
+      rec kdeglobals KDE LookAndFeelPackage
+      rec kdeglobals KDE widgetStyle
+      rec kdeglobals General ColorScheme
+      rec kdeglobals Icons Theme
+      rec plasmarc Theme name
+      for k in library theme BorderSize ButtonsOnLeft ButtonsOnRight; do
+        rec kwinrc org.kde.kdecoration2 "$k"
+      done
+      rec kwinrc Plugins blurEnabled
+      rec kwinrc Plugins contrastEnabled
+      for v in 3.0 4.0; do
+        rec "$config/gtk-$v/settings.ini" Settings gtk-theme-name
+        rec "$config/gtk-$v/settings.ini" Settings gtk-decoration-layout
+      done
+      if command -v dconf >/dev/null; then
+        printf 'dconf\t%s\t%s\n' /org/gnome/desktop/wm/preferences/button-layout \
+          "$(dconf read /org/gnome/desktop/wm/preferences/button-layout)"
+      fi
+      if command -v flatpak >/dev/null; then
+        for v in 3.0 4.0; do
+          grep -qE "^filesystems=(.*;)?xdg-config/gtk-${v//./\\.}(:ro)?(;|$)" \
+            "$data/flatpak/overrides/global" 2>/dev/null && had=1 || had=0
+          printf 'flatpak-fs\txdg-config/gtk-%s\t%s\n' "$v" "$had"
+        done
+        flatpak info --user org.gtk.Gtk3theme.Breeze >/dev/null 2>&1 && had=1 || had=0
+        printf 'flatpak-app\torg.gtk.Gtk3theme.Breeze\t%s\n' "$had"
+      fi
+    } >"$orig/values.new"
+    mv "$orig/values.new" "$orig/values"
+  fi
+fi
+# The panels, the first time an install replaces them.
+if [[ $layout == 1 && ! -d $orig/panels ]]; then
+  mkdir -p "$orig/panels"
+  for f in plasma-org.kde.plasma.desktop-appletsrc plasmashellrc; do
+    [[ -e $config/$f ]] && cp -a "$config/$f" "$orig/panels/"
+  done
 fi
 
 log "Backing up your config"
