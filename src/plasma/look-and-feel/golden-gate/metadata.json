@@ -1,0 +1,11 @@
+{
+    "KPackageStructure": "Plasma/LookAndFeel",
+    "KPlugin": {
+        "Id": "golden-gate",
+        "Name": "Golden Gate",
+        "Description": "Dark theme with traffic-light windows and a soft floating panel, in the style of macOS Golden Gate",
+        "License": "MIT",
+        "Version": "0.1"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0"
+}
