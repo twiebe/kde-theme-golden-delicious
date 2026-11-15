@@ -21,8 +21,8 @@ STATES = {
 LIGHTS = {"close": "#FF5F57", "minimize": "#FEBC2E", "maximize": "#28C840"}
 LIGHT_INACTIVE = "#5A5A5E"
 GLYPH = "#3A1A10"
-BTN = 26        # button box, must match ButtonWidth/ButtonHeight
-DOT = 8         # light radius -> 16 px diameter, 10 px gap in a 26 px box
+BTN = 28        # button box, must match ButtonWidth/ButtonHeight
+DOT = 9         # light radius -> 18 px diameter, 10 px gap in a 28 px box
 
 
 def box(eid, w, h, body, defs=""):
