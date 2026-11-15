@@ -13,5 +13,7 @@ name=golden-gate
 [kwinrc][org.kde.kdecoration2]
 library=org.kde.kwin.aurorae
 theme=__aurorae__svg__golden-gate
+# No visible borders; KWin then adds invisible resize edges.
+BorderSize=None
 ButtonsOnLeft=XIA
 ButtonsOnRight=

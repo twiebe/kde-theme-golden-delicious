@@ -15,7 +15,7 @@ C = P + R       # corner piece size
 STATES = {
     # prefix: (titlebar fill, shadow opacity at window edge)
     "decoration": ("#2B2B2D", 0.45),
-    "decoration-inactive": ("#242426", 0.25),
+    "decoration-inactive": ("#2B2B2D", 0.25),
 }
 
 LIGHTS = {"close": "#FF5F57", "minimize": "#FEBC2E", "maximize": "#28C840"}

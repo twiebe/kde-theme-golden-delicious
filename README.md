@@ -18,10 +18,9 @@ Run inside a Plasma session:
 ## Revert
 
 ```sh
-plasma-apply-lookandfeel -a org.kde.breezedark.desktop
+./uninstall.sh            # back to Breeze Dark, Breeze window buttons
+./uninstall.sh --layout   # also reset the panels (if you installed with --layout)
 ```
-
-Then pick your window buttons again under System Settings > Window Decorations.
 
 ## Develop
 
