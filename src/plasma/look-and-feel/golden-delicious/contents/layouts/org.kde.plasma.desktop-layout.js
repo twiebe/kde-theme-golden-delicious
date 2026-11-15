@@ -4,7 +4,10 @@ panel.location = "top";
 panel.height = 44;
 panel.floating = true;
 
-panel.addWidget("org.kde.plasma.kickoff");
+// The theme's apple, also where the distribution set its own logo.
+var kickoff = panel.addWidget("org.kde.plasma.kickoff");
+kickoff.currentConfigGroup = ["General"];
+kickoff.writeConfig("icon", "start-here-kde-symbolic");
 panel.addWidget("org.kde.plasma.icontasks");
 panel.addWidget("org.kde.plasma.panelspacer");
 panel.addWidget("org.kde.plasma.systemtray");
