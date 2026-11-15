@@ -16,6 +16,12 @@ kwriteconfig6 --file kwinrc --group org.kde.kdecoration2 --key ButtonsOnRight --
 qdbus6 org.kde.KWin /KWin reconfigure 2>/dev/null || true
 
 config=${XDG_CONFIG_HOME:-$HOME/.config}
+data=${XDG_DATA_HOME:-$HOME/.local/share}
+
+systemctl --user disable --now golden-delicious-tiles.path golden-delicious-tiles.service 2>/dev/null || true
+rm -f "$config/systemd/user/golden-delicious-tiles."{service,path}
+systemctl --user daemon-reload 2>/dev/null || true
+rm -rf "${data:?}/golden-delicious" "${data:?}/icons/golden-delicious-apps"
 for v in 3.0 4.0; do
   rm -f "$config/gtk-$v/golden-delicious.css"
   [[ -f $config/gtk-$v/gtk.css ]] && sed -i "/^@import 'golden-delicious.css';$/d" "$config/gtk-$v/gtk.css"

@@ -58,6 +58,22 @@ for v in 3.0 4.0; do
     echo "@import 'golden-delicious.css';" >>"$dir/gtk.css"
 done
 
+# App icons on squircle tiles: a user service draws them into the icon theme
+# golden-delicious-apps and runs again whenever apps come or go.
+mkdir -p "$data/golden-delicious" "$config/systemd/user"
+cp "$here/tiles/golden-delicious-tiles.py" "$data/golden-delicious/"
+sed "s|@SCRIPT@|$data/golden-delicious/golden-delicious-tiles.py|" "$here/tiles/golden-delicious-tiles.service" \
+  >"$config/systemd/user/golden-delicious-tiles.service"
+cp "$here/tiles/golden-delicious-tiles.path" "$config/systemd/user/"
+if systemctl --user daemon-reload 2>/dev/null; then
+  systemctl --user enable --now golden-delicious-tiles.path
+  systemctl --user enable golden-delicious-tiles.service
+  systemctl --user start golden-delicious-tiles.service ||
+    echo "note: drawing the app icon tiles failed, see: journalctl --user -u golden-delicious-tiles" >&2
+else  # no systemd user session: draw them once
+  python3 "$data/golden-delicious/golden-delicious-tiles.py" || echo "note: drawing the app icon tiles failed" >&2
+fi
+
 # Flatpak apps cannot see the host GTK config or themes: let them read the
 # config, and give GTK3 apps Breeze from Flathub.
 if command -v flatpak >/dev/null; then

@@ -24,6 +24,13 @@ GTK apps follow too: Breeze GTK takes the colors and window buttons from KDE,
 and `gtk/golden-delicious.css` adds the traffic lights for libadwaita apps and hides
 separators.
 
+App icons keep their design but sit on a macOS squircle tile; an icon that is
+already a filled square gets masked to the squircle instead. The user service
+`golden-delicious-tiles` draws them into `~/.local/share/icons/golden-delicious-apps`
+and runs again whenever apps or Flatpaks come or go. The originals stay
+untouched. Masking a square SVG-only icon needs `rsvg-convert` or ImageMagick;
+without them such an icon goes on a tile too.
+
 ## Backups
 
 Each install first saves the config it touches (kdeglobals, kwinrc, plasma

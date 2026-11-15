@@ -1,0 +1,10 @@
+[Unit]
+Description=Put app icons on squircle tiles (Golden Delicious icon theme)
+
+[Service]
+Type=oneshot
+# install.sh fills in where it put the script.
+ExecStart=/usr/bin/python3 @SCRIPT@
+
+[Install]
+WantedBy=default.target
