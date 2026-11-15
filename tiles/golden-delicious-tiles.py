@@ -257,7 +257,8 @@ def place(box, target):
 
 def tile(files):
     vector = [f for f in files if f.suffix in (".svg", ".svgz")]
-    pngs = sorted((f for f in files if f.suffix == ".png"), key=size_of)
+    # On a tie the plain dir wins over @2: Ghostty's @2 PNGs don't match its plain ones.
+    pngs = sorted((f for f in files if f.suffix == ".png"), key=lambda f: (size_of(f), "@" in str(f.parent)))
     # The PNG to draw: 256 px is enough for the tile, bigger only bloats the SVG.
     png = next((f for f in pngs if size_of(f) >= 256), pngs[-1] if pngs else None)
     # Measure the very image that gets drawn: apps often pad their small sizes
