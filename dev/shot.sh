@@ -36,7 +36,7 @@ run() {
   plasmashell >"$home/plasmashell.log" 2>&1 &
   sleep 5
   if [[ $install == 1 ]]; then
-    "$repo/install.sh" --layout --tiles >"$home/install.log" 2>&1 || true
+    "$repo/install.sh" --yes --layout --tiles >"$home/install.log" 2>&1 || true
     # A live session picks the new style up on its own; this fake one starts
     # without the kdedefaults watcher, so restart the shell.
     kquitapp6 plasmashell >/dev/null 2>&1 || true

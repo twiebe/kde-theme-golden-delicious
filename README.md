@@ -44,9 +44,11 @@ Run inside a Plasma session:
 ./install.sh --layout   # also replace your panels with the theme's top panel
 ```
 
-`--layout` drops your current panel setup and pinned launchers. Log out and
-back in afterwards so every app, the panel and the icon caches pick the theme
-up.
+Both scripts first list what they will change and ask before they start;
+`-y` or `--yes` skips that (and sets up the tiles, see below). Use them at your
+own risk. `--layout` drops your current panel setup and pinned launchers. Log
+out and back in afterwards so every app, the panel and the icon caches pick the
+theme up.
 
 On the first install the script asks whether to set up the app icon tiles: a
 small user service (`golden-delicious-tiles`) draws them into
