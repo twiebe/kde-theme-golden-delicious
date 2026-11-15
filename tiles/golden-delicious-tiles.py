@@ -243,7 +243,21 @@ def svg_body(path):
         box = [0, 0, num(root.get("width")), num(root.get("height"))]
     if box[2] <= 0 or box[3] <= 0:
         return None
+    hoist_defs(root)
     return "".join(ET.tostring(c, encoding="unicode") for c in root), box
+
+
+def hoist_defs(root):
+    """Qt draws masks, clip paths and filters that sit outside <defs> as plain
+    shapes: GNOME icons came out as a black square. Move them into a <defs>."""
+    q = lambda tag: f"{{{SVG_NS}}}{tag}"
+    loose = [c for c in root if c.tag in (q("mask"), q("clipPath"), q("filter"))]
+    if loose:
+        defs = ET.Element(q("defs"))
+        for c in loose:
+            root.remove(c)
+            defs.append(c)
+        root.insert(0, defs)
 
 
 def place(box, target):
