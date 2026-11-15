@@ -25,7 +25,7 @@ SHADOW_INSET = 16       # tiles reach under the popup to fill around the round c
 SHADOW_ALPHA = 0.30
 PANEL_SHADOW = 14       # the floating panel's own shadow, so it stands out from the wallpaper
 PANEL_SHADOW_ALPHA = 0.20
-PANEL_SHADOW_FALLOFF = ((0, 1), (0.25, 0.6), (0.5, 0.3), (0.75, 0.1), (1, 0))  # soft, no hard line at the edge
+SOFT = ((0, 1), (0.25, 0.6), (0.5, 0.3), (0.75, 0.1), (1, 0))  # shadow falloff: no hard line at the edge
 PANEL_RIM = 0           # opacity of a 1 px light rim like the windows'; 0 for none
 TASK_MARGIN = 4
 TASKS = {               # state: (color class, opacity)
@@ -89,7 +89,7 @@ def svg(content):
             f'<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><defs>{STYLE}</defs>{content}</svg>\n')
 
 
-def shadow(R=DIALOG_R, S=SHADOW, I=SHADOW_INSET, A=SHADOW_ALPHA, falloff=((0, 1), (0.65, 0.35), (1, 0)), pad=0):
+def shadow(R=DIALOG_R, S=SHADOW, I=SHADOW_INSET, A=SHADOW_ALPHA, falloff=SOFT, pad=0):
     """Shadow 9-patch around a rounded popup. Corner gradients are centred on
     the popup's corner arc, so the shadow follows the curve; inside the popup
     they stay clear, which matters under a translucent background. falloff
@@ -124,7 +124,7 @@ def shadow(R=DIALOG_R, S=SHADOW, I=SHADOW_INSET, A=SHADOW_ALPHA, falloff=((0, 1)
 
 def dialog(op):
     return svg(frame("", DIALOG_R, "ColorScheme-Background", op, DIALOG_MARGIN)
-               + frame("mask", DIALOG_R, "ColorScheme-Background", 1, DIALOG_MARGIN)
+               + frame("mask", DIALOG_R, "ColorScheme-Background", 1, DIALOG_MARGIN, inset=1)  # see panel()
                + shadow())
 
 
@@ -133,7 +133,7 @@ def tooltip(op):
     puts tooltips right against the panel, and this moves them off it."""
     g, r = TOOLTIP_GAP, DIALOG_R
     return svg(frame("", r + g, "ColorScheme-Background", op, DIALOG_MARGIN + g, inset=g)
-               + frame("mask", r + g, "ColorScheme-Background", 1, DIALOG_MARGIN + g, inset=g)
+               + frame("mask", r + g, "ColorScheme-Background", 1, DIALOG_MARGIN + g, inset=g + 1)
                + shadow(I=SHADOW_INSET + g, pad=g))
 
 
@@ -143,7 +143,7 @@ def panel(op):
                # scales the mask is not anti-aliased, and its saturated wallpaper
                # would show as a coloured line through the edge's partial pixels.
                + frame("mask", PANEL_R, "ColorScheme-Background", 1, PANEL_MARGIN, inset=1)
-               + shadow(PANEL_R, PANEL_SHADOW, PANEL_R, PANEL_SHADOW_ALPHA, PANEL_SHADOW_FALLOFF))
+               + shadow(PANEL_R, PANEL_SHADOW, PANEL_R, PANEL_SHADOW_ALPHA))
 
 
 BREEZE_WIDGETS = Path("/usr/share/plasma/desktoptheme/default/widgets")
