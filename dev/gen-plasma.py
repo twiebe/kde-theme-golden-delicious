@@ -2,8 +2,11 @@
 """Generate the Plasma style SVGs for Golden Delicious.
 
 Run from the repo root: python3 dev/gen-plasma.py
-Writes into src/plasma/desktoptheme/golden-delicious/.
+Writes into src/plasma/desktoptheme/golden-delicious/. The slider comes from
+Breeze's, so run it in the harness image to refresh that one.
 """
+import gzip
+import re
 from pathlib import Path
 
 OUT = Path(__file__).resolve().parent.parent / "src/plasma/desktoptheme/golden-delicious"
@@ -111,6 +114,21 @@ def panel(op):
                + frame("mask", PANEL_R, "ColorScheme-Background", 1, PANEL_MARGIN))
 
 
+BREEZE_SLIDER = Path("/usr/share/plasma/desktoptheme/default/widgets/slider.svgz")
+
+
+def slider():
+    """Breeze's slider with the knob in the accent colour, like the filled groove."""
+    text = gzip.decompress(BREEZE_SLIDER.read_bytes()).decode()
+    for knob in ("horizontal-slider-handle", "vertical-slider-handle"):
+        start = text.index(f'id="{knob}"')
+        end = text.index("</g>", start)
+        part = re.sub(r'class="ColorScheme-(ButtonBackground|Frame)"', 'class="ColorScheme-Highlight"',
+                      text[start:end])
+        text = text[:start] + part + text[end:]
+    return text
+
+
 def main():
     (OUT / "widgets").mkdir(parents=True, exist_ok=True)
     # Plasma 6 draws the translucent panel from widgets/ and cross-fades the
@@ -124,6 +142,10 @@ def main():
     (OUT / "solid/dialogs/background.svg").write_text(dialog(1))
     (OUT / "widgets/tasks.svg").write_text(
         svg("".join(frame(s, TASK_R, c, o, TASK_MARGIN) for s, (c, o) in TASKS.items())))
+    if BREEZE_SLIDER.exists():
+        (OUT / "widgets/slider.svg").write_text(slider())
+    else:
+        print(f"{BREEZE_SLIDER} missing: widgets/slider.svg left as is")
 
 
 if __name__ == "__main__":
