@@ -14,6 +14,9 @@ config=${XDG_CONFIG_HOME:-$HOME/.config}
 echo "backup: $("$here/backup.sh")"
 
 mkdir -p "$data"
+# Replace our own theme dirs whole, so files dropped from the repo don't linger.
+(cd "$here/src" && find . -mindepth 2 -maxdepth 3 -name 'golden-gate' -o -name 'GoldenGate.colors') |
+  while read -r p; do rm -rf "${data:?}/$p"; done
 cp -r "$here/src/." "$data/"
 
 # Global theme: colors, Plasma style and decoration (and the panel layout on request).
