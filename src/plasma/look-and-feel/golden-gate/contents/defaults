@@ -5,7 +5,7 @@ ColorScheme=GoldenGate
 widgetStyle=Breeze
 
 [kdeglobals][Icons]
-Theme=breeze-dark
+Theme=golden-gate
 
 [plasmarc][Theme]
 name=golden-gate
