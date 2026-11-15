@@ -14,15 +14,15 @@ C = P + R       # corner piece size
 
 STATES = {
     # prefix: (titlebar fill, shadow opacity at window edge)
-    "decoration": ("#2B2B2D", 0.22),
-    "decoration-inactive": ("#2B2B2D", 0.12),
+    "decoration": ("#2B2B2D", 0.15),
+    "decoration-inactive": ("#2B2B2D", 0.08),
 }
 
 LIGHTS = {"close": "#FF5F57", "minimize": "#FEBC2E", "maximize": "#28C840"}
 LIGHT_INACTIVE = "#5A5A5E"
 GLYPH = "#3A1A10"
-BTN = 22        # button box, must match ButtonWidth/ButtonHeight
-DOT = 7         # light radius -> 14 px diameter, 8 px gap in a 22 px box
+BTN = 26        # button box, must match ButtonWidth/ButtonHeight
+DOT = 8         # light radius -> 16 px diameter, 10 px gap in a 26 px box
 
 
 def box(eid, w, h, body, defs=""):
