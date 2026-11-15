@@ -6,6 +6,8 @@ popups, a dark color scheme with blur, and its own icons.
 
 ![Dolphin and a libadwaita app with Golden Delicious](docs/screenshots/overview.png)
 
+<sub>Wallpaper from the Tokyo Night theme of [Omarchy](https://omarchy.org).</sub>
+
 ## What's in it
 
 **Windows.** Traffic lights on the left with the light and sheen of the Mac
