@@ -14,9 +14,9 @@ OUT = Path(__file__).resolve().parent / "src"
 LEVELS = range(0, 101, 10)
 PROFILES = ["", "-profile-balanced", "-profile-performance", "-profile-powersave"]
 
-X0, X1, Y0, Y1, R = 3, 19.2, 7, 17, 3          # body outline, stroke centred
-IX0, IX1, IY0, IY1, IR = 4.9, 17.3, 8.9, 15.1, 1.4   # charge bar area
-BOLT = "M12.3 8.2 L8.8 12.5 H11.1 L10.1 15.8 L13.6 11.5 H11.3 Z"
+X0, X1, Y0, Y1, R = 2.2, 19.6, 5.5, 18.5, 3.6     # body outline, stroke centred
+IX0, IX1, IY0, IY1, IR = 4.1, 17.7, 7.4, 16.6, 1.8   # charge bar area
+BOLT = "M12.6 7.6 L8.3 12.6 H11 L9.9 16.4 L14.2 11.4 H11.5 Z"
 
 HEAD = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
@@ -33,7 +33,7 @@ def rrect(x0, y0, x1, y1, r):
 def battery(level, charging):
     out = HEAD
     out += f'    <path d="{rrect(X0, Y0, X1, Y1, R)}"/>\n'
-    out += '    <path d="M21.2 10.5 V13.5"/>\n  </g>\n'
+    out += '    <path d="M21.4 10 V14"/>\n  </g>\n'
     fill = []
     if level:
         w = max((IX1 - IX0) * level / 100, 2 * IR)
