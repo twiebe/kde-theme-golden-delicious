@@ -47,16 +47,18 @@ def fill(cls, op, extra):
     return f'class="{cls}" fill="currentColor" fill-opacity="{op}" {extra}'
 
 
-def frame(prefix, r, cls, op, margin, rim=0):
+def frame(prefix, r, cls, op, margin, rim=0, inset=0):
     """Rounded-rect 9-patch with radius r. prefix '' gives unprefixed names.
-    rim > 0 adds a 1 px ColorScheme-Text ring of that opacity along the edge."""
+    rim > 0 adds a 1 px ColorScheme-Text ring of that opacity along the edge;
+    inset draws the shape that far inside the tiles' outer edge."""
     n = (lambda s: f"{prefix}-{s}") if prefix else (lambda s: s)
     f = lambda extra: f'<path {fill(cls, op, extra)}/>' if extra.startswith("d=") else f'<rect {fill(cls, op, extra)}/>'
+    i, p = inset, r - inset
     arcs = {
-        "topleft": f'd="M0,{r} A{r},{r} 0 0 1 {r},0 L{r},{r} Z"',
-        "topright": f'd="M0,0 A{r},{r} 0 0 1 {r},{r} L0,{r} Z"',
-        "bottomleft": f'd="M{r},{r} A{r},{r} 0 0 1 0,0 L{r},0 Z"',
-        "bottomright": f'd="M{r},0 A{r},{r} 0 0 1 0,{r} L0,0 Z"',
+        "topleft": f'd="M{i},{r} A{p},{p} 0 0 1 {r},{i} L{r},{r} Z"',
+        "topright": f'd="M0,{i} A{p},{p} 0 0 1 {p},{r} L0,{r} Z"',
+        "bottomleft": f'd="M{r},{p} A{p},{p} 0 0 1 {i},0 L{r},0 Z"',
+        "bottomright": f'd="M{p},0 A{p},{p} 0 0 1 0,{p} L0,0 Z"',
     }
     ring = lambda d: f'<path {fill("ColorScheme-Text", rim, d)}/>' if rim else ""
     q = r - 1
@@ -69,8 +71,12 @@ def frame(prefix, r, cls, op, margin, rim=0):
     out = [piece(n(k), r, r, f(v) + ring(rings[k])) for k, v in arcs.items()]
     edges = {"top": "M0,0 h1 v1 h-1 Z", "bottom": f"M0,{q} h1 v1 h-1 Z",
              "left": "M0,0 h1 v1 h-1 Z", "right": f"M{q},0 h1 v1 h-1 Z"}
+    at = lambda a: f'{a}="{i}" ' if i else ""
+    body = {"top": f'{at("y")}width="1" height="{p}"', "bottom": f'width="1" height="{p}"',
+            "left": f'{at("x")}width="{p}" height="1"', "right": f'width="{p}" height="1"',
+            "center": 'width="1" height="1"'}
     for k, w, h in (("top", 1, r), ("bottom", 1, r), ("left", r, 1), ("right", r, 1), ("center", 1, 1)):
-        out.append(piece(n(k), w, h, f(f'width="{w}" height="{h}"') + (ring(f'd="{edges[k]}"') if k in edges else "")))
+        out.append(piece(n(k), w, h, f(body[k]) + (ring(f'd="{edges[k]}"') if k in edges else "")))
     for side in ("top", "bottom", "left", "right"):
         out.append(f'<rect id="{n("hint-" + side + "-margin")}" width="{margin}" height="{margin}" fill="none"/>')
     return "".join(out)
@@ -124,7 +130,10 @@ def dialog(op):
 
 def panel(op):
     return svg(frame("", PANEL_R, "ColorScheme-Background", op, PANEL_MARGIN, PANEL_RIM)
-               + frame("mask", PANEL_R, "ColorScheme-Background", 1, PANEL_MARGIN)
+               # Blur and contrast stop 1 px short of the edge: at fractional
+               # scales the mask is not anti-aliased, and its saturated wallpaper
+               # would show as a coloured line through the edge's partial pixels.
+               + frame("mask", PANEL_R, "ColorScheme-Background", 1, PANEL_MARGIN, inset=1)
                + shadow(PANEL_R, PANEL_SHADOW, PANEL_R, PANEL_SHADOW_ALPHA))
 
 
