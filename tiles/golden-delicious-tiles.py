@@ -6,7 +6,7 @@ way the icon theme spec does (breeze-dark, breeze, hicolor) and writes a tiled
 copy under the same name into the icon theme golden-delicious-apps, which the
 Golden Delicious icon theme inherits first. The app's own icon file stays
 untouched. An icon that is already a filled square is masked to the squircle;
-anything else sits smaller on a dark tile.
+anything else sits smaller on a light tile, like macOS in light mode.
 
 Plain Python, no extra modules: the output is SVG that embeds the original
 (inline SVG, or a PNG as data URI). Squareness is read from the app's PNG when
@@ -297,10 +297,10 @@ def tile(files):
     off = t0 + (span - size) / 2
     return (head +
             '    <linearGradient id="gdt-tile" x1="0" y1="0" x2="0" y2="1">\n'
-            '      <stop offset="0" stop-color="#4a4a4f"/><stop offset="1" stop-color="#2c2c30"/>\n'
+            '      <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e2e2e6"/>\n'
             '    </linearGradient>\n  </defs>\n'
             f'  <path d="{sq}" fill="url(#gdt-tile)"/>\n'
-            f'  <path d="{sq}" fill="none" stroke="#ffffff" stroke-opacity="0.12" stroke-width="2"/>\n'
+            f'  <path d="{sq}" fill="none" stroke="#000000" stroke-opacity="0.10" stroke-width="1.5"/>\n'
             f'  <g transform="{place(content, (off, off, size))}">{inner}</g>\n</svg>\n')
 
 
