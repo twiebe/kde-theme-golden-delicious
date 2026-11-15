@@ -1,1 +1,6 @@
-draw-polygon.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M11.03 4.81 Q12 4.1 12.97 4.81 L19.11 9.27 Q20.08 9.97 19.71 11.11 L17.37 18.34 Q17 19.48 15.8 19.48 L8.2 19.48 Q7 19.48 6.63 18.34 L4.29 11.11 Q3.92 9.97 4.89 9.27 Z"/>
+  </g>
+</svg>

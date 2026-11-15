@@ -1,1 +1,7 @@
-select-rectangular.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 8 V7 a2 2 0 0 1 2 -2 H7 M17 5 H18 a2 2 0 0 1 2 2 V8 M20 16 V17 a2 2 0 0 1 -2 2 H17 M7 19 H6 a2 2 0 0 1 -2 -2 V16"/>
+    <path d="M10.5 5 H13.5 M10.5 19 H13.5 M4 10.5 V13.5 M20 10.5 V13.5"/>
+  </g>
+</svg>

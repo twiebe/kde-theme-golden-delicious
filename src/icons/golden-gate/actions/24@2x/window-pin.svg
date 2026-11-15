@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-  <style type="text/css" id="current-color-scheme">.ColorScheme-Text { color: #fcfcfc; } </style>
-  <g transform="translate(1,1)">
-    <path d="M15 3l-7.146 7.146L5.707 8 5 8.707 8.793 12.5 4 17.293l.707.707L9.5 13.207 13.293 17l.707-.707-2.146-2.147L19 7z" class="ColorScheme-Text" fill="currentColor" style="stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M13.5 3.5 L20.5 10.5"/>
+    <path d="M15.5 5.5 L12 9 L8 9.5 L14.5 16 L15 12 L18.5 8.5"/>
+    <path d="M11.25 12.75 L4.5 19.5"/>
   </g>
 </svg>

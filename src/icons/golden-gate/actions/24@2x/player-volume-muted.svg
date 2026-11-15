@@ -1,17 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-  <style id="current-color-scheme" type="text/css">.ColorScheme-NegativeText { color: #da4453; } .ColorScheme-Text { color: #fcfcfc; } </style>
-  <g transform="translate(1,1)">
-    <g class="ColorScheme-Text" fill="currentColor">
-      <path d="m3 8v6h2v-6z" style="stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" />
-      <path d="m6 8v6l5 5h1v-5z" style="stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" />
-      <path d="m11 3-3 3 4 4v-7z" style="stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" />
-      <g opacity=".35">
-        <path d="m14.832031 16.832031a7 7 0 0 1 -1.21289.646485l.24414.974609a8 8 0 0 0 1.681641-.908203z" style="stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" />
-        <path d="m14.324219 7.28125-.539063.8613281a4 4 0 0 1 1.214844 2.8574219 4 4 0 0 1 -.371094 1.628906l.75.75a5 5 0 0 0 .621094-2.378906 5 5 0 0 0 -1.675781-3.71875z" style="stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" />
-        <path d="m13.865234 3.5371094-.24414.9765625a7 7 0 0 1 4.378906 6.4863281 7 7 0 0 1 -1.166016 3.833984l.716797.716797a8 8 0 0 0 1.449219-4.550781 8 8 0 0 0 -5.134766-7.4628906z" style="stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" />
-      </g>
-    </g>
-    <path d="m-.50000006 4.7426407 1-.0000001v21.6274174h-1z" class="ColorScheme-NegativeText" fill="currentColor" transform="matrix(.70710678 -.70710678 .70710678 .70710678 0 0)" style="stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4.5 10 a1.5 1.5 0 0 1 1.5 -1.5 H8 L12 5 V19 L8 15.5 H6 a1.5 1.5 0 0 1 -1.5 -1.5 Z"/>
+    <path d="M15.5 9.5 L20.5 14.5"/>
+    <path d="M20.5 9.5 L15.5 14.5"/>
   </g>
 </svg>

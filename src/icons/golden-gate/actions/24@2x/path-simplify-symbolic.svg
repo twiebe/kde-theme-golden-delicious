@@ -1,1 +1,7 @@
-path-simplify.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 7.5 q2 -3.5 4 0 t4 0 t4 0 t4 0"/>
+    <path d="M4 16.5 C9 11 15 22 20 16.5"/>
+  </g>
+</svg>

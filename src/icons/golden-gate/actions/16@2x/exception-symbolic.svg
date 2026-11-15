@@ -1,1 +1,6 @@
-exception.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M13.5 3.5 L6 13.5 H11.5 L10.5 20.5 L18 10.5 H12.5 Z"/>
+  </g>
+</svg>

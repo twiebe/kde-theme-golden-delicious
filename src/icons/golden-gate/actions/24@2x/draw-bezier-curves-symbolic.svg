@@ -1,1 +1,9 @@
-draw-bezier-curves.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4.5 5 H16.5"/>
+    <path d="M4.5 5 C13.5 5 13.5 19 7 19"/>
+    <path d="M18.5 3 a2 2 0 1 1 0 4 a2 2 0 1 1 0 -4 Z"/>
+    <path d="M5.5 17.5 a1.5 1.5 0 1 1 0 3 a1.5 1.5 0 1 1 0 -3 Z"/>
+  </g>
+</svg>

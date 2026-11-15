@@ -1,1 +1,6 @@
-love-amarok.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 7.5 C10.5 4.5 3.5 4.5 3.5 9.5 C3.5 14 9 17.5 12 20 C15 17.5 20.5 14 20.5 9.5 C20.5 4.5 13.5 4.5 12 7.5 Z"/>
+  </g>
+</svg>

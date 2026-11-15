@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-  <defs id="defs3051">
-    <style type="text/css" id="current-color-scheme">.ColorScheme-Text { color: #fcfcfc; } </style>
-  </defs>
-    <path style="fill:currentColor;fill-opacity:0.5;stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:0.5" d="m 7.9843745,2 1.875,3.9394531 4.1484375,0.6210938 -2.980469,3.0800781 0.730469,4.335937 L 8.039062,11.939453 4.3417964,14 5.0273434,9.6601562 2.0058594,6.5976562 6.1503902,5.953125 Z m 0.029297,2.0449219 0,6.5917971 0.013672,-0.0078 2.4785157,1.355469 L 10.019531,9.09375 12.005859,7.0390625 9.2402339,6.6269531 Z" class="ColorScheme-Text" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 4 L14.25 9.41 L20.08 9.87 L15.64 13.68 L17 19.38 L12 16.32 L7 19.38 L8.36 13.68 L3.92 9.87 L9.75 9.41 Z"/>
+  </g>
+  <g class="ColorScheme-Text" fill="currentColor" stroke="none">
+    <path d="M12 4 L12 16.32 L7 19.38 L8.36 13.68 L3.92 9.87 L9.75 9.41 Z"/>
+  </g>
 </svg>

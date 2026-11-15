@@ -1,1 +1,9 @@
-format-text-direction-vertical.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3.5 19 L8.5 5 L13.5 19"/>
+    <path d="M5.3 14 H11.7"/>
+    <path d="M18 4.5 V19.5"/>
+    <path d="M15.5 17 L18 19.5 L20.5 17"/>
+  </g>
+</svg>

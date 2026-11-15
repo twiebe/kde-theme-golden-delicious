@@ -1,5 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-    <style type="text/css" id="current-color-scheme">.ColorScheme-Highlight { color: #fcfcfc; } </style>
-    <path d="m3 2v12h10v-9.7070312l-2.292969-2.2929688zm2 2h1v2h-.7070312l-1.2929688 1.2929688v-2.2929688c0-.554.446-1 1-1zm2 0h2v2h-2zm3 0h1c.554 0 1 .446 1 1v2.2929688l-1.292969-1.2929688h-.707031zm-4.2929688 3h4.5859378l1 1h.707031v1h-.707031l-1 1h-4.5859378l-1-1h-.7070312v-1h.7070312zm-1.7070312 2.7070312 1.2929688 1.2929688h.7070312v2h-1c-.554 0-1-.446-1-1zm8 0v2.2929688c0 .554-.446 1-1 1h-1v-2h.707031zm-5 1.2929688h2v2h-2z" class="ColorScheme-Highlight" fill="currentColor" fill-rule="evenodd" style="stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Highlight{color:#fcfcfc}</style>
+  <g class="ColorScheme-Highlight" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 5.5 a2 2 0 0 1 2 -2 H14 L18 7.5 V18.5 a2 2 0 0 1 -2 2 H8 a2 2 0 0 1 -2 -2 Z"/>
+    <path d="M10 10.5 H14 a1 1 0 0 1 1 1 V16 a1 1 0 0 1 -1 1 H10 a1 1 0 0 1 -1 -1 V11.5 a1 1 0 0 1 1 -1 Z"/>
+    <path d="M12 10.5 V17"/>
+  </g>
 </svg>

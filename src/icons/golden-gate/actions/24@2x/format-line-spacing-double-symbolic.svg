@@ -1,1 +1,8 @@
-format-line-spacing-double.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10.5 5.5 H20.5 M10.5 18.5 H20.5"/>
+    <path d="M5.5 5.5 V18.5"/>
+    <path d="M3.5 7.5 L5.5 5.5 L7.5 7.5 M3.5 16.5 L5.5 18.5 L7.5 16.5"/>
+  </g>
+</svg>

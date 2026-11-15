@@ -1,7 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-  <defs id="defs3051">
-    <style type="text/css" id="current-color-scheme">.ColorScheme-Highlight { color: #fcfcfc; } </style>
-  </defs>
-    <path style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" d="M 6 3 A 3 3 0 0 0 3 6 L 4 6 A 2 2 0 0 1 6 4 A 2 2 0 0 1 8 6 L 9 6 A 3 3 0 0 0 6 3 z M 6 5 A 1 1 0 0 0 5 6 A 1 1 0 0 0 6 7 A 1 1 0 0 0 7 6 A 1 1 0 0 0 6 5 z M 2 8 L 2 13 L 14 13 L 14 8 L 2 8 z M 3 9 L 13 9 L 13 12 L 3 12 L 3 9 z M 7 10 L 7 11 L 8 11 L 8 10 L 7 10 z M 9 10 L 9 11 L 10 11 L 10 10 L 9 10 z M 11 10 L 11 11 L 12 11 L 12 10 L 11 10 z " class="ColorScheme-Highlight" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Highlight{color:#fcfcfc}</style>
+  <g class="ColorScheme-Highlight" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3.5 16 a2 2 0 0 1 2 -2 H18.5 a2 2 0 0 1 2 2 V18 a2 2 0 0 1 -2 2 H5.5 a2 2 0 0 1 -2 -2 Z"/>
+    <path d="M9 10.5 a3 3 0 0 1 6 0"/>
+    <path d="M6 10.5 a6 6 0 0 1 12 0"/>
+  </g>
+  <g class="ColorScheme-Highlight" fill="currentColor" stroke="none">
+    <path d="M12 9.5 a1 1 0 1 1 0 2 a1 1 0 1 1 0 -2 Z"/>
+    <path d="M13.5 16.2 a0.8 0.8 0 1 1 0 1.6 a0.8 0.8 0 1 1 0 -1.6 Z"/>
+    <path d="M16.5 16.2 a0.8 0.8 0 1 1 0 1.6 a0.8 0.8 0 1 1 0 -1.6 Z"/>
+  </g>
 </svg>

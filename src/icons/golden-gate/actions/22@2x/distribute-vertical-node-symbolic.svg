@@ -1,1 +1,9 @@
-distribute-vertical-node.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3.5 5 H6.5 M3.5 12 H6.5 M3.5 19 H6.5 M5 5 V19"/>
+    <path d="M18 3.75 H19 a0.75 0.75 0 0 1 0.75 0.75 V5.5 a0.75 0.75 0 0 1 -0.75 0.75 H18 a0.75 0.75 0 0 1 -0.75 -0.75 V4.5 a0.75 0.75 0 0 1 0.75 -0.75 Z"/>
+    <path d="M11 10.75 H12 a0.75 0.75 0 0 1 0.75 0.75 V12.5 a0.75 0.75 0 0 1 -0.75 0.75 H11 a0.75 0.75 0 0 1 -0.75 -0.75 V11.5 a0.75 0.75 0 0 1 0.75 -0.75 Z"/>
+    <path d="M15.5 17.75 H16.5 a0.75 0.75 0 0 1 0.75 0.75 V19.5 a0.75 0.75 0 0 1 -0.75 0.75 H15.5 a0.75 0.75 0 0 1 -0.75 -0.75 V18.5 a0.75 0.75 0 0 1 0.75 -0.75 Z"/>
+  </g>
+</svg>

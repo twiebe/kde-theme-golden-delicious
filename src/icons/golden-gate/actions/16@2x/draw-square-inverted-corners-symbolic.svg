@@ -1,1 +1,6 @@
-draw-square-inverted-corners.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8 4.5 H16 a3.5 3.5 0 0 0 3.5 3.5 V16 a3.5 3.5 0 0 0 -3.5 3.5 H8 a3.5 3.5 0 0 0 -3.5 -3.5 V8 a3.5 3.5 0 0 0 3.5 -3.5 Z"/>
+  </g>
+</svg>

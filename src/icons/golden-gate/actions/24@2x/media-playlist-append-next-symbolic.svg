@@ -1,1 +1,9 @@
-media-playlist-append-next.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 6 H5 M4 12 H5 M4 18 H5"/>
+    <path d="M9 6 H11.5 M9 12 H20 M9 18 H20"/>
+    <path d="M17.25 3.5 V9.5"/>
+    <path d="M14.25 6.5 H20.25"/>
+  </g>
+</svg>

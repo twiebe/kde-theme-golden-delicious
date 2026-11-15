@@ -1,1 +1,9 @@
-mail-folder-outbox.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Highlight{color:#fcfcfc}</style>
+  <g class="ColorScheme-Highlight" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M7 9.5 H6.1 a1.2 1.2 0 0 0 -1.1 .7 L3.5 14 V18 a1.5 1.5 0 0 0 1.5 1.5 H19 a1.5 1.5 0 0 0 1.5 -1.5 V14 L19 10.2 a1.2 1.2 0 0 0 -1.1 -.7 H17"/>
+    <path d="M3.5 14 H8 L9.5 16 H14.5 L16 14 H20.5"/>
+    <path d="M12 12 V3.5"/>
+    <path d="M9 6.5 L12 3.5 L15 6.5"/>
+  </g>
+</svg>

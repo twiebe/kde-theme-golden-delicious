@@ -1,1 +1,8 @@
-debug-execute-to-cursor.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 4 H20 M18 4 V20 M16 20 H20"/>
+    <path d="M4 8.5 V15.5 M4 12 H13"/>
+    <path d="M10 9 L13 12 L10 15"/>
+  </g>
+</svg>

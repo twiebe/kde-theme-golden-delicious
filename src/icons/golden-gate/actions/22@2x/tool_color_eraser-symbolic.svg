@@ -1,1 +1,8 @@
-tool_color_eraser.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 4.83 12.47 Q 4.02 11.66 4.83 10.84 L 10.84 4.83 Q 11.66 4.02 12.47 4.83 L 14.41 6.77 Q 15.22 7.58 14.41 8.40 L 8.40 14.41 Q 7.58 15.22 6.77 14.41 Z"/>
+    <path d="M 7.07 8.60 L 10.64 12.17"/>
+    <path d="M17 11.5 C17 11.5 20.25 15 20.25 17.25 a3.25 3.25 0 0 1 -6.5 0 C13.75 15 17 11.5 17 11.5 Z"/>
+  </g>
+</svg>

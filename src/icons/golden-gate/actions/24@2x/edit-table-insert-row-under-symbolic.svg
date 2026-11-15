@@ -1,1 +1,10 @@
-edit-table-insert-row-under.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5.5 3.5 H18.5 a2 2 0 0 1 2 2 V10 a2 2 0 0 1 -2 2 H5.5 a2 2 0 0 1 -2 -2 V5.5 a2 2 0 0 1 2 -2 Z"/>
+    <path d="M3.5 7.75 H20.5"/>
+    <path d="M12 3.5 V12"/>
+    <path d="M12 15.75 V20.25"/>
+    <path d="M9.75 18 H14.25"/>
+  </g>
+</svg>

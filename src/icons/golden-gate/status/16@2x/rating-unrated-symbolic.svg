@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-    <style type="text/css" id="current-color-scheme">.ColorScheme-Text { color: #fcfcfc; } </style>
-    <path style="fill:currentColor;stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" class="ColorScheme-Text" d="M8 .188l-2.473 5.01L0 6l4 3.898-.943 5.506L8 12.804l4.943 2.598L12 9.898 16 6l-5.527-.803zm0 2.261l1.809 3.662 4.043.588-2.926 2.852.69 4.025L8 11.676l-3.615 1.9.69-4.025-2.927-2.852 4.043-.588z" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 4 L14.25 9.41 L20.08 9.87 L15.64 13.68 L17 19.38 L12 16.32 L7 19.38 L8.36 13.68 L3.92 9.87 L9.75 9.41 Z"/>
+  </g>
 </svg>

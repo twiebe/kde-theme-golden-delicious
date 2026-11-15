@@ -1,9 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-  <defs id="defs3051">
-    <style type="text/css" id="current-color-scheme">.ColorScheme-NegativeText { color: #da4453; } </style>
-  </defs>
-  <g transform="translate(1,1)">
-    <path style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" class="ColorScheme-NegativeText" d="m386.85714 548.07646c-2.56828 0-4.78334 1.3818-6 3.43361l.00001.56641-.00001.99999c0 0 .00001.99999 1.00003 1h3c1 0 1-1 1-1v-.5c0-.831.66901-1.5 1.5-1.5l4.99997-.00001c.83098 0 1.5.669 1.5 1.50001v.5c0 0 0 .99999 1 .99999h3c1 0 1-.99999 1-.99999v-.99999-.56641c-1.21666-2.05181-3.43208-3.4336-6-3.4336z" transform="translate(-378.85714-540.07647)" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3.5 13 C6 10.2 9 9 12 9 C15 9 18 10.2 20.5 13 V14.5 a1 1 0 0 1 -1 1 H16.5 a1 1 0 0 1 -1 -.9 L15.3 12.9 C13.2 12.3 10.8 12.3 8.7 12.9 L8.5 14.6 a1 1 0 0 1 -1 .9 H4.5 a1 1 0 0 1 -1 -1 Z"/>
   </g>
 </svg>

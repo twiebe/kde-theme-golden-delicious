@@ -1,1 +1,11 @@
-filename-discnumber-amarok.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20.37 10.5 A8.5 8.5 0 1 0 10.5 20.37"/>
+    <path d="M12 10 a2 2 0 1 1 0 4 a2 2 0 1 1 0 -4 Z"/>
+    <path d="M16 14 V20.5"/>
+    <path d="M19 14 V20.5"/>
+    <path d="M14 15.75 H21"/>
+    <path d="M14 18.75 H21"/>
+  </g>
+</svg>

@@ -1,1 +1,10 @@
-align-horizontal-center.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3 V5"/>
+    <path d="M10.5 5 H13.5 A1.5 1.5 0 0 1 15 6.5 V8.5 A1.5 1.5 0 0 1 13.5 10 H10.5 A1.5 1.5 0 0 1 9 8.5 V6.5 A1.5 1.5 0 0 1 10.5 5 Z"/>
+    <path d="M12 10 V13.5"/>
+    <path d="M6.5 13.5 H17.5 A1.5 1.5 0 0 1 19 15 V17 A1.5 1.5 0 0 1 17.5 18.5 H6.5 A1.5 1.5 0 0 1 5 17 V15 A1.5 1.5 0 0 1 6.5 13.5 Z"/>
+    <path d="M12 18.5 V21"/>
+  </g>
+</svg>

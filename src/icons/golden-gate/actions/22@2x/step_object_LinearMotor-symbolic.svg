@@ -1,1 +1,9 @@
-step_object_LinearMotor.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 4.5 H18 a2 2 0 0 1 2 2 V10 a2 2 0 0 1 -2 2 H6 a2 2 0 0 1 -2 -2 V6.5 a2 2 0 0 1 2 -2 Z"/>
+    <path d="M4 18 H20"/>
+    <path d="M6.5 15.5 L4 18 L6.5 20.5"/>
+    <path d="M17.5 15.5 L20 18 L17.5 20.5"/>
+  </g>
+</svg>

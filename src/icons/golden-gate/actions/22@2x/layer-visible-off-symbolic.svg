@@ -1,1 +1,9 @@
-layer-visible-off.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3.5 L20.5 7.75 L12 12 L3.5 7.75 Z"/>
+    <path d="M3.5 12 L12 16.25 L20.5 12"/>
+    <path d="M3.5 16.25 L12 20.5 L20.5 16.25"/>
+    <path d="M4.5 4.5 L19.5 19.5"/>
+  </g>
+</svg>

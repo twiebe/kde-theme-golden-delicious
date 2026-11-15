@@ -1,1 +1,9 @@
-archive-extract.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 21 H7.5 a2 2 0 0 1 -2 -2 V5 a2 2 0 0 1 2 -2 H13.5 L19 8.5 V12"/>
+    <path d="M13.5 3.5 V7 a1.5 1.5 0 0 0 1.5 1.5 H18.5"/>
+    <path d="M9.5 6 V7 M9.5 9.5 V10.5 M9.5 13 V14"/>
+    <path d="M17 21 V15 M14.5 17.5 L17 15 L19.5 17.5"/>
+  </g>
+</svg>

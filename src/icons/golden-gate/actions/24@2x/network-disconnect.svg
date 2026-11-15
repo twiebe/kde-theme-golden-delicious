@@ -1,10 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-  <defs id="defs3051">
-    <style type="text/css" id="current-color-scheme">.ColorScheme-NegativeText { color: #da4453; } .ColorScheme-Text { color: #fcfcfc; } </style>
-  </defs>
-  <g transform="translate(1,1)">
-    <path style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" d="M 18.292969 3 L 14.792969 6.5 L 13.292969 5 L 11.292969 7 L 9.5 8.7929688 L 11 10.292969 L 11.707031 11 L 13.207031 12.5 L 15 10.707031 L 17 8.7070312 L 15.5 7.2070312 L 19 3.7070312 L 18.292969 3 z M 8.7929688 9.5 L 8 10.292969 L 6 12.292969 L 7.5 13.792969 L 3 18.292969 L 3.7070312 19 L 8.2070312 14.5 L 9.7070312 16 L 11.707031 14 L 12.5 13.207031 L 11 11.707031 L 10.292969 11 L 8.7929688 9.5 z " class="ColorScheme-Text" />
-    <path style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" d="M 14.833984 14 L 14 14.833984 L 15.666016 16.5 L 14 18.166016 L 14.833984 19 L 16.5 17.333984 L 18.166016 19 L 19 18.166016 L 17.333984 16.5 L 19 14.833984 L 18.166016 14 L 16.5 15.666016 L 14.833984 14 z " class="ColorScheme-NegativeText" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12.00 7.76 L12.88 6.87 A1.25 1.25 0 0 1 14.65 6.87 L17.13 9.35 A1.25 1.25 0 0 1 17.13 11.12 L16.24 12.00 A1.25 1.25 0 0 1 14.47 12.00 L12.00 9.53 A1.25 1.25 0 0 1 12.00 7.76 Z"/>
+    <path d="M6.87 12.88 L7.76 12.00 A1.25 1.25 0 0 1 9.53 12.00 L12.00 14.47 A1.25 1.25 0 0 1 12.00 16.24 L11.12 17.13 A1.25 1.25 0 0 1 9.35 17.13 L6.87 14.65 A1.25 1.25 0 0 1 6.87 12.88 Z"/>
+    <path d="M15.89 8.11 L19.50 4.50"/>
+    <path d="M8.11 15.89 L4.50 19.50"/>
+    <path d="M16 16 L19.5 19.5"/>
+    <path d="M19.5 16 L16 19.5"/>
   </g>
 </svg>

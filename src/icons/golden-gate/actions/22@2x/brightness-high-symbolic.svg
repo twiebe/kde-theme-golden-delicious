@@ -1,1 +1,7 @@
-brightness-high.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 8.5 a3.5 3.5 0 1 1 0 7 a3.5 3.5 0 1 1 0 -7 Z"/>
+    <path d="M18.3 12 L20.5 12 M16.45 16.45 L18.01 18.01 M12 18.3 L12 20.5 M7.55 16.45 L5.99 18.01 M5.7 12 L3.5 12 M7.55 7.55 L5.99 5.99 M12 5.7 L12 3.5 M16.45 7.55 L18.01 5.99"/>
+  </g>
+</svg>

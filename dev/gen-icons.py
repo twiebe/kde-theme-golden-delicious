@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Generate the Golden Gate icon theme: Breeze Dark's monochrome icons with
-thicker, rounder strokes.
+"""Generate the Golden Gate icon theme from our own drawings in dev/icons/src,
+under Breeze Dark's names, sizes and aliases.
 
-Every filled shape gets a round-joined stroke in its own colour, which widens
-each line by WIDTH and softens the corners. Colourful icons are left out and
-keep coming from the inherited themes.
+A name we have not drawn yet falls back to Breeze's monochrome icon with
+thicker, rounder strokes: every filled shape gets a round-joined stroke in its
+own colour, which widens each line by WIDTH and softens the corners. Colourful
+icons are left out and keep coming from the inherited themes.
 
 Runs inside the harness image, which has the pinned Breeze icons:
   docker run --rm -v "$PWD:/repo" -w /repo --entrypoint python3 \\
@@ -17,7 +18,11 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 
 SRC = Path("/usr/share/icons/breeze-dark")
-OUT = Path(__file__).resolve().parent.parent / "src/icons/golden-gate"
+REPO = Path(__file__).resolve().parent.parent
+OUT = REPO / "src/icons/golden-gate"
+OURS = REPO / "dev/icons/src"
+# Names we don't draw separately: -symbolic twins and coloured folders.
+TWIN = re.compile(r"-symbolic$|(?<=^folder)-(brown|magenta|green|black|yellow|cyan|orange|violet|grey|blue|red)$")
 
 WIDTH = 0.4                     # px added to every line
 CONTEXTS = ["actions", "places", "devices", "status", "emblems"]
@@ -76,6 +81,16 @@ def thicken(text, accent):
     return '<?xml version="1.0" encoding="UTF-8"?>\n' + out + "\n"
 
 
+def ours(name, accent):
+    """Our drawing for a name, or None."""
+    for n in (name, TWIN.sub("", name)):
+        f = OURS / f"{n}.svg"
+        if f.exists():
+            text = f.read_text()
+            return text.replace("ColorScheme-Text", "ColorScheme-Highlight") if accent else text
+    return None
+
+
 def monochrome(text):
     # Recolourable and no fixed colours of its own.
     return "currentColor" in text and not re.search(r'(?:fill|stop-color)[:=]\s*"?#', text)
@@ -95,6 +110,7 @@ def main():
     shutil.rmtree(OUT, ignore_errors=True)
     big = big_names()
     fixed, scaled = [], []
+    drawn, fallback = set(), set()
     for ctx in CONTEXTS:
         for size in SIZES:
             src = SRC / ctx / str(size)
@@ -105,22 +121,30 @@ def main():
             hi.mkdir(parents=True)
             lo.mkdir(parents=True)
             entries = sorted(src.glob("*.svg"))
+            accent = ctx in ACCENT
             for f in entries:                # real files first, then aliases
-                if f.is_symlink() or f.stem in EXCLUDE:
+                if f.is_symlink():
                     continue
-                text = f.read_text()
-                if monochrome(text):
-                    (hi / f.name).write_text(thicken(text, ctx in ACCENT))
+                if (own := ours(f.stem, accent)) is not None:
+                    (hi / f.name).write_text(own)
+                    drawn.add(f.stem)
+                elif f.stem not in EXCLUDE and monochrome(text := f.read_text()):
+                    (hi / f.name).write_text(thicken(text, accent))
+                    fallback.add(f.stem)
             for f in entries:
-                if not f.is_symlink() or f.stem in EXCLUDE:
+                if not f.is_symlink():
                     continue
                 target = f.resolve()
-                if target.stem in EXCLUDE:
-                    continue
-                if target.parent == src.resolve() and (hi / target.name).exists():
+                # Our own drawing of the alias name wins over the alias target.
+                own = ours(f.stem, accent)
+                if own is None and not (target.parent == src.resolve() and (hi / target.name).exists()):
+                    own = ours(target.stem, accent)
+                if own is not None:
+                    (hi / f.name).write_text(own)
+                elif target.parent == src.resolve() and (hi / target.name).exists():
                     (hi / f.name).symlink_to(target.name)
-                elif target.exists() and monochrome(target.read_text()):
-                    (hi / f.name).write_text(thicken(target.read_text(), ctx in ACCENT))
+                elif target.stem not in EXCLUDE and target.exists() and monochrome(target.read_text()):
+                    (hi / f.name).write_text(thicken(target.read_text(), accent))
             if ctx == "places" and (hi / "folder.svg").exists():
                 (hi / "inode-directory.svg").symlink_to("folder.svg")
             for f in sorted(hi.iterdir()):
@@ -135,7 +159,7 @@ def main():
 
     head = f"""[Icon Theme]
 Name=Golden Gate
-Comment=Breeze Dark symbolic icons with thicker, rounder strokes
+Comment=Soft line icons in the spirit of macOS, under Breeze's names
 Inherits=WhiteSur-dark,breeze-dark,hicolor
 FollowsColorScheme=true
 DisplayDepth=32
@@ -158,8 +182,11 @@ ScaledDirectories={",".join(d for *_, d, _ in scaled)}
     (OUT / "index.theme").write_text(head + sections)
     shutil.copy("/usr/share/licenses/spdx/LGPL-3.0-or-later.txt", OUT / "LICENSE")
     (OUT / "README").write_text(
-        "Modified Breeze icons (KDE, LGPL-3.0-or-later): monochrome icons from\n"
-        f"breeze-dark with every line widened by {WIDTH} px. See dev/gen-icons.py.\n")
+        "Golden Gate icons, drawn for this theme (dev/icons/src). Names not drawn\n"
+        "yet are modified Breeze icons (KDE, LGPL-3.0-or-later): monochrome icons\n"
+        f"from breeze-dark with every line widened by {WIDTH} px. See dev/gen-icons.py.\n")
+    fallback -= drawn
+    print(f"{len(drawn)} drawn, {len(fallback)} thickened Breeze: {' '.join(sorted(fallback)[:30])}")
 
 
 if __name__ == "__main__":

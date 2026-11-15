@@ -1,1 +1,7 @@
-edit-clear.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8.3 5.5 H18.5 a2 2 0 0 1 2 2 V16.5 a2 2 0 0 1 -2 2 H8.3 a1.5 1.5 0 0 1 -1.2 -.6 L3.3 12 L7.1 6.1 a1.5 1.5 0 0 1 1.2 -.6 Z"/>
+    <path d="M11.5 10 L15.5 14 M15.5 10 L11.5 14"/>
+  </g>
+</svg>

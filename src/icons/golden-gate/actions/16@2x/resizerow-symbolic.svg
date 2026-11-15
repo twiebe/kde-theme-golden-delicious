@@ -1,1 +1,10 @@
-resizerow.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 12 H20"/>
+    <path d="M12 4 V9"/>
+    <path d="M9 7 L12 4 L15 7"/>
+    <path d="M12 15 V20"/>
+    <path d="M9 17 L12 20 L15 17"/>
+  </g>
+</svg>

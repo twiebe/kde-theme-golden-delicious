@@ -1,1 +1,9 @@
-news-subscribe.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 5 H18 a2.5 2.5 0 0 1 2.5 2.5 V16.5 a2.5 2.5 0 0 1 -2.5 2.5 H6 a2.5 2.5 0 0 1 -2.5 -2.5 V7.5 a2.5 2.5 0 0 1 2.5 -2.5 Z"/>
+    <path d="M8 8.5 H9.5 a1 1 0 0 1 1 1 V11 a1 1 0 0 1 -1 1 H8 a1 1 0 0 1 -1 -1 V9.5 a1 1 0 0 1 1 -1 Z"/>
+    <path d="M13.5 8.5 H17 M13.5 12 H17"/>
+    <path d="M7 15.5 H17"/>
+  </g>
+</svg>

@@ -1,1 +1,8 @@
-video-television.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Highlight{color:#fcfcfc}</style>
+  <g class="ColorScheme-Highlight" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 6.5 H19 a2 2 0 0 1 2 2 V16 a2 2 0 0 1 -2 2 H5 a2 2 0 0 1 -2 -2 V8.5 a2 2 0 0 1 2 -2 Z"/>
+    <path d="M8.5 3 L12 6.5 L15.5 3"/>
+    <path d="M8.5 20.5 H15.5"/>
+  </g>
+</svg>

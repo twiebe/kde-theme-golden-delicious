@@ -1,1 +1,10 @@
-view-fullscreen.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9.5 8 H14.5 a1.5 1.5 0 0 1 1.5 1.5 V14.5 a1.5 1.5 0 0 1 -1.5 1.5 H9.5 a1.5 1.5 0 0 1 -1.5 -1.5 V9.5 a1.5 1.5 0 0 1 1.5 -1.5 Z"/>
+    <path d="M3.5 7 V3.5 H7"/>
+    <path d="M17 3.5 H20.5 V7"/>
+    <path d="M20.5 17 V20.5 H17"/>
+    <path d="M7 20.5 H3.5 V17"/>
+  </g>
+</svg>

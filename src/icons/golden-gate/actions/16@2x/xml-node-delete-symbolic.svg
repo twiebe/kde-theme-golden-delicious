@@ -1,1 +1,9 @@
-xml-node-delete.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M7.5 5 L3.5 9.25 L7.5 13.5"/>
+    <path d="M15.5 5 L19.5 9.25 L15.5 13.5"/>
+    <path d="M12.75 3.5 L10.25 15"/>
+    <path d="M15.5 15.5 L20.5 20.5 M20.5 15.5 L15.5 20.5"/>
+  </g>
+</svg>

@@ -1,1 +1,10 @@
-edit-table-insert-column-left.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 9.75 V14.25"/>
+    <path d="M3.75 12 H8.25"/>
+    <path d="M14 3.5 H18.5 a2 2 0 0 1 2 2 V18.5 a2 2 0 0 1 -2 2 H14 a2 2 0 0 1 -2 -2 V5.5 a2 2 0 0 1 2 -2 Z"/>
+    <path d="M16.25 3.5 V20.5"/>
+    <path d="M12 12 H20.5"/>
+  </g>
+</svg>

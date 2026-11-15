@@ -50,9 +50,10 @@ A restore backs up the current state first, so it can be undone the same way.
 
 The SVGs under `src/aurorae` and `src/plasma/desktoptheme` are generated:
 edit `dev/gen-aurorae.py` or `dev/gen-plasma.py` and rerun them.
-`dev/gen-icons.py` builds the icon theme in `src/icons/golden-gate` from Breeze
-Dark's monochrome icons with every line 0.4 px wider; it runs in the harness
-image, which has the pinned Breeze icons.
+`dev/gen-icons.py` builds the icon theme in `src/icons/golden-gate` from our
+drawings in `dev/icons/src` (style in `dev/icons/STYLE.md`), under Breeze's
+names and aliases; a name not drawn yet gets Breeze Dark's icon with every line
+0.4 px wider. It runs in the harness image, which has the pinned Breeze icons.
 
 To see the result without touching your desktop, render a screenshot in a
 pinned headless Plasma 6.8 (needs Docker and `/dev/dri`):

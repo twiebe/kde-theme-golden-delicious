@@ -1,7 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
-    <defs id="defs3051">
-        <style type="text/css" id="current-color-scheme">.ColorScheme-NegativeText { color: #da4453; } </style>
-    </defs>
-    <path style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" class="ColorScheme-NegativeText" d="M8 3v2h1V4h4v1h1V3H8M4 6v1h14V6H4m2 2v11h10V8h-1v10H7V8H6" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 7 H18 L17.1 19.1 a1.75 1.75 0 0 1 -1.75 1.6 H8.65 a1.75 1.75 0 0 1 -1.75 -1.6 Z"/>
+    <path d="M10 10.5 V17"/>
+    <path d="M14 10.5 V17"/>
+    <path d="M4 7 H20"/>
+    <path d="M9.5 7 V5 a1.5 1.5 0 0 1 1.5 -1.5 H13 a1.5 1.5 0 0 1 1.5 1.5 V7"/>
+  </g>
 </svg>

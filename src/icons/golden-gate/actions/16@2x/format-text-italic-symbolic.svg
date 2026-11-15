@@ -1,1 +1,8 @@
-format-text-italic.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 4.5 H18"/>
+    <path d="M6 19.5 H14"/>
+    <path d="M14 4.5 L10 19.5"/>
+  </g>
+</svg>

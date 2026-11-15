@@ -1,1 +1,10 @@
-blurfx.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 5.5 C10 5.5 5 10.8 5 15 a5 5 0 0 0 10 0 C15 10.8 10 5.5 10 5.5 Z"/>
+    <path d="M17.5 3.5 V8.5"/>
+    <path d="M15 6 H20"/>
+    <path d="M18.5 11.5 V14.5"/>
+    <path d="M17 13 H20"/>
+  </g>
+</svg>

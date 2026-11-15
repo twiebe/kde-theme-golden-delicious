@@ -1,1 +1,8 @@
-edit-delete-shred.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M7 10 V5.5 a2 2 0 0 1 2 -2 H13.5 L17 7 V10"/>
+    <path d="M3.5 10 H20.5"/>
+    <path d="M7.5 13.5 V20 M10.5 13.5 V20 M13.5 13.5 V20 M16.5 13.5 V20"/>
+  </g>
+</svg>

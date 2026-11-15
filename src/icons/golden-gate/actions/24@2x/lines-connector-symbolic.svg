@@ -1,1 +1,8 @@
-lines-connector.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4.75 16.75 H6.25 a1 1 0 0 1 1 1 V19.25 a1 1 0 0 1 -1 1 H4.75 a1 1 0 0 1 -1 -1 V17.75 a1 1 0 0 1 1 -1 Z"/>
+    <path d="M17.75 3.75 H19.25 a1 1 0 0 1 1 1 V6.25 a1 1 0 0 1 -1 1 H17.75 a1 1 0 0 1 -1 -1 V4.75 a1 1 0 0 1 1 -1 Z"/>
+    <path d="M7.25 18.5 H9 L15 5.5 H16.75"/>
+  </g>
+</svg>

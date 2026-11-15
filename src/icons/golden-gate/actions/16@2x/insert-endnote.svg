@@ -1,8 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-  <defs id="defs3051">
-    <style type="text/css" id="current-color-scheme">.ColorScheme-Accent { color: #3daee9; } .ColorScheme-Text { color: #fcfcfc; } </style>
-  </defs>
-  <path style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" d="M 2 2 L 2 9 L 2 10 L 2 11 L 2 12 L 4 12 L 4 14 L 11 14 L 11 13 L 5 13 L 5 12 L 11 12 L 11 11 L 11 9 L 11 5 L 13 5 L 13 7 L 14 7 L 14 4 L 11 4 L 11 2 L 3 2 L 2 2 z M 3 3 L 10 3 L 10 10 L 10 11 L 3 11 L 3 10 L 3 9 L 3 3 z M 4 4 L 4 5 L 9 5 L 9 4 L 4 4 z M 4 6 L 4 7 L 7 7 L 7 6 L 4 6 z " class="ColorScheme-Text" />
-  <path style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" d="M 13 8 L 13 9 L 14 9 L 14 8 L 13 8 z M 4 9 L 4 10 L 8 10 L 8 9 L 4 9 z M 13 10 L 13 14 L 14 14 L 14 10 L 13 10 z " class="ColorScheme-Accent" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M7.5 3.5 H17.5 a2 2 0 0 1 2 2 V12"/>
+    <path d="M13 20.5 H6 a2 2 0 0 1 -2 -2 V8.5 a2 2 0 0 1 2 -2 H14 a2 2 0 0 1 2 2 V12"/>
+    <path d="M7 10.5 H13"/>
+    <path d="M7 14 H9.5"/>
+    <path d="M7 17 H11.5"/>
+    <path d="M18 15 V21 M15 18 H21"/>
+  </g>
 </svg>

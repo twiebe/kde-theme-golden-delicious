@@ -1,1 +1,8 @@
-tools-media-optical-copy.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10.5 3.5 a7 7 0 1 1 0 14 a7 7 0 1 1 0 -14 Z"/>
+    <path d="M10.5 8.75 a1.75 1.75 0 1 1 0 3.5 a1.75 1.75 0 1 1 0 -3.5 Z"/>
+    <path d="M16.72 7.28 A7 7 0 1 1 7.28 16.72"/>
+  </g>
+</svg>

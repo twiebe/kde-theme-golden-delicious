@@ -1,1 +1,8 @@
-mail-reply-custom.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20.5 8 H4.5"/>
+    <path d="M9 3.5 L4.5 8 L9 12.5"/>
+    <path d="M16.5 13.0 Q16.5 16.5 20.0 16.5 Q16.5 16.5 16.5 20.0 Q16.5 16.5 13.0 16.5 Q16.5 16.5 16.5 13.0 Z"/>
+  </g>
+</svg>

@@ -1,1 +1,10 @@
-tools-report-bug.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 8.5 a4.5 5.5 0 0 1 4.5 5.5 V15 a4.5 5.5 0 0 1 -9 0 V14 a4.5 5.5 0 0 1 4.5 -5.5 Z"/>
+    <path d="M9.5 9.2 a2.5 2.5 0 0 1 5 0"/>
+    <path d="M12 11 V20"/>
+    <path d="M7.5 12.5 L4.5 11 M7.5 16 H4 M8.5 18.5 L5.5 20.5 M16.5 12.5 L19.5 11 M16.5 16 H20 M15.5 18.5 L18.5 20.5"/>
+    <path d="M10.5 7 L9 4.5 M13.5 7 L15 4.5"/>
+  </g>
+</svg>

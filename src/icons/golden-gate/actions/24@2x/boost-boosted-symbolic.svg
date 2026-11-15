@@ -1,1 +1,9 @@
-boost-boosted.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4.5 9.5 L7 7 L9.5 9.5"/>
+    <path d="M7 7 V15.5 a2 2 0 0 0 2 2 H10.5"/>
+    <path d="M17 11.5 V8.5 a2 2 0 0 0 -2 -2 H11"/>
+    <path d="M13.5 17 L16 19.5 L20.5 15"/>
+  </g>
+</svg>

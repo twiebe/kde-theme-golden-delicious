@@ -1,1 +1,8 @@
-office-chart-ring.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3.5 a8.5 8.5 0 1 1 0 17 a8.5 8.5 0 1 1 0 -17 Z"/>
+    <path d="M12 7.5 a4.5 4.5 0 1 1 0 9 a4.5 4.5 0 1 1 0 -9 Z"/>
+    <path d="M12 3.5 V7.5 M4.64 16.25 L8.1 14.25"/>
+  </g>
+</svg>

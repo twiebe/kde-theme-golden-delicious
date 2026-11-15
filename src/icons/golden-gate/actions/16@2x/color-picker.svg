@@ -1,5 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-    <style type="text/css" id="current-color-scheme">.ColorScheme-Text { color: #fcfcfc; } </style>
-    <path d="m12.5 2c-.397802.0000601-.779289.1581347-1.060547.4394531l-1.9999999 2-.9394531-.9394531-1 1 .6464844.6464844-4.5898438 4.5898437c-.3716796.3716799-.5566407.8625979-.5566406 1.3535159v.910156l-1.5 1.5 1 1 1.5-1.5h.9101562c.490918 0 .9818361-.184962 1.3535157-.556641l4.5898441-4.5898434.646484.6464844 1-1-.939453-.9394531 2-2c.281318-.2812583.439393-.6627452.439453-1.0605469v-.5c0-.5522847-.447715-1-1-1zm-3.6464844 3.8535156 1.2929684 1.2929688-2.8535152 2.8535156h-2.5859376z" class="ColorScheme-Text" fill="currentColor" style="stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14.5 7.5 L7 15 V17 H9 L16.5 9.5"/>
+    <path d="M13 6 L18 11"/>
+    <path d="M15 7 L17.5 4.5 A1.414 1.414 0 0 1 19.5 6.5 L17 9"/>
+    <path d="M7 17 L4.5 19.5"/>
+  </g>
 </svg>

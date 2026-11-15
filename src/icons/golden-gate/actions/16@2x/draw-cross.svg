@@ -1,8 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 16 16">
-    <defs>
-        <style type="text/css" id="current-color-scheme">.ColorScheme-Text { color: #fcfcfc; } </style>
-    </defs>
-    <path class="ColorScheme-Text" d="m6 2v4h-4v4h4v4h4v-4h4v-4h-4v-4zm1 1h2v4h4v2h-4v4h-2v-4h-4v-2h4v-1z" fill="currentColor" style="stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" />
-    <path d="m6.978071 11.184841-0.0190613-2.116597-4.2062093-0.0383672v-2.0941338l2.1031046-0.0191834 2.1031047-0.0191833 0.0190611-2.1165964 0.0190611-2.1165965h2.0110564v4.269374h4.2421607v2.0985059h-4.2421607v4.2693737h-2.0110561z" class="ColorScheme-Text" fill="currentColor" fill-opacity=".50196078" style="stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:.50196078" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9.5 5 Q9.5 4 10.5 4 L13.5 4 Q14.5 4 14.5 5 L14.5 8.5 Q14.5 9.5 15.5 9.5 L19 9.5 Q20 9.5 20 10.5 L20 13.5 Q20 14.5 19 14.5 L15.5 14.5 Q14.5 14.5 14.5 15.5 L14.5 19 Q14.5 20 13.5 20 L10.5 20 Q9.5 20 9.5 19 L9.5 15.5 Q9.5 14.5 8.5 14.5 L5 14.5 Q4 14.5 4 13.5 L4 10.5 Q4 9.5 5 9.5 L8.5 9.5 Q9.5 9.5 9.5 8.5 Z"/>
+  </g>
 </svg>

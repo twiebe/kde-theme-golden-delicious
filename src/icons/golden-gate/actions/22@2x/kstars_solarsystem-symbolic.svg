@@ -1,1 +1,12 @@
-kstars_solarsystem.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3.5 a8.5 8.5 0 1 1 0 17 a8.5 8.5 0 1 1 0 -17 Z"/>
+    <path d="M12 7.5 a4.5 4.5 0 1 1 0 9 a4.5 4.5 0 1 1 0 -9 Z"/>
+  </g>
+  <g class="ColorScheme-Text" fill="currentColor" stroke="none">
+    <path d="M12 10.2 a1.8 1.8 0 1 1 0 3.6 a1.8 1.8 0 1 1 0 -3.6 Z"/>
+    <path d="M6 16.2 a1.8 1.8 0 1 1 0 3.6 a1.8 1.8 0 1 1 0 -3.6 Z"/>
+    <path d="M15.2 7.3 a1.5 1.5 0 1 1 0 3 a1.5 1.5 0 1 1 0 -3 Z"/>
+  </g>
+</svg>

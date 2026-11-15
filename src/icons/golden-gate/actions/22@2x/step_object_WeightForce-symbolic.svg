@@ -1,1 +1,9 @@
-step_object_WeightForce.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 20 V9.5 H11 M5 14.5 H10"/>
+    <path d="M5 5.5 H15.5"/>
+    <path d="M13.5 3.5 L15.5 5.5 L13.5 7.5"/>
+    <path d="M13 13.5 L14.75 20 L16.5 15 L18.25 20 L20 13.5"/>
+  </g>
+</svg>

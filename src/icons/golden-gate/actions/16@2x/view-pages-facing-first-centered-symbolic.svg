@@ -1,1 +1,8 @@
-view-pages-facing-first-centered.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M13 3 H10 a1 1 0 0 0 -1 1 V9.5 a1 1 0 0 0 1 1 H14 a1 1 0 0 0 1 -1 V5 Z"/>
+    <path d="M8 13.5 H5 a1 1 0 0 0 -1 1 V20 a1 1 0 0 0 1 1 H9 a1 1 0 0 0 1 -1 V15.5 Z"/>
+    <path d="M18 13.5 H15 a1 1 0 0 0 -1 1 V20 a1 1 0 0 0 1 1 H19 a1 1 0 0 0 1 -1 V15.5 Z"/>
+  </g>
+</svg>

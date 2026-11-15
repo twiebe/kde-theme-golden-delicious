@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 16 16">
-    <defs>
-        <style type="text/css" id="current-color-scheme">.ColorScheme-Text { color: #fcfcfc; } </style>
-    </defs>
-    <rect x="2.4988089" y="3.5160389" width="10.998194" height="8.9580956" fill="none" stroke="currentColor" stroke-dasharray="2,2" stroke-dashoffset="4.95" stroke-miterlimit="3.9000001" class="ColorScheme-Text" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 8 V7 a2 2 0 0 1 2 -2 H7 M17 5 H18 a2 2 0 0 1 2 2 V8 M20 16 V17 a2 2 0 0 1 -2 2 H17 M7 19 H6 a2 2 0 0 1 -2 -2 V16"/>
+    <path d="M10.5 5 H13.5 M10.5 19 H13.5 M4 10.5 V13.5 M20 10.5 V13.5"/>
+  </g>
 </svg>

@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 16 16">
-    <defs>
-        <style type="text/css" id="current-color-scheme">.ColorScheme-Text { color: #fcfcfc; } </style>
-    </defs>
-    <path d="M 2 5.99997 L 15 5.99997 L 15 6.99997 L 2 6.99997 L 2 5.99997 Z" class="ColorScheme-Text" style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" />
-    <path d="M 14 1 L 14 6 L 9 6 L 9 1 L 14 1 Z M 8 1 L 8 6 L 3 6 L 3 1 L 8 1 Z M 14 7 L 14 12 L 9 12 L 9 7 L 14 7 Z M 8 7 L 8 12 L 3 12 L 3 7 L 8 7 Z" class="ColorScheme-Text" style="fill:currentColor;fill-opacity:0.5;stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:0.5" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 12 H20"/>
+  </g>
+  <g class="ColorScheme-Text" fill="currentColor" stroke="none">
+    <path d="M4 3.15 a0.85 0.85 0 1 1 0 1.7 a0.85 0.85 0 1 1 0 -1.7 Z M4 7.15 a0.85 0.85 0 1 1 0 1.7 a0.85 0.85 0 1 1 0 -1.7 Z M4 15.15 a0.85 0.85 0 1 1 0 1.7 a0.85 0.85 0 1 1 0 -1.7 Z M4 19.15 a0.85 0.85 0 1 1 0 1.7 a0.85 0.85 0 1 1 0 -1.7 Z M8 3.15 a0.85 0.85 0 1 1 0 1.7 a0.85 0.85 0 1 1 0 -1.7 Z M8 19.15 a0.85 0.85 0 1 1 0 1.7 a0.85 0.85 0 1 1 0 -1.7 Z M12 3.15 a0.85 0.85 0 1 1 0 1.7 a0.85 0.85 0 1 1 0 -1.7 Z M12 7.15 a0.85 0.85 0 1 1 0 1.7 a0.85 0.85 0 1 1 0 -1.7 Z M12 15.15 a0.85 0.85 0 1 1 0 1.7 a0.85 0.85 0 1 1 0 -1.7 Z M12 19.15 a0.85 0.85 0 1 1 0 1.7 a0.85 0.85 0 1 1 0 -1.7 Z M16 3.15 a0.85 0.85 0 1 1 0 1.7 a0.85 0.85 0 1 1 0 -1.7 Z M16 19.15 a0.85 0.85 0 1 1 0 1.7 a0.85 0.85 0 1 1 0 -1.7 Z M20 3.15 a0.85 0.85 0 1 1 0 1.7 a0.85 0.85 0 1 1 0 -1.7 Z M20 7.15 a0.85 0.85 0 1 1 0 1.7 a0.85 0.85 0 1 1 0 -1.7 Z M20 15.15 a0.85 0.85 0 1 1 0 1.7 a0.85 0.85 0 1 1 0 -1.7 Z M20 19.15 a0.85 0.85 0 1 1 0 1.7 a0.85 0.85 0 1 1 0 -1.7 Z"/>
+  </g>
 </svg>

@@ -1,1 +1,11 @@
-vcs-diff.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 4 a2 2 0 1 1 0 4 a2 2 0 1 1 0 -4 Z"/>
+    <path d="M18 16 a2 2 0 1 1 0 4 a2 2 0 1 1 0 -4 Z"/>
+    <path d="M6 8 V14 a2 2 0 0 0 2 2 H12.5"/>
+    <path d="M10.25 13.75 L12.5 16 L10.25 18.25"/>
+    <path d="M18 16 V10 a2 2 0 0 0 -2 -2 H11.5"/>
+    <path d="M13.75 5.75 L11.5 8 L13.75 10.25"/>
+  </g>
+</svg>

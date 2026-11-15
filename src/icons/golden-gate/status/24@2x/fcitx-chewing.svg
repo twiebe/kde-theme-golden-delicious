@@ -1,10 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-  <style type="text/css" id="current-color-scheme">.ColorScheme-Accent { color: #3daee9; } .ColorScheme-Background { color: #2a2e32; } .ColorScheme-ButtonText { color: #31363b; } .ColorScheme-Text { color: #fcfcfc; } </style>
-  <g transform="translate(1,1)">
-    <g transform="translate(88,8e-6) translate(-88,-8e-06)" id="fcitx-chewing">
-      <path class="ColorScheme-Text" style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" d="m 91,37 0,0.5 0,15.5 16,0 0,-16 -16,0 z m 1,1 14,0 0,14 -14,0 0,-14 z m 1,1 0,1 1,0 0,3 -1,0 0,8 1,0 4.5,0 0.5,0 0,-8 -0.5,0 -1.5,0 0,-3 2,0 0,-1 -6,0 z m 6,4 0.400391,0.300781 c 0,0 0.398251,-0.511169 0.796879,-1.300781 L 102,42 l 0,2 -2,0 0,1 5,0 0,-1 -2,0 0,-2 2,0 0,-1 -2,0 0,-2 -1,0 0,2 -1.38281,0 C 100.83463,40.388658 101,39.708749 101,39 l -1,0 c 0,1.75 -1.400391,3.699219 -1.400391,3.699219 L 99,43 Z m -4,-3 1,0 0,3 -1,0 0,-3 z m 0,4 1,0 0,3 1,0 0,-3 1,0 0,6 -4,0 0,-1 3,0 0,-1 -3,0 0,-1 1,0 0,-3 z m 5,2 0,0.5 0,4.5 5,0 0,-5 -5,0 z m 1,1 3,0 0,3 -3,0 0,-3 z" id="path4265" transform="translate(-88,-34)" />
-      <rect style="fill:none;fill-opacity:1;stroke:none;stroke-linejoin:miter" id="rect4267" width="22" height="22" x="0" y="0" />
-    </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5.5 3.5 H18.5 a2 2 0 0 1 2 2 V18.5 a2 2 0 0 1 -2 2 H5.5 a2 2 0 0 1 -2 -2 V5.5 a2 2 0 0 1 2 -2 Z"/>
+    <path d="M6.5 7 H10.5 M6.75 9.5 H10 V17.5 H6.75 Z"/>
+    <path d="M13.5 6.5 L12.5 8.5 M12.75 8.75 H17 M12.25 11.5 H17.5 M15 6.5 V11.5 M12.75 14 H16.75 V17.5 H12.75 Z"/>
   </g>
 </svg>

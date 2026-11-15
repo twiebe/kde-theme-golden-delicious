@@ -1,1 +1,11 @@
-text_horz_kern.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M7 13 a3 3 0 1 1 0 6 a3 3 0 1 1 0 -6 Z"/>
+    <path d="M10 13 V19"/>
+    <path d="M14 11.5 V19"/>
+    <path d="M17 13 a3 3 0 1 1 0 6 a3 3 0 1 1 0 -6 Z"/>
+    <path d="M5 7 H9.5 M7 5 L5 7 L7 9"/>
+    <path d="M14.5 7 H19 M17 5 L19 7 L17 9"/>
+  </g>
+</svg>

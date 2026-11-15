@@ -1,1 +1,16 @@
-brightness-low.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 8.5 a3.5 3.5 0 1 1 0 7 a3.5 3.5 0 1 1 0 -7 Z"/>
+  </g>
+  <g class="ColorScheme-Text" fill="currentColor" stroke="none">
+    <path d="M18.8 11 a1 1 0 1 1 0 2 a1 1 0 1 1 0 -2 Z"/>
+    <path d="M16.81 15.81 a1 1 0 1 1 0 2 a1 1 0 1 1 0 -2 Z"/>
+    <path d="M12 17.8 a1 1 0 1 1 0 2 a1 1 0 1 1 0 -2 Z"/>
+    <path d="M7.19 15.81 a1 1 0 1 1 0 2 a1 1 0 1 1 0 -2 Z"/>
+    <path d="M5.2 11 a1 1 0 1 1 0 2 a1 1 0 1 1 0 -2 Z"/>
+    <path d="M7.19 6.19 a1 1 0 1 1 0 2 a1 1 0 1 1 0 -2 Z"/>
+    <path d="M12 4.2 a1 1 0 1 1 0 2 a1 1 0 1 1 0 -2 Z"/>
+    <path d="M16.81 6.19 a1 1 0 1 1 0 2 a1 1 0 1 1 0 -2 Z"/>
+  </g>
+</svg>

@@ -1,1 +1,11 @@
-align-horizontal-top-out.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3.5 10 H20.5"/>
+    <path d="M6 13 H9 A1.5 1.5 0 0 1 10.5 14.5 V19 A1.5 1.5 0 0 1 9 20.5 H6 A1.5 1.5 0 0 1 4.5 19 V14.5 A1.5 1.5 0 0 1 6 13 Z"/>
+    <path d="M15 13 H18 A1.5 1.5 0 0 1 19.5 14.5 V17 A1.5 1.5 0 0 1 18 18.5 H15 A1.5 1.5 0 0 1 13.5 17 V14.5 A1.5 1.5 0 0 1 15 13 Z"/>
+  </g>
+  <g class="ColorScheme-Text" fill="currentColor" stroke="none">
+    <path d="M14.5 2.7 H18.5 A1.8 1.8 0 0 1 20.3 4.5 V6 A1.8 1.8 0 0 1 18.5 7.8 H14.5 A1.8 1.8 0 0 1 12.7 6 V4.5 A1.8 1.8 0 0 1 14.5 2.7 Z"/>
+  </g>
+</svg>

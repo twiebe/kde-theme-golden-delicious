@@ -1,1 +1,9 @@
-mail-queue.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M11.5 16 H5.5 a2 2 0 0 1 -2 -2 V6 a2 2 0 0 1 2 -2 H18.5 a2 2 0 0 1 2 2 V10.5"/>
+    <path d="M4.5 6 L12 11.5 L19.5 6"/>
+    <path d="M17.5 14.0 a3.5 3.5 0 1 1 0 7.0 a3.5 3.5 0 1 1 0 -7.0 Z"/>
+    <path d="M17.5 15.75 V17.5 H19"/>
+  </g>
+</svg>

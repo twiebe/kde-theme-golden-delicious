@@ -1,1 +1,7 @@
-favorite-genres-amarok.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3.5 C7.5 3.5 4 5.3 4 8.8 C4 13 9.5 20.5 12 20.5 C14.5 20.5 20 13 20 8.8 C20 5.3 16.5 3.5 12 3.5 Z"/>
+    <path d="M12 6.4 L12.94 8.71 L15.42 8.89 L13.52 10.49 L14.12 12.91 L12 11.6 L9.88 12.91 L10.48 10.49 L8.58 8.89 L11.06 8.71 Z"/>
+  </g>
+</svg>

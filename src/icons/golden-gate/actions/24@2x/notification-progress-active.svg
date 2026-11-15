@@ -1,10 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-  <style type="text/css" id="current-color-scheme">.ColorScheme-Accent { color: #3daee9; } .ColorScheme-NegativeText { color: #da4453; } .ColorScheme-Text { color: #fcfcfc; } </style>
-  <g transform="translate(1,1)">
-    <g id="notification-progress-active" transform="translate(39 -1) translate(-40,0)">
-      <path id="empty-rectangle" d="m1 1h22v22h-22z" fill="none" />
-      <circle id="circle-blue" cx="12" cy="12" r="8" class="ColorScheme-Accent" fill="currentColor" style="stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" />
-    </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 4 a8 8 0 1 1 0 16 a8 8 0 1 1 0 -16 Z"/>
+  </g>
+  <g class="ColorScheme-Text" fill="currentColor" stroke="none">
+    <path d="M12 4 a8 8 0 1 1 0 16 a8 8 0 1 1 0 -16 Z"/>
   </g>
 </svg>

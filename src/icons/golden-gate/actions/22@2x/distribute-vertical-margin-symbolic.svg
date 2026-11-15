@@ -1,1 +1,8 @@
-distribute-vertical-margin.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M7 3.5 H17 a2 2 0 0 1 2 2 V18.5 a2 2 0 0 1 -2 2 H7 a2 2 0 0 1 -2 -2 V5.5 a2 2 0 0 1 2 -2 Z"/>
+    <path d="M9.5 7 H14.5 a1 1 0 0 1 1 1 V9.5 a1 1 0 0 1 -1 1 H9.5 a1 1 0 0 1 -1 -1 V8 a1 1 0 0 1 1 -1 Z"/>
+    <path d="M9.5 13.5 H14.5 a1 1 0 0 1 1 1 V16 a1 1 0 0 1 -1 1 H9.5 a1 1 0 0 1 -1 -1 V14.5 a1 1 0 0 1 1 -1 Z"/>
+  </g>
+</svg>

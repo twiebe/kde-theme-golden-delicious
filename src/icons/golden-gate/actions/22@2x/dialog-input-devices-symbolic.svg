@@ -1,1 +1,9 @@
-dialog-input-devices.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M11.5 16.5 H18.5 a2 2 0 0 0 2 -2 V5.5 a2 2 0 0 0 -2 -2 H9 a2 2 0 0 0 -2 2 V8"/>
+    <path d="M7 7.5 H20.5"/>
+    <path d="M3.5 13.5 a3 3 0 0 1 6 0 V17.5 a3 3 0 0 1 -6 0 Z"/>
+    <path d="M6.5 12.5 V14"/>
+  </g>
+</svg>

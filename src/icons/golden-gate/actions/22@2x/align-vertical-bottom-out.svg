@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
-  <defs id="defs3051">
-    <style type="text/css" id="current-color-scheme">.ColorScheme-Text { color: #fcfcfc; } </style>
-  </defs>
- <path style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" d="m572.72253 602.11943v-1-3h-1-5v1 3zm0-6v-1h-16v1zm-10-3v-1-6h-1-5v1 6zm10-1.00033v-1-4-1h-1-4-1v6h5zm-11 .00033h-4v-5h4zm10-1.00033h-4v-4h4z" transform="translate(-553.72253-583.11926)" class="ColorScheme-Text" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14.5 17 H17.5 a1 1 0 0 1 1 1 V19.5 a1 1 0 0 1 -1 1 H14.5 a1 1 0 0 1 -1 -1 V18 a1 1 0 0 1 1 -1 Z"/>
+    <path d="M3.5 14 H20.5"/>
+    <path d="M7 6 H9 a1.5 1.5 0 0 1 1.5 1.5 V9.5 a1.5 1.5 0 0 1 -1.5 1.5 H7 a1.5 1.5 0 0 1 -1.5 -1.5 V7.5 a1.5 1.5 0 0 1 1.5 -1.5 Z"/>
+    <path d="M15 3.5 H17 a1.5 1.5 0 0 1 1.5 1.5 V9.5 a1.5 1.5 0 0 1 -1.5 1.5 H15 a1.5 1.5 0 0 1 -1.5 -1.5 V5 a1.5 1.5 0 0 1 1.5 -1.5 Z"/>
+  </g>
 </svg>

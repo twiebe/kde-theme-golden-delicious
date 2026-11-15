@@ -1,1 +1,8 @@
-text-frame-unlink.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4.5 3.5 H7.5 a1.5 1.5 0 0 1 1.5 1.5 V19 a1.5 1.5 0 0 1 -1.5 1.5 H4.5 a1.5 1.5 0 0 1 -1.5 -1.5 V5 a1.5 1.5 0 0 1 1.5 -1.5 Z"/>
+    <path d="M16.5 3.5 H19.5 a1.5 1.5 0 0 1 1.5 1.5 V19 a1.5 1.5 0 0 1 -1.5 1.5 H16.5 a1.5 1.5 0 0 1 -1.5 -1.5 V5 a1.5 1.5 0 0 1 1.5 -1.5 Z"/>
+    <path d="M10.5 10.5 L13.5 13.5 M13.5 10.5 L10.5 13.5"/>
+  </g>
+</svg>

@@ -1,1 +1,7 @@
-format-indent-more.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3.5 4.5 H20.5 M11 9.5 H20.5 M11 14.5 H20.5 M3.5 19.5 H20.5"/>
+    <path d="M4 9.5 L6.5 12 L4 14.5"/>
+  </g>
+</svg>

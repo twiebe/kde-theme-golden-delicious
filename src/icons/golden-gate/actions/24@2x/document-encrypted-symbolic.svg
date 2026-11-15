@@ -1,1 +1,8 @@
-document-encrypted.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M7 11 H17 a2 2 0 0 1 2 2 V18.5 a2 2 0 0 1 -2 2 H7 a2 2 0 0 1 -2 -2 V13 a2 2 0 0 1 2 -2 Z"/>
+    <path d="M8 11 V8 a4 4 0 0 1 8 0 V11"/>
+    <path d="M12 14.5 V17"/>
+  </g>
+</svg>

@@ -1,1 +1,8 @@
-insert-more-mark.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 4.5 H20 M4 8 H14"/>
+    <path d="M4 12 H6.5 M10.75 12 H13.25 M17.5 12 H20"/>
+    <path d="M4 16 H20 M4 19.5 H14"/>
+  </g>
+</svg>

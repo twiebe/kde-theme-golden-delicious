@@ -1,7 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
-  <defs id="defs3051">
-    <style type="text/css" id="current-color-scheme">.ColorScheme-Highlight { color: #fcfcfc; } </style>
-  </defs>
-    <path style="fill:currentColor;stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" d="M 11 1.8300781 L 3 5.9296875 L 3 16 L 11 20 L 19 16 L 19 5.9296875 L 11 1.8300781 z M 11 3 L 11 8.2988281 L 10.5 8.6289062 L 4 6.4902344 L 11 3 z M 18 7 L 18 15.400391 L 11 18.800781 L 11 9.5292969 L 18 7 z " class="ColorScheme-Highlight" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Highlight{color:#fcfcfc}</style>
+  <g class="ColorScheme-Highlight" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3.5 7 a2 2 0 0 1 2 -2 H9.3 a1.5 1.5 0 0 1 1.1 .5 L12 7 H18.5 a2 2 0 0 1 2 2 V17.5 a2 2 0 0 1 -2 2 H5.5 a2 2 0 0 1 -2 -2 Z"/>
+    <path d="M3.5 10 H20.5"/>
+    <path d="M12 11.75 L15 13.25 V16.25 L12 17.75 L9 16.25 V13.25 Z"/>
+    <path d="M9 13.25 L12 14.75 L15 13.25"/>
+    <path d="M12 14.75 V17.75"/>
+  </g>
 </svg>

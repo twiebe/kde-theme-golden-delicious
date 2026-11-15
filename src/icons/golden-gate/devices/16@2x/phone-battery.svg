@@ -1,10 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 16 16">
-    <defs>
-        <style id="current-color-scheme" type="text/css">.ColorScheme-Highlight { color: #fcfcfc; } </style>
-    </defs>
-    <g fill="currentColor">
-        <path id="smartphone" class="ColorScheme-Highlight" d="m6 2c-0.96855 0-2 1.0314-2 2v8c0 0.96855 1.0314 2 2 2h4c0.96855 0 2-1.0314 2-2v-8c0-0.96855-1.0314-2-2-2h-4zm0 1h4c0.56208 0 1 0.43788 1 1v8c0 0.56208-0.43788 1-1 1h-4c-0.56208 0-1-0.43788-1-1v-8c0-0.56208 0.43788-1 1-1zm0.5 1a0.5 0.5 0 0 0-0.5 0.5 0.5 0.5 0 0 0 0.5 0.5 0.5 0.5 0 0 0 0.5-0.5 0.5 0.5 0 0 0-0.5-0.5zm0 7c-0.277 0-0.5 0.223-0.5 0.5s0.223 0.5 0.5 0.5h3c0.277 0 0.5-0.223 0.5-0.5s-0.223-0.5-0.5-0.5h-3z" fill="currentColor" style="stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" />
-        <path id="lightningBolt" class="ColorScheme-Highlight" d="m8 5-2 3.5h2v2.5l2-3.5h-2z" fill="currentColor" style="stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" />
-    </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Highlight{color:#fcfcfc}</style>
+  <g class="ColorScheme-Highlight" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 3 H15 a2.5 2.5 0 0 1 2.5 2.5 V18.5 a2.5 2.5 0 0 1 -2.5 2.5 H9 a2.5 2.5 0 0 1 -2.5 -2.5 V5.5 a2.5 2.5 0 0 1 2.5 -2.5 Z"/>
+    <path d="M10.5 18 H13.5"/>
+    <path d="M12.5 6.5 L9.5 11 H14.5 L11.5 15"/>
+  </g>
 </svg>

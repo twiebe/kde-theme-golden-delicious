@@ -1,1 +1,11 @@
-network-bluetooth-activated-locked.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 8 L14 16 L9.5 20 V4 L14 8 L5 16"/>
+    <path d="M17 17 H19.5 a1 1 0 0 1 1 1 V19.5 a1 1 0 0 1 -1 1 H17 a1 1 0 0 1 -1 -1 V18 a1 1 0 0 1 1 -1 Z"/>
+    <path d="M16.75 17 V15.75 a1.5 1.5 0 0 1 3 0 V17"/>
+  </g>
+  <g class="ColorScheme-Text" fill="currentColor" stroke="none">
+    <path d="M3 11.1 a0.9 0.9 0 1 1 0 1.8 a0.9 0.9 0 1 1 0 -1.8 Z"/>
+  </g>
+</svg>

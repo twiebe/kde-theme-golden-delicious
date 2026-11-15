@@ -1,1 +1,7 @@
-transform-shear-right.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20.5 13 V5.5 a2 2 0 0 0 -2 -2 H9"/>
+    <path d="M7 9.5 H16 L14.5 20.5 H5.5 Z"/>
+  </g>
+</svg>

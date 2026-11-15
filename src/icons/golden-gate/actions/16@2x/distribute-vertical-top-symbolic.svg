@@ -1,1 +1,9 @@
-distribute-vertical-top.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M19 3.5 V20.5 M17 5.5 L19 3.5 L21 5.5 M17 18.5 L19 20.5 L21 18.5"/>
+    <path d="M3 5 H15 M3 14 H15"/>
+    <path d="M4.5 5 V9 a1 1 0 0 0 1 1 H10.5 a1 1 0 0 0 1 -1 V5"/>
+    <path d="M4.5 14 V18 a1 1 0 0 0 1 1 H10.5 a1 1 0 0 0 1 -1 V14"/>
+  </g>
+</svg>

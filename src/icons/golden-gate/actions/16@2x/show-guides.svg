@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 3.5 V5 M9 8 V10 M9 13 V15 M9 18 V20.5"/>
+    <path d="M3.5 14 H5 M8 14 H10 M13 14 H15 M18 14 H20.5"/>
+  </g>
+</svg>

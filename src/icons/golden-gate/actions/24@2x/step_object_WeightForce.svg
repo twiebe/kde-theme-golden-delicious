@@ -1,10 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-  <defs id="defs3051">
-    <style type="text/css" id="current-color-scheme">.ColorScheme-Accent { color: #3daee9; } .ColorScheme-Text { color: #fcfcfc; } </style>
-  </defs>
-  <g transform="translate(1,1)">
-    <path style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" d="M 12.087891 1 L 12.455078 1.3789062 L 14.076172 3 L 12 3 L 4 3 L 4 4 L 14.076172 4 L 16.5 4 L 15.990234 3.5 L 13.490234 1 L 12.087891 1 z M 4 5 L 4 19 L 5 19 L 5 12 L 11 12 L 11 11 L 5 11 L 5 6 L 13 6 L 13 5 L 5 5 L 4 5 z " class="ColorScheme-Text" />
-    <path style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" d="M 11 13 L 11.052734 13.158203 L 13 19 L 14.054688 19 L 15.527344 14.582031 L 17 19 L 18.054688 19 L 20.001953 13.158203 L 20.054688 13 L 19 13 L 17.527344 17.417969 L 16.054688 13 L 15 13 L 13.527344 17.417969 L 12.054688 13 L 11 13 z " class="ColorScheme-Accent" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 20 V9.5 H11 M5 14.5 H10"/>
+    <path d="M5 5.5 H15.5"/>
+    <path d="M13.5 3.5 L15.5 5.5 L13.5 7.5"/>
+    <path d="M13 13.5 L14.75 20 L16.5 15 L18.25 20 L20 13.5"/>
   </g>
 </svg>

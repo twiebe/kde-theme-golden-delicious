@@ -1,1 +1,8 @@
-object-flip-horizontal.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3.5 V5.5 M12 8.5 V10.5 M12 13.5 V15.5 M12 18.5 V20.5"/>
+    <path d="M9 6.5 V17.5 H3.5 Z"/>
+    <path d="M15 6.5 V17.5 H20.5 Z"/>
+  </g>
+</svg>

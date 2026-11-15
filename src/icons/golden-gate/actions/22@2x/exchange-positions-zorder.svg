@@ -1,8 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" id="svg8" version="1.1" viewBox="0 0 22 22">
-    <defs id="defs3051">
-    <style type="text/css" id="current-color-scheme">.ColorScheme-Accent { color: #3daee9; } .ColorScheme-Text { color: #fcfcfc; } </style>
-    </defs>
-    <path id="rect1708" d="m3 3v8h8v-8h-8zm1 1h6v6h-6v-6zm8 0.0722656v1.0117188a6 6 0 0 1 4.171875 2.9160156h-2.171875v1h4v-1-3h-1v2.4277344a7 7 0 0 0-5-3.3554688zm-8 8.9277344v1 3h1v-2.423828a7 7 0 0 0 6 3.423828v-1a6 6 0 0 1-5.171875-3h2.171875v-1h-4z" class="ColorScheme-Text" fill="currentColor" stroke-linecap="square" style="paint-order:markers fill stroke;stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" />
-    <path id="rect3451" d="m16.5 9.7929688-2.353516 2.3535152-0.353515 0.353516 0.707031 0.707031 0.353516-0.353515 1.146484-1.146485v3.292969h1v-3.292969l1.146484 1.146485 0.353516 0.353515 0.707031-0.707031-0.353515-0.353516-2.353516-2.3535152zm-2.5 4.2070312v3.292969l-1.146484-1.146485-0.353516-0.353515-0.707031 0.707031 0.353515 0.353516 2.353516 2.353515 2.353516-2.353515 0.353515-0.353516-0.707031-0.707031-0.353516 0.353515-1.146484 1.146485v-3.292969h-1z" class="ColorScheme-Accent" fill="currentColor" stroke-linecap="square" style="paint-order:markers fill stroke;stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 3.5 H9 a1.5 1.5 0 0 1 1.5 1.5 V9 a1.5 1.5 0 0 1 -1.5 1.5 H5 a1.5 1.5 0 0 1 -1.5 -1.5 V5 a1.5 1.5 0 0 1 1.5 -1.5 Z"/>
+    <path d="M13.5 5 A5.5 5.5 0 0 1 19 10.5"/>
+    <path d="M17 8.5 L19 10.5 L21 8.5"/>
+    <path d="M10.5 19 A5.5 5.5 0 0 1 5 13.5"/>
+    <path d="M3 15.5 L5 13.5 L7 15.5"/>
+    <path d="M15 20.5 V13.5"/>
+    <path d="M13.5 15 L15 13.5 L16.5 15"/>
+    <path d="M19.5 13.5 V20.5"/>
+    <path d="M18 19 L19.5 20.5 L21 19"/>
+  </g>
 </svg>

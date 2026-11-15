@@ -1,1 +1,10 @@
-adjustcol.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10.5 3.5 H13.5 A1.5 1.5 0 0 1 15 5 V19 A1.5 1.5 0 0 1 13.5 20.5 H10.5 A1.5 1.5 0 0 1 9 19 V5 A1.5 1.5 0 0 1 10.5 3.5 Z"/>
+    <path d="M9 9.25 H15"/>
+    <path d="M9 14.75 H15"/>
+    <path d="M5.5 9.5 L3 12 L5.5 14.5"/>
+    <path d="M18.5 9.5 L21 12 L18.5 14.5"/>
+  </g>
+</svg>

@@ -1,1 +1,10 @@
-help-donate-sek.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4.5 4.5 V19.5"/>
+    <path d="M11 9.5 L4.5 15"/>
+    <path d="M7.5 12.8 L11.5 19.5"/>
+    <path d="M15 19.5 V9.5"/>
+    <path d="M15 13.5 C15 11 16.8 9.5 19.5 9.5"/>
+  </g>
+</svg>

@@ -1,1 +1,10 @@
-folder-stash.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M11.5 19.5 H5.5 a2 2 0 0 1 -2 -2 V7 a2 2 0 0 1 2 -2 H9.3 a1.5 1.5 0 0 1 1.1 .5 L12 7 H18.5 a2 2 0 0 1 2 2 V11.5"/>
+    <path d="M3.5 10 H20.5"/>
+    <path d="M14 13 H20.5 a.75 .75 0 0 1 .75 .75 V15.25 a.75 .75 0 0 1 -.75 .75 H14 a.75 .75 0 0 1 -.75 -.75 V13.75 a.75 .75 0 0 1 .75 -.75 Z"/>
+    <path d="M14 16 V19.5 a1.5 1.5 0 0 0 1.5 1.5 H19 a1.5 1.5 0 0 0 1.5 -1.5 V16"/>
+    <path d="M16.25 18.5 H18.25"/>
+  </g>
+</svg>

@@ -1,1 +1,7 @@
-help-donate-rub.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8.5 19.5 V4.5 H13 a4 4 0 0 1 0 8 H6"/>
+    <path d="M6 16 H14"/>
+  </g>
+</svg>

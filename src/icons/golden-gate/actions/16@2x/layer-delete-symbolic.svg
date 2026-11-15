@@ -1,1 +1,8 @@
-layer-delete.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M11 4 L18.5 8.25 L11 12.5 L3.5 8.25 Z"/>
+    <path d="M15 15 L20 20"/>
+    <path d="M20 15 L15 20"/>
+  </g>
+</svg>

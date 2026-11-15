@@ -1,1 +1,14 @@
-adjustlevels.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3.5 6 H12.8"/>
+    <path d="M17.2 6 H20.5"/>
+    <path d="M15 4 A2 2 0 1 1 15 8 A2 2 0 1 1 15 4 Z"/>
+    <path d="M3.5 12 H8.8"/>
+    <path d="M13.2 12 H20.5"/>
+    <path d="M11 10 A2 2 0 1 1 11 14 A2 2 0 1 1 11 10 Z"/>
+    <path d="M3.5 18 H4.3"/>
+    <path d="M8.7 18 H20.5"/>
+    <path d="M6.5 16 A2 2 0 1 1 6.5 20 A2 2 0 1 1 6.5 16 Z"/>
+  </g>
+</svg>

@@ -1,12 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:ns1="http://www.inkscape.org/namespaces/inkscape" xmlns:ns2="http://www.w3.org/1999/xlink" viewBox="0 0 22 22">
-  <defs id="defs3051">
-    <style type="text/css" id="current-color-scheme">.ColorScheme-Accent { color: #3daee9; } .ColorScheme-Text { color: #fcfcfc; } </style>    
-      <linearGradient id="linearGradient4469" ns1:collect="always">
-      <stop id="stop4471" offset="0" style="stop-color:currentColor;stop-opacity:0.8" />
-      <stop id="stop4473" offset="1" style="stop-color:currentColor;stop-opacity:0" />
-    </linearGradient>
-    <linearGradient ns1:collect="always" ns2:href="#linearGradient4469" id="linearGradient5093" x1="555.57141" y1="745.93359" x2="555.57141" y2="761.93359" gradientUnits="userSpaceOnUse" />
-  </defs>
- <path style="opacity:1;fill:url(#linearGradient5093);fill-opacity:1;stroke:url(#linearGradient5093);stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" d="m 547.57141,745.93359 16,0 0,16.00001 -16,0 z" class="ColorScheme-Text" transform="translate(-544.57141,-742.93359)" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6.5 4 H17.5 A2.5 2.5 0 0 1 20 6.5 V17.5 A2.5 2.5 0 0 1 17.5 20 H6.5 A2.5 2.5 0 0 1 4 17.5 V6.5 A2.5 2.5 0 0 1 6.5 4 Z"/>
+    <path d="M4.73 19.27 L19.27 4.73"/>
+    <path d="M10 20 L20 10"/>
+    <path d="M15 20 L20 15"/>
+  </g>
 </svg>

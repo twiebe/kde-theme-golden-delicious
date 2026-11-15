@@ -1,1 +1,8 @@
-markasblank.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M7 4 H5 a1.5 1.5 0 0 0 -1.5 1.5 V18.5 a1.5 1.5 0 0 0 1.5 1.5 H7"/>
+    <path d="M17 4 H19 a1.5 1.5 0 0 1 1.5 1.5 V18.5 a1.5 1.5 0 0 1 -1.5 1.5 H17"/>
+    <path d="M8 13.5 V15.5 H16 V13.5"/>
+  </g>
+</svg>

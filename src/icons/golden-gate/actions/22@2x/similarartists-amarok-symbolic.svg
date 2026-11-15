@@ -1,1 +1,9 @@
-similarartists-amarok.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 6 a3 3 0 1 1 0 6 a3 3 0 1 1 0 -6 Z"/>
+    <path d="M3.5 20 V19.5 a4.5 4.5 0 0 1 4.5 -4.5 H10 a4.5 4.5 0 0 1 4.5 4.5 V20"/>
+    <path d="M16 3.5 a2.5 2.5 0 1 1 0 5.0 a2.5 2.5 0 1 1 0 -5.0 Z"/>
+    <path d="M15.5 12 H16.5 a4 4 0 0 1 4 4 V16.5"/>
+  </g>
+</svg>

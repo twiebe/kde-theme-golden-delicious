@@ -1,1 +1,10 @@
-vcs-merge.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3.5 a2 2 0 1 1 0 4 a2 2 0 1 1 0 -4 Z"/>
+    <path d="M6.5 16.5 a2 2 0 1 1 0 4 a2 2 0 1 1 0 -4 Z"/>
+    <path d="M17.5 16.5 a2 2 0 1 1 0 4 a2 2 0 1 1 0 -4 Z"/>
+    <path d="M12 7.5 V11.5"/>
+    <path d="M6.5 16.5 V14 a2.5 2.5 0 0 1 2.5 -2.5 H15 a2.5 2.5 0 0 1 2.5 2.5 V16.5"/>
+  </g>
+</svg>

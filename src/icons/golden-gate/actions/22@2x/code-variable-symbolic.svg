@@ -1,1 +1,10 @@
-code-variable.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 3.5 H19 a1.5 1.5 0 0 1 1.5 1.5 V8.5 a1.5 1.5 0 0 1 -1.5 1.5 H5 a1.5 1.5 0 0 1 -1.5 -1.5 V5 a1.5 1.5 0 0 1 1.5 -1.5 Z"/>
+    <path d="M5.5 13.5 V18"/>
+    <path d="M9.5 13.5 V20.5"/>
+    <path d="M13.5 13.5 V16"/>
+    <path d="M17.5 13.5 V18.5"/>
+  </g>
+</svg>

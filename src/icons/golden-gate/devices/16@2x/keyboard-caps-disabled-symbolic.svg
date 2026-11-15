@@ -1,1 +1,6 @@
-keyboard-caps-disabled.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Highlight{color:#fcfcfc}</style>
+  <g class="ColorScheme-Highlight" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 4 L19.5 11.5 H15.5 V17 H8.5 V11.5 H4.5 Z"/>
+  </g>
+</svg>

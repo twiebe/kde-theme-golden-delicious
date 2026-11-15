@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" height="22" width="22">
-    <defs id="defs1">
-        <style type="text/css" id="current-color-scheme">.ColorScheme-Text { color: #fcfcfc; } </style>
-    </defs>
-    <path style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" class="ColorScheme-Text" d="M16 15h3v3h-3zM3 15h3v3H3zm4 0h8v3H7zm5-4h7v3h-7zm-9 0h8v3H3zm13-4h3v3h-3zM3 7h3v3H3zm4 0h8v3H7zm5-4h7v3h-7zM3 3h8v3H3z" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5.5 4.5 H18.5 a2 2 0 0 1 2 2 V17.5 a2 2 0 0 1 -2 2 H5.5 a2 2 0 0 1 -2 -2 V6.5 a2 2 0 0 1 2 -2 Z"/>
+    <path d="M3.5 9.5 H20.5 M3.5 14.5 H20.5"/>
+    <path d="M12 4.5 V9.5 M12 14.5 V19.5"/>
+    <path d="M8 9.5 V14.5 M16 9.5 V14.5"/>
+  </g>
 </svg>

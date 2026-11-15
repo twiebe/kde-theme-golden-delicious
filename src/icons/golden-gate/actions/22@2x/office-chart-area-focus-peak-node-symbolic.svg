@@ -1,1 +1,9 @@
-office-chart-area-focus-peak-node.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 3.5 V20 H20.5"/>
+    <path d="M4 16 L8 13 L10.82 9.12"/>
+    <path d="M13.23 9.08 L15.5 12 L19.5 10 V20"/>
+    <path d="M12 5.5 a2 2 0 1 1 0 4 a2 2 0 1 1 0 -4 Z"/>
+  </g>
+</svg>

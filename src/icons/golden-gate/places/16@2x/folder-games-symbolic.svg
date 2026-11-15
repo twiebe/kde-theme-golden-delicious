@@ -1,1 +1,12 @@
-folder-games.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Highlight{color:#fcfcfc}</style>
+  <g class="ColorScheme-Highlight" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3.5 7 a2 2 0 0 1 2 -2 H9.3 a1.5 1.5 0 0 1 1.1 .5 L12 7 H18.5 a2 2 0 0 1 2 2 V17.5 a2 2 0 0 1 -2 2 H5.5 a2 2 0 0 1 -2 -2 Z"/>
+    <path d="M3.5 10 H20.5"/>
+    <path d="M 9.75 12.1 H 14.25 a 2.5 2.5 0 0 1 2.4 1.85 L 17.2 16.2 a 1.25 1.25 0 0 1 -2.15 1.1 L 14 16.1 H 10 L 8.95 17.3 a 1.25 1.25 0 0 1 -2.15 -1.1 L 7.35 13.95 A 2.5 2.5 0 0 1 9.75 12.1 Z"/>
+    <path d="M 9.5 13.35 V 14.85 M 8.75 14.1 H 10.25"/>
+  </g>
+  <g class="ColorScheme-Highlight" fill="currentColor" stroke="none">
+    <path d="M14.5 13.3 a0.8 0.8 0 1 1 0 1.6 a0.8 0.8 0 1 1 0 -1.6 Z"/>
+  </g>
+</svg>

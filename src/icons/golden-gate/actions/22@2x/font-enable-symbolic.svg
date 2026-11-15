@@ -1,1 +1,8 @@
-font-enable.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3.5 18.5 L8 5.5 L12.5 18.5"/>
+    <path d="M5.6 14 H10.4"/>
+    <path d="M14.5 17 L16.75 19.25 L20.5 15"/>
+  </g>
+</svg>

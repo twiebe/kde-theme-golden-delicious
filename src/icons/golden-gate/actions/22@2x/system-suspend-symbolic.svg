@@ -1,1 +1,7 @@
-system-suspend.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10.84 5.5 A7.5 7.5 0 1 0 18.5 13.16 A6 6 0 0 1 10.84 5.5 Z"/>
+    <path d="M15.5 4 H19.5 L15.5 9 H19.5"/>
+  </g>
+</svg>

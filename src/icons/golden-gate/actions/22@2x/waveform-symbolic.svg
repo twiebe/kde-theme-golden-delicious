@@ -1,1 +1,12 @@
-waveform.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3.5 11 V13"/>
+    <path d="M6.5 8.5 V15.5"/>
+    <path d="M9.5 5 V19"/>
+    <path d="M12.5 7.5 V16.5"/>
+    <path d="M15.5 4 V20"/>
+    <path d="M18.5 9 V15"/>
+    <path d="M21 11 V13"/>
+  </g>
+</svg>

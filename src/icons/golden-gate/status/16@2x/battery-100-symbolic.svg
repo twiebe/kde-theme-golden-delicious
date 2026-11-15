@@ -1,1 +1,8 @@
-battery-100.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 7 H16 a2 2 0 0 1 2 2 V15 a2 2 0 0 1 -2 2 H5 a2 2 0 0 1 -2 -2 V9 a2 2 0 0 1 2 -2 Z"/>
+    <path d="M18 10 H19.5 a1 1 0 0 1 1 1 V13 a1 1 0 0 1 -1 1 H18"/>
+    <path d="M6 9 H15 a1 1 0 0 1 1 1 V14 a1 1 0 0 1 -1 1 H6 a1 1 0 0 1 -1 -1 V10 a1 1 0 0 1 1 -1 Z"/>
+  </g>
+</svg>

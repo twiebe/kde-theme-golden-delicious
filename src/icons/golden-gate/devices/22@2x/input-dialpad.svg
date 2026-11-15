@@ -1,16 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
-    <style type="text/css" id="current-color-scheme">.ColorScheme-Highlight { color: #fcfcfc; } </style>
-    <g class="ColorScheme-Highlight" fill="currentColor" fill-rule="evenodd">
-        <path d="m9 18h4v4h-4z" style="stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" />
-        <path d="m9 12h4v4h-4z" style="stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" />
-        <path d="m9 6h4v4h-4z" style="stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" />
-        <path d="m9 0h4v4h-4z" style="stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" />
-        <path d="m15 12h4v4h-4z" style="stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" />
-        <path d="m15 6h4v4h-4z" style="stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" />
-        <path d="m15 0h4v4h-4z" style="stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" />
-        <path d="m3 12h4v4h-4z" style="stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" />
-        <path d="m3 6h4v4h-4z" style="stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" />
-        <path d="m3 0h4v4h-4z" style="stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" />
-    </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Highlight{color:#fcfcfc}</style>
+  <g class="ColorScheme-Highlight" fill="currentColor" stroke="none">
+    <path d="M7 3.05 a1.45 1.45 0 1 1 0 2.9 a1.45 1.45 0 1 1 0 -2.9 Z"/>
+    <path d="M12 3.05 a1.45 1.45 0 1 1 0 2.9 a1.45 1.45 0 1 1 0 -2.9 Z"/>
+    <path d="M17 3.05 a1.45 1.45 0 1 1 0 2.9 a1.45 1.45 0 1 1 0 -2.9 Z"/>
+    <path d="M7 7.8 a1.45 1.45 0 1 1 0 2.9 a1.45 1.45 0 1 1 0 -2.9 Z"/>
+    <path d="M12 7.8 a1.45 1.45 0 1 1 0 2.9 a1.45 1.45 0 1 1 0 -2.9 Z"/>
+    <path d="M17 7.8 a1.45 1.45 0 1 1 0 2.9 a1.45 1.45 0 1 1 0 -2.9 Z"/>
+    <path d="M7 12.55 a1.45 1.45 0 1 1 0 2.9 a1.45 1.45 0 1 1 0 -2.9 Z"/>
+    <path d="M12 12.55 a1.45 1.45 0 1 1 0 2.9 a1.45 1.45 0 1 1 0 -2.9 Z"/>
+    <path d="M17 12.55 a1.45 1.45 0 1 1 0 2.9 a1.45 1.45 0 1 1 0 -2.9 Z"/>
+    <path d="M12 17.05 a1.45 1.45 0 1 1 0 2.9 a1.45 1.45 0 1 1 0 -2.9 Z"/>
+  </g>
 </svg>

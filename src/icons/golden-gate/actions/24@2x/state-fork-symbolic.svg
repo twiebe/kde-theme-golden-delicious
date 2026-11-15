@@ -1,1 +1,11 @@
-state-fork.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 3.25 a1.75 1.75 0 1 1 0 3.5 a1.75 1.75 0 1 1 0 -3.5 Z"/>
+    <path d="M5 17.25 a1.75 1.75 0 1 1 0 3.5 a1.75 1.75 0 1 1 0 -3.5 Z"/>
+    <path d="M19 3.25 a1.75 1.75 0 1 1 0 3.5 a1.75 1.75 0 1 1 0 -3.5 Z"/>
+    <path d="M5 6.75 V17.25"/>
+    <path d="M5 11.5 H17 a2 2 0 0 0 2 -2 V6.75"/>
+    <path d="M14 17.5 H20 M17 14.5 V20.5"/>
+  </g>
+</svg>

@@ -1,1 +1,7 @@
-amarok_change_language.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 11.5 H5.5 a2 2 0 0 1 -2 -2 V5.5 a2 2 0 0 1 2 -2 H12 a2 2 0 0 1 2 2 V9"/>
+    <path d="M12 9 H18.5 a2 2 0 0 1 2 2 V15 a2 2 0 0 1 -2 2 H14.5 L11.5 20 V17 a2 2 0 0 1 -1.5 -2 V11 a2 2 0 0 1 2 -2 Z"/>
+  </g>
+</svg>

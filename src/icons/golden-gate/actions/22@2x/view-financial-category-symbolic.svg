@@ -1,1 +1,9 @@
-view-financial-category.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8.5 16.5 H5.5 a2 2 0 0 1 -2 -2 V5.5 a2 2 0 0 1 2 -2 H14.5 a2 2 0 0 1 2 2 V10"/>
+    <path d="M3.5 7 H16.5"/>
+    <path d="M10.5 10 H18.5 a2 2 0 0 1 2 2 V18.5 a2 2 0 0 1 -2 2 H10.5 a2 2 0 0 1 -2 -2 V12 a2 2 0 0 1 2 -2 Z"/>
+    <path d="M8.5 13.5 H20.5"/>
+  </g>
+</svg>
