@@ -2,10 +2,22 @@
 # Install the Golden Delicious theme into ~/.local/share and apply it.
 # Run inside a Plasma session. Safe to run again; each run backs up the
 # config it changes first (see backup.sh, undo with restore.sh).
-# Usage: ./install.sh [--layout]
-#   --layout  also replace your panels with the theme's floating top panel
-#             (drops your current panel setup and pinned launchers).
+# Usage: ./install.sh [--layout] [--tiles | --no-tiles]
+#   --layout    also replace your panels with the theme's floating top panel
+#               (drops your current panel setup and pinned launchers).
+#   --tiles     set up the app icon tiles without asking
+#   --no-tiles  leave them out (an existing setup is kept as it is)
 set -euo pipefail
+
+layout=0 tiles=ask
+for arg in "$@"; do
+  case $arg in
+    --layout) layout=1 ;;
+    --tiles) tiles=yes ;;
+    --no-tiles) tiles=no ;;
+    *) echo "unknown option: $arg" >&2; exit 2 ;;
+  esac
+done
 
 here=$(cd "$(dirname "$0")" && pwd)
 data=${XDG_DATA_HOME:-$HOME/.local/share}
@@ -21,7 +33,7 @@ for p in aurorae/themes/golden-gate plasma/desktoptheme/golden-gate plasma/look-
 done
 for v in 3.0 4.0; do
   rm -f "$config/gtk-$v/golden-gate.css"
-  [[ -f $config/gtk-$v/gtk.css ]] && sed -i "/^@import 'golden-gate.css';$/d" "$config/gtk-$v/gtk.css"
+  [[ -f $config/gtk-$v/gtk.css ]] && sed -i "s/@import 'golden-gate.css';//; /^$/d" "$config/gtk-$v/gtk.css"
 done
 # Replace our own theme dirs whole, so files dropped from the repo don't linger.
 (cd "$here/src" && find . -mindepth 2 -maxdepth 3 -name 'golden-delicious' -o -name 'GoldenDelicious.colors') |
@@ -29,7 +41,7 @@ done
 cp -r "$here/src/." "$data/"
 
 # Global theme: colors, Plasma style and decoration (and the panel layout on request).
-if [[ ${1:-} == --layout ]]; then
+if [[ $layout == 1 ]]; then
   plasma-apply-lookandfeel -a golden-delicious --resetLayout
 else
   plasma-apply-lookandfeel -a golden-delicious
@@ -54,24 +66,43 @@ for v in 3.0 4.0; do
   kwriteconfig6 --file "$dir/settings.ini" --group Settings --key gtk-theme-name Breeze
   kwriteconfig6 --file "$dir/settings.ini" --group Settings --key gtk-decoration-layout "close,minimize,maximize:"
   cp "$here/gtk/golden-delicious.css" "$dir/"
-  grep -qxF "@import 'golden-delicious.css';" "$dir/gtk.css" 2>/dev/null ||
+  # kde-gtk-config writes gtk.css without a final newline: start our line on its own.
+  if ! grep -qF "@import 'golden-delicious.css';" "$dir/gtk.css" 2>/dev/null; then
+    [[ -s $dir/gtk.css && -n $(tail -c1 "$dir/gtk.css") ]] && echo >>"$dir/gtk.css"
     echo "@import 'golden-delicious.css';" >>"$dir/gtk.css"
+  fi
 done
 
 # App icons on squircle tiles: a user service draws them into the icon theme
-# golden-delicious-apps and runs again whenever apps come or go.
-mkdir -p "$data/golden-delicious" "$config/systemd/user"
-cp "$here/tiles/golden-delicious-tiles.py" "$data/golden-delicious/"
-sed "s|@SCRIPT@|$data/golden-delicious/golden-delicious-tiles.py|" "$here/tiles/golden-delicious-tiles.service" \
-  >"$config/systemd/user/golden-delicious-tiles.service"
-cp "$here/tiles/golden-delicious-tiles.path" "$config/systemd/user/"
-if systemctl --user daemon-reload 2>/dev/null; then
-  systemctl --user enable --now golden-delicious-tiles.path
-  systemctl --user enable golden-delicious-tiles.service
-  systemctl --user start golden-delicious-tiles.service ||
-    echo "note: drawing the app icon tiles failed, see: journalctl --user -u golden-delicious-tiles" >&2
-else  # no systemd user session: draw them once
-  python3 "$data/golden-delicious/golden-delicious-tiles.py" || echo "note: drawing the app icon tiles failed" >&2
+# golden-delicious-apps and runs again whenever apps come or go. Asked for on
+# the first install; an existing setup is updated without asking.
+if [[ $tiles == ask ]]; then
+  if [[ -f $config/systemd/user/golden-delicious-tiles.service ]]; then
+    tiles=yes
+  elif [[ -t 0 ]]; then
+    echo "App icon tiles put every app icon on a macOS-style squircle tile. A small"
+    echo "user service keeps them in step when you install or remove apps."
+    read -rp "Set up the app icon tiles? [Y/n] " answer
+    [[ ${answer,,} == n* ]] && tiles=no || tiles=yes
+  else
+    tiles=no
+    echo "note: app icon tiles left out (no terminal to ask); run with --tiles to add them" >&2
+  fi
+fi
+if [[ $tiles == yes ]]; then
+  mkdir -p "$data/golden-delicious" "$config/systemd/user"
+  cp "$here/tiles/golden-delicious-tiles.py" "$data/golden-delicious/"
+  sed "s|@SCRIPT@|$data/golden-delicious/golden-delicious-tiles.py|" "$here/tiles/golden-delicious-tiles.service" \
+    >"$config/systemd/user/golden-delicious-tiles.service"
+  cp "$here/tiles/golden-delicious-tiles.path" "$config/systemd/user/"
+  if systemctl --user daemon-reload 2>/dev/null; then
+    systemctl --user enable --now golden-delicious-tiles.path
+    systemctl --user enable golden-delicious-tiles.service
+    systemctl --user restart golden-delicious-tiles.service ||
+      echo "note: drawing the app icon tiles failed, see: journalctl --user -u golden-delicious-tiles" >&2
+  else  # no systemd user session: draw them once
+    python3 "$data/golden-delicious/golden-delicious-tiles.py" || echo "note: drawing the app icon tiles failed" >&2
+  fi
 fi
 
 # Flatpak apps cannot see the host GTK config or themes: let them read the
@@ -81,3 +112,6 @@ if command -v flatpak >/dev/null; then
   flatpak install --user -y --noninteractive flathub org.gtk.Gtk3theme.Breeze >/dev/null 2>&1 ||
     echo "note: could not install org.gtk.Gtk3theme.Breeze for Flatpak GTK3 apps" >&2
 fi
+
+echo "Golden Delicious is installed. Log out and back in once so every app,"
+echo "the panel and the icon caches pick up all of it."
