@@ -229,7 +229,7 @@ def main():
     head = f"""[Icon Theme]
 Name=Golden Delicious
 Comment=Soft line icons in the spirit of macOS, under Breeze's names
-Inherits=WhiteSur-dark,breeze-dark,hicolor
+Inherits=breeze-dark,hicolor
 FollowsColorScheme=true
 DisplayDepth=32
 SmallDefault=16
