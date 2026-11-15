@@ -1,9 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <style id="current-color-scheme">.ColorScheme-Highlight{color:#fcfcfc}</style>
   <g class="ColorScheme-Highlight" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M3.5 7 a2 2 0 0 1 2 -2 H9.3 a1.5 1.5 0 0 1 1.1 .5 L12 7 H18.5 a2 2 0 0 1 2 2 V17.5 a2 2 0 0 1 -2 2 H5.5 a2 2 0 0 1 -2 -2 Z"/>
+    <path d="M10 19.5 H5.5 a2 2 0 0 1 -2 -2 V7 a2 2 0 0 1 2 -2 H9.3 a1.5 1.5 0 0 1 1.1 .5 L12 7 H18.5 a2 2 0 0 1 2 2 V10"/>
     <path d="M3.5 10 H20.5"/>
-    <path d="M 8 13 H 14 V 15 a 2.5 2.5 0 0 1 -2.5 2.5 H 10.5 a 2.5 2.5 0 0 1 -2.5 -2.5 Z"/>
-    <path d="M 14 13.5 H 14.75 a 1.25 1.25 0 0 1 0 2.5 H 13.8"/>
+    <path d="M12.75 15 H18.75 V17.75 a2.75 2.75 0 0 1 -2.75 2.75 H15.5 a2.75 2.75 0 0 1 -2.75 -2.75 Z"/>
+    <path d="M18.75 15.5 H19.5 a1.25 1.25 0 0 1 0 2.5 H18.6"/>
+    <path d="M15.75 12.5 V13"/>
   </g>
 </svg>

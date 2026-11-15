@@ -1,15 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
   <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M4.5 9 H19.5 a2 2 0 0 1 2 2 V18.5 a2 2 0 0 1 -2 2 H4.5 a2 2 0 0 1 -2 -2 V11 a2 2 0 0 1 2 -2 Z"/>
-    <path d="M8 17 H16"/>
+    <path d="M16 4.5 H4.5 a2 2 0 0 0 -2 2 V14.5 a2 2 0 0 0 2 2 V20.5 L8.5 16.5 H19.5 a2 2 0 0 0 2 -2 V8"/>
+    <path d="M8 13.5 H16"/>
   </g>
   <g class="ColorScheme-Text" fill="currentColor" stroke="none">
-    <path d="M6 11.55 a0.95 0.95 0 1 1 0 1.9 a0.95 0.95 0 1 1 0 -1.9 Z"/>
-    <path d="M9 11.55 a0.95 0.95 0 1 1 0 1.9 a0.95 0.95 0 1 1 0 -1.9 Z"/>
-    <path d="M12 11.55 a0.95 0.95 0 1 1 0 1.9 a0.95 0.95 0 1 1 0 -1.9 Z"/>
-    <path d="M15 11.55 a0.95 0.95 0 1 1 0 1.9 a0.95 0.95 0 1 1 0 -1.9 Z"/>
-    <path d="M18 11.55 a0.95 0.95 0 1 1 0 1.9 a0.95 0.95 0 1 1 0 -1.9 Z"/>
-    <path d="M18.5 2.85 a1.9 1.9 0 1 1 0 3.8 a1.9 1.9 0 1 1 0 -3.8 Z"/>
+    <path d="M6 6.55 a0.95 0.95 0 1 1 0 1.9 a0.95 0.95 0 1 1 0 -1.9 Z"/>
+    <path d="M9 6.55 a0.95 0.95 0 1 1 0 1.9 a0.95 0.95 0 1 1 0 -1.9 Z"/>
+    <path d="M12 6.55 a0.95 0.95 0 1 1 0 1.9 a0.95 0.95 0 1 1 0 -1.9 Z"/>
+    <path d="M15 6.55 a0.95 0.95 0 1 1 0 1.9 a0.95 0.95 0 1 1 0 -1.9 Z"/>
+    <path d="M6 9.55 a0.95 0.95 0 1 1 0 1.9 a0.95 0.95 0 1 1 0 -1.9 Z"/>
+    <path d="M9 9.55 a0.95 0.95 0 1 1 0 1.9 a0.95 0.95 0 1 1 0 -1.9 Z"/>
+    <path d="M12 9.55 a0.95 0.95 0 1 1 0 1.9 a0.95 0.95 0 1 1 0 -1.9 Z"/>
+    <path d="M15 9.55 a0.95 0.95 0 1 1 0 1.9 a0.95 0.95 0 1 1 0 -1.9 Z"/>
+    <path d="M18 9.55 a0.95 0.95 0 1 1 0 1.9 a0.95 0.95 0 1 1 0 -1.9 Z"/>
+    <path d="M19.5 2.6 a1.9 1.9 0 1 1 0 3.8 a1.9 1.9 0 1 1 0 -3.8 Z"/>
   </g>
 </svg>

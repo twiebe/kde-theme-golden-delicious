@@ -3,7 +3,7 @@
   <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
     <path d="M5.5 4 H3.5 V20"/>
     <path d="M3.5 5.5 H18.5 a2 2 0 0 1 2 2 V14.5 a2 2 0 0 1 -2 2 H3.5"/>
-    <path d="M12 8.5 a2.5 2.5 0 1 1 0 5 a2.5 2.5 0 1 1 0 -5 Z"/>
+    <path d="M15.5 7.5 a2 2 0 1 1 0 4 a2 2 0 1 1 0 -4 Z"/>
     <path d="M8.5 16.5 V19 H16.5 V16.5"/>
     <path d="M2.5 3 L21 21"/>
   </g>

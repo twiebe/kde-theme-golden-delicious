@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-  <defs id="defs3051">
-    <style type="text/css" id="current-color-scheme">.ColorScheme-NegativeText { color: #da4453; } .ColorScheme-Text { color: #fcfcfc; } </style>
-  </defs>
- <path style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" d="M 4 2 L 4 3 L 4 5 L 3 5 L 2 5 L 2 6 L 2 11 L 2 12 L 3 12 L 5 12 L 5 13 L 5 14 L 8 14 L 8 13 L 6 13 L 6 12 L 8 12 L 8 10 L 4 10 L 4 11 L 3 11 L 3 6 L 13 6 L 13 10 L 14 10 L 14 6 L 14 5 L 12 5 L 12 3 L 12 2 L 4 2 z M 5 3 L 11 3 L 11 5 L 5 5 L 5 3 z M 10 7 L 10 8 L 12 8 L 12 7 L 10 7 z " class="ColorScheme-Text" />
- <path d="m 9,10.99997 5,0 0,1 -5,0 z" style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" class="ColorScheme-NegativeText" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M7 17 H5.5 a2 2 0 0 1 -2 -2 V10.5 a2 2 0 0 1 2 -2 H18.5 a2 2 0 0 1 2 2 V11"/>
+    <path d="M7 8.5 V5 a1 1 0 0 1 1 -1 H16 a1 1 0 0 1 1 1 V8.5"/>
+    <path d="M7 13.5 H12.5 V20.5 H8 a1 1 0 0 1 -1 -1 Z"/>
+    <path d="M15.75 15.25 L20 19.5 M20 15.25 L15.75 19.5"/>
+  </g>
 </svg>

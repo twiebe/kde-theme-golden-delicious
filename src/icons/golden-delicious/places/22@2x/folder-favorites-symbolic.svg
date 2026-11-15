@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <style id="current-color-scheme">.ColorScheme-Highlight{color:#fcfcfc}</style>
   <g class="ColorScheme-Highlight" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M3.5 7 a2 2 0 0 1 2 -2 H9.3 a1.5 1.5 0 0 1 1.1 .5 L12 7 H18.5 a2 2 0 0 1 2 2 V17.5 a2 2 0 0 1 -2 2 H5.5 a2 2 0 0 1 -2 -2 Z"/>
+    <path d="M10 19.5 H5.5 a2 2 0 0 1 -2 -2 V7 a2 2 0 0 1 2 -2 H9.3 a1.5 1.5 0 0 1 1.1 .5 L12 7 H18.5 a2 2 0 0 1 2 2 V10"/>
     <path d="M3.5 10 H20.5"/>
-    <path d="M12 11.75 L12.88 13.74 L15.04 13.96 L13.43 15.41 L13.88 17.54 L12 16.45 L10.12 17.54 L10.57 15.41 L8.96 13.96 L11.12 13.74 Z"/>
+    <path d="M16.75 12.70 L17.95 15.34 L20.84 15.67 L18.70 17.63 L19.28 20.48 L16.75 19.05 L14.22 20.48 L14.80 17.63 L12.66 15.67 L15.55 15.34 Z"/>
   </g>
 </svg>

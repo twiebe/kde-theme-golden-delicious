@@ -3,6 +3,7 @@
   <g class="ColorScheme-Highlight" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
     <path d="M8.46 14.96 A5 5 0 0 1 15.54 14.96"/>
     <path d="M5.28 11.78 A9.5 9.5 0 0 1 18.72 11.78"/>
+    <path d="M2.1 8.6 v0 M5 6.38 v0 M8.38 4.98 v0 M12 4.5 v0 M15.62 4.98 v0 M19 6.38 v0 M21.9 8.6 v0"/>
   </g>
   <g class="ColorScheme-Highlight" fill="currentColor" stroke="none">
     <path d="M12 16.9 a1.6 1.6 0 1 1 0 3.2 a1.6 1.6 0 1 1 0 -3.2 Z"/>

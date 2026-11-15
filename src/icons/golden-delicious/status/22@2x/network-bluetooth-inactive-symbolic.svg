@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22">
-    <style type="text/css" id="current-color-scheme">.ColorScheme-Background { color: #2a2e32; } .ColorScheme-NegativeText { color: #da4453; } .ColorScheme-NeutralText { color: #f67400; } .ColorScheme-PositiveText { color: #27ae60; } .ColorScheme-Text { color: #fcfcfc; } </style>
-    <g id="22-22-preferences-system-bluetooth-inactive" transform="translate(-44,94) translate(-22,-94)">
-        <path id="path4164" class="ColorScheme-Text" d="m76.998047 3v7.041013l-3.292969-3.2929692-2e-3 0.00195c-0.355749-0.3559538-0.996047-0.9960876-0.996047-0.9960876l-0.707031 0.7070313 4.544922 4.5410155-4.544922 4.541016 0.707031 0.707031s0.640351-0.640094 0.996094-0.996094h2e-3l3.294875-3.292968v7.039062h1l4-4-4-4 4-4-4-4zm1.001953 1.4160156 2.585938 2.5859375-2.585938 2.5859375zm0 8.0000004 2.585938 2.585937-2.585938 2.585938z" fill="currentColor" opacity=".5" style="stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" />
-    </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 8 L13.5 15.5 L9.5 19.5 V4.5 L13.5 8 L5 15.5"/>
+    <path d="M18.25 15.5 a2.75 2.75 0 1 1 0 5.5 a2.75 2.75 0 1 1 0 -5.5 Z"/>
+    <path d="M16.3 16.3 L20.2 20.2"/>
+  </g>
 </svg>

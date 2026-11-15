@@ -3,7 +3,6 @@
   <g class="ColorScheme-Highlight" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
     <path d="M20.37 10.5 A8.5 8.5 0 1 0 10.5 20.37"/>
     <path d="M12 10 a2 2 0 1 1 0 4 a2 2 0 1 1 0 -4 Z"/>
-    <path d="M14.5 15 H16.5 a1 1 0 0 1 1 1 V19 a1 1 0 0 1 -1 1 H14.5 a1 1 0 0 1 -1 -1 V16 a1 1 0 0 1 1 -1 Z"/>
-    <path d="M17.5 17 L20.5 15.5 V19.5 L17.5 18"/>
+    <path d="M15 14.5 L20.5 17.5 L15 20.5 Z"/>
   </g>
 </svg>

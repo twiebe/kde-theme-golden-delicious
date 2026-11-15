@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
   <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M5.5 5 H14.6 a1.5 1.5 0 0 1 1.2 .6 L20.5 12 L15.8 18.4 a1.5 1.5 0 0 1 -1.2 .6 H5.5 a2 2 0 0 1 -2 -2 V7 a2 2 0 0 1 2 -2 Z"/>
-    <path d="M8.5 8.5 a1 1 0 0 0 -1 1 V11 L6.5 12 L7.5 13 V14.5 a1 1 0 0 0 1 1"/>
-    <path d="M11.5 8.5 a1 1 0 0 1 1 1 V11 L13.5 12 L12.5 13 V14.5 a1 1 0 0 1 -1 1"/>
+    <path d="M7.5 4.5 H7 a2 2 0 0 0 -2 2 V10 L3.5 12 L5 14 V17.5 a2 2 0 0 0 2 2 H7.5"/>
+    <path d="M16.5 4.5 H17 a2 2 0 0 1 2 2 V10 L20.5 12 L19 14 V17.5 a2 2 0 0 1 -2 2 H16.5"/>
+    <path d="M10.5 8.5 L14 12 L10.5 15.5"/>
   </g>
 </svg>

@@ -1,19 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:ns1="http://www.inkscape.org/namespaces/inkscape" xmlns:ns2="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" viewBox="0 0 16 16" id="svg2" version="1.1" ns1:version="0.91 r13725" ns2:docname="media-view-subtitles-symbolic.svg">
-  <metadata id="metadata14">
-    <RDF>
-      <Work rdf:about="">
-        <format>image/svg+xml</format>
-        <type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-      </Work>
-    </RDF>
-  </metadata>
-  <namedview pagecolor="#ffffff" bordercolor="#666666" borderopacity="1" objecttolerance="10" gridtolerance="10" guidetolerance="10" ns1:pageopacity="0" ns1:pageshadow="2" ns1:window-width="1920" ns1:window-height="1046" id="namedview12" showgrid="false" ns1:zoom="29.5" ns1:cx="3.5873749" ns1:cy="4.9082691" ns1:window-x="0" ns1:window-y="34" ns1:window-maximized="1" ns1:current-layer="svg2" />
-  <defs id="defs3051">
-    <style type="text/css" id="current-color-scheme">.ColorScheme-Accent { color: #3daee9; } .ColorScheme-Text { color: #fcfcfc; } </style>
-  </defs>
-  <g transform="matrix(1,0,0,-1,-421.71,547.79)" id="g6">
-    <path style="color:#bebebe;fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" d="m 424.71,545.79 0,-12 10,0 0,9 -3,3 z m 1,-1 5,0 0,-3 3,0 0,-7 -8,0 z" class="ColorScheme-Text" id="path8" ns1:connector-curvature="0" />
-    <path style="color:#3daee9;fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" d="m 426.71,535.79 6,0 0,2 -6,0 z" class="ColorScheme-Accent" id="path10" ns1:connector-curvature="0" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 4.5 H18 A2.5 2.5 0 0 1 20.5 7 V17 A2.5 2.5 0 0 1 18 19.5 H6 A2.5 2.5 0 0 1 3.5 17 V7 A2.5 2.5 0 0 1 6 4.5 Z"/>
+    <path d="M7 12.5 H17"/>
+    <path d="M9 15.5 H15"/>
   </g>
 </svg>

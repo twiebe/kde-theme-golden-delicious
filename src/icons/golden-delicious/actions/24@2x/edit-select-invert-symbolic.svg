@@ -2,7 +2,8 @@
   <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
   <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
     <path d="M6 3.5 H18 a2.5 2.5 0 0 1 2.5 2.5 V18 a2.5 2.5 0 0 1 -2.5 2.5 H6 a2.5 2.5 0 0 1 -2.5 -2.5 V6 a2.5 2.5 0 0 1 2.5 -2.5 Z"/>
-    <path d="M12 7.5 a4.5 4.5 0 1 1 0 9 a4.5 4.5 0 1 1 0 -9 Z"/>
     <path d="M4.3 19.7 L19.7 4.3"/>
+    <path d="M3.5 14.5 L14.5 3.5"/>
+    <path d="M3.5 8.5 L8.5 3.5"/>
   </g>
 </svg>
