@@ -9,7 +9,7 @@ from pathlib import Path
 OUT = Path(__file__).resolve().parent.parent / "src/aurorae/themes/golden-gate"
 
 P = 20          # shadow padding, must match Padding* in golden-gaterc
-R = 12          # top corner radius
+R = 16          # top corner radius
 C = P + R       # corner piece size
 
 STATES = {
@@ -17,6 +17,8 @@ STATES = {
     "decoration": ("#2B2B2D", 0.10),
     "decoration-inactive": ("#2B2B2D", 0.055),
 }
+# Light rim along the top edge and round the top corners, like macOS.
+RIM = {"decoration": 0.12, "decoration-inactive": 0.06}
 
 # Fitted to the Golden Gate lights in a Retina screenshot.
 # base: body, top to bottom. top: glow hugging the upper edge. bot: glow blob in
@@ -60,6 +62,14 @@ def frame(prefix, fill, a):
             grad = (f'<radialGradient id="{gid}" cx="{C}" cy="{C}" r="{C}" gradientUnits="userSpaceOnUse">'
                     f'<stop offset="{inner:.4f}" {s} stop-opacity="{a}"/><stop offset="1" {s} stop-opacity="0"/></radialGradient>')
             shape = f'<path d="M{P},{C} A{R},{R} 0 0 1 {C},{P} L{C},{C} Z" fill="{fill}"/>'
+            # Rim: full strength at the top, fading out down the curve.
+            grad += (f'<linearGradient id="{gid}r" x1="0" y1="{P}" x2="0" y2="{C}" gradientUnits="userSpaceOnUse">'
+                     f'<stop offset="0" stop-color="#FFF" stop-opacity="{RIM[prefix]}"/>'
+                     f'<stop offset="1" stop-color="#FFF" stop-opacity="0"/></linearGradient>')
+            # A filled 1 px ring, not a stroke: a stroke widens the element's
+            # bounds and leaves a seam next to the edge pieces.
+            shape += (f'<path d="M{P},{C} A{R},{R} 0 0 1 {C},{P} L{C},{P + 1} '
+                      f'A{R - 1},{R - 1} 0 0 0 {P + 1},{C} Z" fill="url(#{gid}r)"/>')
             body = f'<g transform="{flip}"><rect width="{C}" height="{C}" fill="url(#{gid})"/>{shape}</g>'
         else:
             # Square corner: radial in the outer P x P cell, linear strips beside it.
@@ -85,6 +95,8 @@ def frame(prefix, fill, a):
                 f'<stop offset="0" {s} stop-opacity="0"/><stop offset="1" {s} stop-opacity="{a}"/></linearGradient>')
         body = (f'<rect width="{w}" height="{h}" fill="url(#{gid})"/>'
                 f'<rect x="{rx}" y="{ry}" width="{rw}" height="{rh}" fill="{fill}"/>')
+        if name == "top":
+            body += f'<rect y="{P}" width="1" height="1" fill="#FFF" fill-opacity="{RIM[prefix]}"/>'
         g.append(box(f"{prefix}-{name}", w, h, body, f"<defs>{grad}</defs>"))
     g.append(box(f"{prefix}-center", 1, 1, f'<rect width="1" height="1" fill="{fill}"/>'))
     return "".join(g)
