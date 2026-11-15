@@ -46,6 +46,7 @@ SIZE = 256
 TILE = (14, 242)          # tile edges inside the 256 canvas, like a Breeze app icon's margin
 INNER = 0.72              # how much of the tile a non-square icon's content may fill
 OVERSCAN = 1.03           # a square icon is drawn a little past the tile so no corner shows
+MASK_SQUARES = False      # True: mask an already square icon to the squircle instead of tiling it
 TILE_OPACITY = 0.6        # the light tile lets the panel show through a little
 SVG_NS = "http://www.w3.org/2000/svg"
 XLINK_NS = "http://www.w3.org/1999/xlink"
@@ -283,7 +284,7 @@ def tile(files):
             shape = alpha_box(png.read_bytes())
     else:
         shape = alpha_box(png.read_bytes()) if png else None
-    square = shape and is_square(*shape)
+    square = MASK_SQUARES and shape and is_square(*shape)
 
     if vector:
         body = svg_body(max(vector, key=size_of))
