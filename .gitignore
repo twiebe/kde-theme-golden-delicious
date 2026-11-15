@@ -1,3 +1,4 @@
 /tmp
 /.superpowers
 __pycache__/
+*.py[co]
