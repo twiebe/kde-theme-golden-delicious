@@ -17,7 +17,7 @@ DIALOG_R = 16           # popups (applets, krunner): same radius as the windows
 DIALOG_OPACITY = 0.82   # dialogs/: translucent, KWin blurs behind it
 DIALOG_MARGIN = 6       # keeps content out of the rounded corners
 SHADOW = 18             # popup shadow reach
-SHADOW_INSET = 0        # shadow tiles start at the popup edge
+SHADOW_INSET = 16       # tiles reach under the popup to fill around the round corners
 SHADOW_ALPHA = 0.30
 TASK_MARGIN = 4
 TASKS = {               # state: (color class, opacity)
@@ -93,7 +93,9 @@ def shadow():
         out.append(piece(f"shadow-{k}", w, h, f'<rect width="{w}" height="{h}" fill="url(#g-{k})"/>'))
     out.append(piece("shadow-center", 1, 1))
     for side_ in ("top", "bottom", "left", "right"):
-        out.append(f'<rect id="shadow-hint-{side_}-margin" width="{T}" height="{T}" fill="none"/>')
+        # KWin pads the popup by the margin and draws each tile from the outer
+        # edge, so tiles larger than the margin reach under the popup.
+        out.append(f'<rect id="shadow-hint-{side_}-margin" width="{S}" height="{S}" fill="none"/>')
         out.append(f'<rect id="shadow-hint-{side_}-inset" width="{I}" height="{I}" fill="none"/>')
     return "<defs>" + "".join(defs) + "</defs>" + "".join(out)
 
