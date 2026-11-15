@@ -376,30 +376,6 @@
        opacity="0.02" />
     <rect
        id="rect841-6-6-5-3-3"
-       class="ColorScheme-ButtonBackground"
-       x="67"
-       y="15"
-       width="22"
-       height="22"
-       rx="11"
-       fill="currentColor"
-       fill-rule="evenodd" />
-    <path
-       id="rect841-6"
-       d="m 78,15 c -6.094,0 -11,4.906 -11,11 0,6.094 4.906,11 11,11 6.094,0 11,-4.906 11,-11 0,-6.094 -4.906,-11 -11,-11 z m 0,1 c 5.54,0 10,4.46 10,10 0,5.54 -4.46,10 -10,10 -5.54,0 -10,-4.46 -10,-10 0,-5.54 4.46,-10 10,-10 z"
-       class="ColorScheme-Frame"
-       fill="currentColor"
-       fill-rule="evenodd" />
-  </g><g
-     id="handle-active"
-     transform="translate(-66,21)">
-    <path
-      
-       d="M 67,15 H 89 V 37 H 67 Z"
-       fill="none"
-       opacity="0.02" />
-    <rect
-      
        class="ColorScheme-Highlight"
        x="67"
        y="15"
@@ -409,7 +385,7 @@
        fill="currentColor"
        fill-rule="evenodd" />
     <path
-      
+       id="rect841-6"
        d="m 78,15 c -6.094,0 -11,4.906 -11,11 0,6.094 4.906,11 11,11 6.094,0 11,-4.906 11,-11 0,-6.094 -4.906,-11 -11,-11 z m 0,1 c 5.54,0 10,4.46 10,10 0,5.54 -4.46,10 -10,10 -5.54,0 -10,-4.46 -10,-10 0,-5.54 4.46,-10 10,-10 z"
        class="ColorScheme-Highlight"
        fill="currentColor"
@@ -444,60 +420,8 @@
   </g>
   <g
      id="handle-hover"
-     transform="translate(-38,-44)">
-    <path
-       id="path4176"
-       d="m 62,80 h 22 v 22 H 62 Z"
-       fill="none"
-       opacity="0.02" />
-    <rect
-       id="rect4178"
-       class="ColorScheme-ButtonFocus"
-       x="62"
-       y="80"
-       width="22"
-       height="22"
-       rx="11"
-       fill="currentColor"
-       fill-rule="evenodd" />
-    <rect
-       id="rect4180"
-       class="ColorScheme-ButtonBackground"
-       x="63"
-       y="81"
-       width="20"
-       height="20"
-       rx="10"
-       fill="currentColor"
-       fill-rule="evenodd" />
-  </g>
+     transform="translate(-38,-44)"><circle cx="73" cy="91" r="11" class="ColorScheme-Highlight" fill="currentColor"/><circle cx="73" cy="91" r="11" fill="#fff" fill-opacity="0.14"/><defs><radialGradient id="swht" cx="73" cy="97.38" r="16.83" gradientUnits="userSpaceOnUse"><stop offset="0.675" stop-color="#ffffff" stop-opacity="0"/><stop offset="0.8375" stop-color="#ffffff" stop-opacity="0.22"/></radialGradient><radialGradient id="swhg" cx="73" cy="97.05" r="7.59" gradientUnits="userSpaceOnUse"><stop offset="0.38" stop-color="#ffffff" stop-opacity="0.16"/><stop offset="0.69" stop-color="#ffffff" stop-opacity="0.08"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient><linearGradient id="swhr" x1="0" y1="80" x2="0" y2="102" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffffff" stop-opacity="0.6"/><stop offset="0.265" stop-color="#ffffff" stop-opacity="0"/><stop offset="0.735" stop-color="#ffffff" stop-opacity="0"/><stop offset="1" stop-color="#ffffff" stop-opacity="0.4"/></linearGradient></defs><circle cx="73" cy="91" r="11" fill="url(#swht)"/><circle cx="73" cy="91" r="11" fill="url(#swhg)"/><circle cx="73" cy="91" r="10.61" fill="none" stroke="url(#swhr)" stroke-width="0.7857"/></g>
   <g
      id="handle-pressed"
-     transform="translate(-15,-44)">
-    <path
-       id="path4342"
-       d="m 62,80 h 22 v 22 H 62 Z"
-       fill="none"
-       opacity="0.02" />
-    <rect
-       id="rect4344"
-       class="ColorScheme-ButtonFocus"
-       x="62"
-       y="80"
-       width="22"
-       height="22"
-       rx="11"
-       fill="currentColor"
-       fill-rule="evenodd" />
-    <rect
-       id="rect4346"
-       class="ColorScheme-ButtonBackground"
-       x="63"
-       y="81"
-       width="20"
-       height="20"
-       rx="10"
-       fill="currentColor"
-       fill-rule="evenodd" />
-  </g>
+     transform="translate(-15,-44)"><circle cx="73" cy="91" r="11" class="ColorScheme-Highlight" fill="currentColor"/><circle cx="73" cy="91" r="11" fill="#000" fill-opacity="0.18"/><defs><radialGradient id="swpt" cx="73" cy="97.38" r="16.83" gradientUnits="userSpaceOnUse"><stop offset="0.675" stop-color="#ffffff" stop-opacity="0"/><stop offset="0.8375" stop-color="#ffffff" stop-opacity="0.22"/></radialGradient><radialGradient id="swpg" cx="73" cy="97.05" r="7.59" gradientUnits="userSpaceOnUse"><stop offset="0.38" stop-color="#ffffff" stop-opacity="0.16"/><stop offset="0.69" stop-color="#ffffff" stop-opacity="0.08"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient><linearGradient id="swpr" x1="0" y1="80" x2="0" y2="102" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffffff" stop-opacity="0.6"/><stop offset="0.265" stop-color="#ffffff" stop-opacity="0"/><stop offset="0.735" stop-color="#ffffff" stop-opacity="0"/><stop offset="1" stop-color="#ffffff" stop-opacity="0.4"/></linearGradient></defs><circle cx="73" cy="91" r="11" fill="url(#swpt)"/><circle cx="73" cy="91" r="11" fill="url(#swpg)"/><circle cx="73" cy="91" r="10.61" fill="none" stroke="url(#swpr)" stroke-width="0.7857"/></g>
 </svg>

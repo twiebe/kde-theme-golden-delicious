@@ -161,9 +161,19 @@ def slider():
 
 
 def switch():
-    """Breeze's switch with a knob in the accent colour while it is on."""
+    """Breeze's switch with the knob in the accent colour, on or off, lit like
+    the traffic lights; a little brighter on hover, darker while pressed."""
     text = gzip.decompress((BREEZE_WIDGETS / "switch.svgz").read_bytes()).decode()
-    return accent_knob(text, "handle", "sw", 78, 26, 11, new_id="handle-active")
+    text = accent_knob(text, "handle", "sw", 78, 26, 11)
+    for element, gid, tint in (("handle-hover", "swh", '#fff" fill-opacity="0.14'),
+                               ("handle-pressed", "swp", '#000" fill-opacity="0.18')):
+        start = text.rindex("<g", 0, text.index(f'id="{element}"'))
+        head = text[start:text.index(">", start) + 1]
+        end = text.index("</g>", start)
+        knob = ('<circle cx="73" cy="91" r="11" class="ColorScheme-Highlight" fill="currentColor"/>'
+                f'<circle cx="73" cy="91" r="11" fill="{tint}"/>' + sheen(gid, 73, 91, 11))
+        text = text[:start] + head + knob + text[end:]
+    return text
 
 
 def main():
