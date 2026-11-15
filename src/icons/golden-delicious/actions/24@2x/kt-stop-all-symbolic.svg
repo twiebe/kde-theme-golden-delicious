@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="2 2 20 20">
   <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
-  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
     <path d="M13.6 18.05 A7.5 7.5 0 1 1 18.05 13.6"/>
     <path d="M9 8 H13 a1 1 0 0 1 1 1 V13 a1 1 0 0 1 -1 1 H9 a1 1 0 0 1 -1 -1 V9 a1 1 0 0 1 1 -1 Z"/>
     <path d="M16.5 16.5 H20.5"/>

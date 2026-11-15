@@ -14,6 +14,8 @@ Runs inside the harness image, which has the pinned Breeze icons:
 import os
 import re
 import shutil
+import subprocess
+import tempfile
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
@@ -27,6 +29,13 @@ TWIN = re.compile(r"-symbolic$|(?<=^folder)-(brown|magenta|green|black|yellow|cy
 WIDTH = 0.4                     # px added to every line
 CONTEXTS = ["actions", "places", "devices", "status", "emblems"]
 ACCENT = {"places", "devices"}  # drawn in the accent colour, like Finder's sidebar
+# Devices that live in the tray (bluetooth, audio, input) stay in the text colour.
+ACCENT_DEVICES = re.compile(r"^(drive|media)-")
+# Our drawings use a 24 grid with a 3 px margin and 1.6 strokes. Shown as is
+# they look small and thin next to Breeze and app icons, so the build zooms in
+# to VIEW (or as far out as an icon's own extent needs) and thickens strokes.
+VIEW = 10       # half the visible square, around (12, 12): 20 units = 1.2x
+STROKE = "1.75"
 SIZES = [16, 22, 24]
 # Icons whose 1 px gaps close up when thickened; they keep Breeze's drawing.
 EXCLUDE = {
@@ -81,12 +90,47 @@ def thicken(text, accent):
     return '<?xml version="1.0" encoding="UTF-8"?>\n' + out + "\n"
 
 
+def tint(ctx, name):
+    return ctx in ACCENT and (ctx != "devices" or bool(ACCENT_DEVICES.search(name)))
+
+
+def restroke(text):
+    return text.replace('stroke-width="1.6"', f'stroke-width="{STROKE}"')
+
+
+def fit_views():
+    """viewBox per drawing: VIEW around the centre, widened where the drawing
+    (with its stroke) reaches further out, so nothing gets clipped."""
+    views = {}
+    with tempfile.TemporaryDirectory() as tmp:
+        pngs = []
+        for f in sorted(OURS.glob("*.svg")):
+            svg = Path(tmp) / f.name
+            svg.write_text(restroke(f.read_text()))
+            png = svg.with_suffix(".png")
+            subprocess.run(["rsvg-convert", "-w", "240", "-h", "240", svg, "-o", png], check=True)
+            pngs.append(png)
+        info = subprocess.run(["magick", *pngs, "-format", "%t %@\n", "info:"],
+                              check=True, capture_output=True, text=True).stdout
+    for line in info.splitlines():
+        name, geo = line.split()
+        m = re.match(r"(\d+)x(\d+)\+(-?\d+)\+(-?\d+)", geo)
+        w, h, x, y = (int(v) / 10 for v in m.groups())
+        reach = max(VIEW, 12 - x, x + w - 12, 12 - y, y + h - 12)
+        reach = round(reach + 0.05, 2) if reach > VIEW else VIEW
+        views[name] = f"{12 - reach:g} {12 - reach:g} {2 * reach:g} {2 * reach:g}"
+    return views
+
+
+VIEWS = {}
+
+
 def ours(name, accent):
     """Our drawing for a name, or None."""
     for n in (name, TWIN.sub("", name)):
         f = OURS / f"{n}.svg"
         if f.exists():
-            text = f.read_text()
+            text = restroke(f.read_text()).replace('viewBox="0 0 24 24"', f'viewBox="{VIEWS[n]}"')
             return text.replace("ColorScheme-Text", "ColorScheme-Highlight") if accent else text
     return None
 
@@ -108,6 +152,8 @@ def big_names():
 
 def main():
     shutil.rmtree(OUT, ignore_errors=True)
+    VIEWS.update(fit_views())
+    print(f"{sum(v != f'{12 - VIEW} {12 - VIEW} {2 * VIEW} {2 * VIEW}' for v in VIEWS.values())} drawings need a wider view")
     big = big_names()
     fixed, scaled = [], []
     drawn, fallback = set(), set()
@@ -125,7 +171,7 @@ def main():
             for f in entries:                # real files first, then aliases
                 if f.is_symlink():
                     continue
-                if (own := ours(f.stem, accent)) is not None:
+                if (own := ours(f.stem, tint(ctx, f.stem))) is not None:
                     (hi / f.name).write_text(own)
                     drawn.add(f.stem)
                 elif f.stem not in EXCLUDE and monochrome(text := f.read_text()):
@@ -136,9 +182,9 @@ def main():
                     continue
                 target = f.resolve()
                 # Our own drawing of the alias name wins over the alias target.
-                own = ours(f.stem, accent)
+                own = ours(f.stem, tint(ctx, f.stem))
                 if own is None and not (target.parent == src.resolve() and (hi / target.name).exists()):
-                    own = ours(target.stem, accent)
+                    own = ours(target.stem, tint(ctx, target.stem))
                 if own is not None:
                     (hi / f.name).write_text(own)
                 elif target.parent == src.resolve() and (hi / target.name).exists():
