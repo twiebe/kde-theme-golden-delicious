@@ -6,8 +6,8 @@
 # Usage: dev/shot.sh <out.png> [--install] [app...]
 # Env: SHOT_W/SHOT_H (default 1600x1000), SHOT_WAIT (seconds, default 10),
 #      SHOT_HOME (persistent fake home; default: fresh temp dir),
-#      KWIN (kwin binary; containers need a copy without file caps, and its
-#            file name must stay kwin_wayland).
+#      KWIN (kwin binary; the dev/docker image strips its file caps, elsewhere
+#            use a cap-free copy whose file name stays kwin_wayland).
 set -euo pipefail
 
 out=$(realpath -m "$1"); shift
