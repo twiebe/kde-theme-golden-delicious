@@ -26,8 +26,7 @@ for their type.
 ![Line icons, folders and file types](docs/screenshots/icons.png)
 
 **App icons on tiles.** App icons keep their own design but sit on a light
-macOS squircle tile; one that is already a filled square is masked to the
-squircle instead. The originals stay untouched (optional, see Install).
+macOS squircle tile. The originals stay untouched (optional, see Install).
 
 ![KRunner with app icons on tiles in a rounded popup](docs/screenshots/krunner.png)
 
@@ -53,9 +52,7 @@ On the first install the script asks whether to set up the app icon tiles: a
 small user service (`golden-delicious-tiles`) draws them into
 `~/.local/share/icons/golden-delicious-apps` and runs again whenever apps or
 Flatpaks come or go. Once set up, later installs update it without asking.
-`--tiles` or `--no-tiles` answer the question up front. Masking a square
-SVG-only app icon needs `rsvg-convert` or ImageMagick; without them such an icon
-goes on a tile too.
+`--tiles` or `--no-tiles` answer the question up front.
 
 GTK apps follow too: Breeze GTK takes the colors and window buttons from KDE,
 and `gtk/golden-delicious.css` adds the traffic lights for libadwaita apps and

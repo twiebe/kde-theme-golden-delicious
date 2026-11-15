@@ -5,8 +5,8 @@ Reads the .desktop files (system, ~/.local, Flatpak), finds each app icon the
 way the icon theme spec does (breeze-dark, breeze, hicolor) and writes a tiled
 copy under the same name into the icon theme golden-delicious-apps, which the
 Golden Delicious icon theme inherits first. The app's own icon file stays
-untouched. An icon that is already a filled square is masked to the squircle;
-anything else sits smaller on a light tile, like macOS in light mode.
+untouched. Each icon sits smaller on a light tile, like macOS in light mode
+(MASK_SQUARES instead masks one that is already a filled square to the squircle).
 
 Plain Python, no extra modules: the output is SVG that embeds the original
 (inline SVG, or a PNG as data URI). Squareness is measured on the image that gets
