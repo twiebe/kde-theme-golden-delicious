@@ -1,12 +1,38 @@
 # Golden Delicious for KDE Plasma
 
-A lean Plasma 6 theme with the feel of macOS Golden Gate: traffic-light window
-buttons, rounded corners with a soft shadow, a floating translucent top panel
-with soft rounded task highlights, and a dark color scheme with blur.
+A lean Plasma 6 theme with the feel of macOS: traffic-light window buttons,
+rounded corners with a soft shadow, a floating translucent top panel, rounded
+popups, a dark color scheme with blur, and its own icons.
 
 ![Dolphin and a libadwaita app with Golden Delicious](docs/screenshots/overview.png)
 
-![Traffic lights, titlebar and sidebar icons up close](docs/screenshots/titlebar.png)
+## What's in it
+
+**Windows.** Traffic lights on the left with the light and sheen of the Mac
+ones, rounded corners, a soft shadow. libadwaita and GTK apps get the same
+buttons on the same side.
+
+![Traffic lights, sidebar, folders and file types up close](docs/screenshots/titlebar.png)
+
+**Icons.** About 2000 line icons of our own for actions, places, devices and
+status, under Breeze's names, so every KDE app picks them up. In the panel the
+wifi and the battery look like the Mac menu bar. From 32 px up folders turn
+into blue Mac folders with the place's symbol embossed (and the tag colours for
+`folder-red` and friends), and files into white pages with a coloured label
+for their type.
+
+![Line icons, folders and file types](docs/screenshots/icons.png)
+
+**App icons on tiles.** App icons keep their own design but sit on a light
+macOS squircle tile; one that is already a filled square is masked to the
+squircle instead. The originals stay untouched (optional, see Install).
+
+![KRunner with app icons on tiles in a rounded popup](docs/screenshots/krunner.png)
+
+**Plasma.** A floating top panel, popups as round as the windows, and switches
+and sliders with a knob in the accent colour, lit like the traffic lights.
+
+![Switches and sliders](docs/screenshots/controls.png)
 
 ## Install
 
@@ -18,18 +44,20 @@ Run inside a Plasma session:
 ```
 
 `--layout` drops your current panel setup and pinned launchers. Log out and
-back in afterwards so every app picks the theme up.
+back in afterwards so every app, the panel and the icon caches pick the theme
+up.
+
+On the first install the script asks whether to set up the app icon tiles: a
+small user service (`golden-delicious-tiles`) draws them into
+`~/.local/share/icons/golden-delicious-apps` and runs again whenever apps or
+Flatpaks come or go. Once set up, later installs update it without asking.
+`--tiles` or `--no-tiles` answer the question up front. Masking a square
+SVG-only app icon needs `rsvg-convert` or ImageMagick; without them such an icon
+goes on a tile too.
 
 GTK apps follow too: Breeze GTK takes the colors and window buttons from KDE,
-and `gtk/golden-delicious.css` adds the traffic lights for libadwaita apps and hides
-separators.
-
-App icons keep their design but sit on a macOS squircle tile; an icon that is
-already a filled square gets masked to the squircle instead. The user service
-`golden-delicious-tiles` draws them into `~/.local/share/icons/golden-delicious-apps`
-and runs again whenever apps or Flatpaks come or go. The originals stay
-untouched. Masking a square SVG-only icon needs `rsvg-convert` or ImageMagick;
-without them such an icon goes on a tile too.
+and `gtk/golden-delicious.css` adds the traffic lights for libadwaita apps and
+hides separators. Flatpak apps get read access to that config.
 
 ## Backups
 
@@ -52,6 +80,12 @@ A restore backs up the current state first, so it can be undone the same way.
 ./uninstall.sh            # back to Breeze Dark, Breeze window buttons
 ./uninstall.sh --layout   # also reset the panels (if you installed with --layout)
 ```
+
+This removes the theme's files and the tile service, puts the window buttons
+back on the right (KDE and GTK), drops our GTK CSS and takes back the Flatpak
+access install.sh gave. Your backups stay. The Breeze GTK theme for Flatpak
+apps stays installed; `flatpak uninstall --user org.gtk.Gtk3theme.Breeze`
+removes it.
 
 ## Develop
 
