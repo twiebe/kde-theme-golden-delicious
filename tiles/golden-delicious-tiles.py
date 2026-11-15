@@ -9,9 +9,9 @@ untouched. An icon that is already a filled square is masked to the squircle;
 anything else sits smaller on a light tile, like macOS in light mode.
 
 Plain Python, no extra modules: the output is SVG that embeds the original
-(inline SVG, or a PNG as data URI). Squareness is read from the app's PNG when
-it ships one, else from rsvg-convert or ImageMagick if installed; without them an
-app with SVG only counts as not square.
+(inline SVG, or a PNG as data URI). Squareness is measured on the image that gets
+drawn: an SVG through rsvg-convert or ImageMagick if installed, else the app's
+PNG; with neither, an app with SVG only counts as not square.
 
 Runs again on its own when apps come and go (golden-delicious-tiles.path).
 Only redraws what changed; drops tiles of apps that are gone.
@@ -258,13 +258,16 @@ def place(box, target):
 def tile(files):
     vector = [f for f in files if f.suffix in (".svg", ".svgz")]
     pngs = sorted((f for f in files if f.suffix == ".png"), key=size_of)
-    probe = next((f for f in pngs if size_of(f) >= 48), pngs[-1] if pngs else None)
-    if probe:
-        shape = alpha_box(probe.read_bytes())
-    elif vector:
+    # The PNG to draw: 256 px is enough for the tile, bigger only bloats the SVG.
+    png = next((f for f in pngs if size_of(f) >= 256), pngs[-1] if pngs else None)
+    # Measure the very image that gets drawn: apps often pad their small sizes
+    # differently, and a box taken from one size crops another wrong.
+    if vector:
         shape = alpha_box(rasterise(max(vector, key=size_of)))
+        if not shape and png and size_of(png) >= 128:
+            shape = alpha_box(png.read_bytes())
     else:
-        shape = None
+        shape = alpha_box(png.read_bytes()) if png else None
     square = shape and is_square(*shape)
 
     if vector:
@@ -272,9 +275,8 @@ def tile(files):
         if not body:
             return None
         inner, (vx, vy, vw, vh) = body
-    elif pngs:
-        big = pngs[-1]
-        b64 = base64.b64encode(big.read_bytes()).decode()
+    elif png:
+        b64 = base64.b64encode(png.read_bytes()).decode()
         vx, vy, vw, vh = 0, 0, 1, 1
         inner = f'<image width="1" height="1" preserveAspectRatio="none" xlink:href="data:image/png;base64,{b64}"/>'
     else:
