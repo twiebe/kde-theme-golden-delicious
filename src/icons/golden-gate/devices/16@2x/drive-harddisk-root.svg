@@ -1,1 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><defs><style type="text/css" id="current-color-scheme">.ColorScheme-Text { color: #fcfcfc; } .ColorScheme-Highlight { color: #3daee9; } </style></defs><path class="ColorScheme-Highlight" style="fill:currentColor; fill-opacity:1; stroke:none" d="M224,60H32A20,20,0,0,0,12,80v96a20,20,0,0,0,20,20H224a20,20,0,0,0,20-20V80A20,20,0,0,0,224,60Zm-4,112H36V84H220Zm-56-44a16,16,0,1,1,16,16A16,16,0,0,1,164,128Z"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+    <style type="text/css" id="current-color-scheme">.ColorScheme-Highlight { color: #fcfcfc; } </style>
+    <g style="fill:currentColor;fill-opacity:1;stroke:none" class="ColorScheme-Highlight">
+        <path d="m3 2v12h10v-12zm3 1h4a2 2 0 0 1 2 2v1a1 1 0 1 0 0 2v2l-1 1h-6l-1-1v-2a1 1 0 1 0 0-2v-1a2 2 0 0 1 2-2zm-2 9h4v1h-4zm6 0h2v1h-2z" style="stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" />
+        <path d="m8 4-3 6h1l3-6z" style="stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" />
+        <rect height="1" width="3" x="8" y="9" style="stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" />
+    </g>
+</svg>

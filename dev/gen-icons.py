@@ -1,166 +1,165 @@
 #!/usr/bin/env python3
-"""Generate the Golden Gate icon theme: a few small symbolic icons drawn with
-Phosphor Icons, everything else inherited.
+"""Generate the Golden Gate icon theme: Breeze Dark's monochrome icons with
+thicker, rounder strokes.
 
-Run from the repo root: python3 dev/gen-icons.py
-Fetches Phosphor once into tmp/phosphor (gitignored, needs npm) and writes
-into src/icons/golden-gate/.
+Every filled shape gets a round-joined stroke in its own colour, which widens
+each line by WIDTH and softens the corners. Colourful icons are left out and
+keep coming from the inherited themes.
+
+Runs inside the harness image, which has the pinned Breeze icons:
+  docker run --rm -v "$PWD:/repo" -w /repo --entrypoint python3 \\
+    golden-gate-shot:6.8 dev/gen-icons.py
 """
+import os
 import re
 import shutil
-import subprocess
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
-OUT = ROOT / "src/icons/golden-gate"
-CACHE = ROOT / "tmp/phosphor"
-PHOSPHOR = "@phosphor-icons/core@2.1.1"
-WEIGHT = "bold"         # regular is a 1 px hairline at 16 px, like Breeze
+SRC = Path("/usr/share/icons/breeze-dark")
+OUT = Path(__file__).resolve().parent.parent / "src/icons/golden-gate"
 
-INHERITS = "WhiteSur-dark,breeze-dark,hicolor"
-SIZES = (16, 22, 24)    # only the symbolic sizes; larger ones come from Inherits
-# Places and devices exist only as scaled (@2x, @3x) directories. KIconLoader
-# matches those by exact size, so a 64 px folder in the file view still falls
-# through to the inherited theme. A plain 16 px directory would be the best
-# match for every size and replace the big folder icons too.
-PLACE_SCALES = (2, 3)
-ACTION_SCALES = (1, 2, 3)
-
-# Colors only matter as fallbacks; KDE swaps in the color scheme.
-STYLE = ('<style type="text/css" id="current-color-scheme">'
-         '.ColorScheme-Text { color: #fcfcfc; } .ColorScheme-Highlight { color: #3daee9; } </style>')
-
-TEXT, ACCENT = "ColorScheme-Text", "ColorScheme-Highlight"
-
-# context dir: {freedesktop name: (phosphor name, color class)}
-ICONS = {
-    "places": {
-        "user-home": ("house", ACCENT),
-        "user-desktop": ("desktop", ACCENT),
-        "folder": ("folder", ACCENT),
-        # Places you add yourself get the folder mime icon.
-        "inode-directory": ("folder", ACCENT),
-        "folder-open": ("folder-open", ACCENT),
-        "folder-documents": ("file-text", ACCENT),
-        "folder-download": ("arrow-circle-down", ACCENT),
-        "folder-downloads": ("arrow-circle-down", ACCENT),
-        "folder-music": ("music-note", ACCENT),
-        "folder-pictures": ("image", ACCENT),
-        "folder-videos": ("film-strip", ACCENT),
-        "folder-network": ("globe-simple", ACCENT),
-        "network-workgroup": ("globe-simple", ACCENT),
-        "folder-open-recent": ("clock", ACCENT),
-        "document-open-recent": ("clock", ACCENT),
-        "user-trash": ("trash", ACCENT),
-        "user-trash-full": ("trash", ACCENT),
-    },
-    "devices": {
-        "drive-harddisk": ("hard-drive", ACCENT),
-        "drive-harddisk-root": ("hard-drive", ACCENT),
-        "drive-removable-media": ("hard-drive", ACCENT),
-        "drive-removable-media-usb": ("usb", ACCENT),
-        "drive-optical": ("disc", ACCENT),
-        "media-optical": ("disc", ACCENT),
-    },
-    "actions": {
-        "go-previous": ("caret-left", TEXT),
-        "go-next": ("caret-right", TEXT),
-        "go-up": ("arrow-up", TEXT),
-        "go-down": ("arrow-down", TEXT),
-        "go-home": ("house", TEXT),
-        "view-list-icons": ("squares-four", TEXT),
-        "view-list-details": ("list-bullets", TEXT),
-        "view-list-tree": ("tree-view", TEXT),
-        "view-split-left-right": ("square-split-horizontal", TEXT),
-        "view-sidetree": ("sidebar-simple", TEXT),
-        "view-preview": ("eye", TEXT),
-        "view-visible": ("eye", TEXT),
-        "view-hidden": ("eye-slash", TEXT),
-        "view-visible-off": ("eye-slash", TEXT),
-        "view-filter": ("funnel", TEXT),
-        "view-refresh": ("arrow-clockwise", TEXT),
-        "view-more": ("dots-three", TEXT),
-        "view-more-horizontal": ("dots-three", TEXT),
-        "edit-find": ("magnifying-glass", TEXT),
-        "search": ("magnifying-glass", TEXT),
-        "edit-clear": ("x-circle", TEXT),
-        "edit-copy": ("copy", TEXT),
-        "edit-cut": ("scissors", TEXT),
-        "edit-paste": ("clipboard", TEXT),
-        "edit-delete": ("trash", TEXT),
-        "edit-rename": ("pencil-simple", TEXT),
-        "edit-undo": ("arrow-counter-clockwise", TEXT),
-        "edit-redo": ("arrow-clockwise", TEXT),
-        "application-menu": ("list", TEXT),
-        "open-menu": ("list", TEXT),
-        "configure": ("gear", TEXT),
-        "list-add": ("plus", TEXT),
-        "list-remove": ("minus", TEXT),
-        "tab-new": ("plus", TEXT),
-        "tab-close": ("x", TEXT),
-        "folder-new": ("folder-plus", TEXT),
-        "document-new": ("file-plus", TEXT),
-        "document-import": ("tray-arrow-down", TEXT),
-        "get-hot-new-stuff": ("sparkle", TEXT),
-    },
+WIDTH = 0.4                     # px added to every line
+CONTEXTS = ["actions", "places", "devices", "status", "emblems"]
+ACCENT = {"places", "devices"}  # drawn in the accent colour, like Finder's sidebar
+SIZES = [16, 22, 24]
+# Icons whose 1 px gaps close up when thickened; they keep Breeze's drawing.
+EXCLUDE = {
+    "draw-highlight",
+    "edit-line-width",
+    "flashlight-off",
+    "flashlight-on",
+    "show-guides",
+    "view-grid",
+    "view-sort",
+    "view-sort-ascending",
+    "view-sort-descending",
 }
 
-CONTEXTS = {"places": "Places", "devices": "Devices", "actions": "Actions"}
+SVG = "http://www.w3.org/2000/svg"
+ET.register_namespace("", SVG)
+SHAPES = {f"{{{SVG}}}{t}" for t in ("path", "rect", "circle", "ellipse", "polygon")}
 
 
-def fetch():
-    src = CACHE / "package/assets" / WEIGHT
-    if not src.is_dir():
-        CACHE.mkdir(parents=True, exist_ok=True)
-        tgz = subprocess.run(["npm", "pack", PHOSPHOR, "--silent"], cwd=CACHE,
-                             check=True, capture_output=True, text=True).stdout.strip()
-        subprocess.run(["tar", "xzf", tgz], cwd=CACHE, check=True)
-    return src
+def style(s):
+    return {k.strip(): v.strip() for k, v in
+            (kv.split(":", 1) for kv in (s or "").split(";") if ":" in kv)}
 
 
-def icon(src, name, cls):
-    suffix = "" if WEIGHT == "regular" else f"-{WEIGHT}"
-    body = (src / f"{name}{suffix}.svg").read_text()
-    paths = re.findall(r'<path d="([^"]+)"', body)
-    assert paths, name
-    shapes = "".join(f'<path class="{cls}" style="fill:currentColor; fill-opacity:1; stroke:none" d="{d}"/>'
-                     for d in paths)
-    return ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">'
-            f'<defs>{STYLE}</defs>{shapes}</svg>\n')
+def thicken(text, accent):
+    root = ET.fromstring(text)
+    parent = {c: p for p in root.iter() for c in p}
+
+    def inherited(el, key, default):
+        while el is not None:
+            v = style(el.get("style")).get(key, el.get(key))
+            if v is not None:
+                return v
+            el = parent.get(el)
+        return default
+
+    for el in root.iter():
+        if el.tag not in SHAPES:
+            continue
+        fill = inherited(el, "fill", "#000")
+        if fill == "none" or inherited(el, "stroke", "none") != "none":
+            continue
+        st = style(el.get("style"))
+        st.update({"stroke": fill, "stroke-width": str(WIDTH), "stroke-linejoin": "round",
+                   "stroke-linecap": "round",
+                   "stroke-opacity": st.get("fill-opacity", el.get("fill-opacity", "1"))})
+        el.attrib.pop("stroke", None)
+        el.set("style", ";".join(f"{k}:{v}" for k, v in st.items()))
+    out = ET.tostring(root, encoding="unicode")
+    if accent:
+        out = out.replace("ColorScheme-Text", "ColorScheme-Highlight")
+    return '<?xml version="1.0" encoding="UTF-8"?>\n' + out + "\n"
 
 
-def dirname(ctx, size, scale):
-    return f"{ctx}/{size}" + (f"@{scale}x" if scale > 1 else "")
+def monochrome(text):
+    # Recolourable and no fixed colours of its own.
+    return "currentColor" in text and not re.search(r'(?:fill|stop-color)[:=]\s*"?#', text)
+
+
+def big_names():
+    """Names Breeze also has above 24 px: shipping them at 1x would make our
+    small drawing win at every size, so they only go into the @2x/@3x dirs."""
+    names = set()
+    for d in SRC.glob("*/*"):
+        if d.name.split("@")[0].isdigit() and int(d.name.split("@")[0]) > 24:
+            names.update(p.stem for p in d.glob("*.svg"))
+    return names
 
 
 def main():
-    src = fetch()
-    if OUT.exists():
-        shutil.rmtree(OUT)
-    sections = []
-    for ctx, icons in ICONS.items():
-        for scale in (PLACE_SCALES if ctx in ("places", "devices") else ACTION_SCALES):
-            for size in SIZES:
-                d = dirname(ctx, size, scale)
-                (OUT / d).mkdir(parents=True)
-                for fd, (ph, cls) in icons.items():
-                    (OUT / d / f"{fd}.svg").write_text(icon(src, ph, cls))
-                sections.append((d, size, scale, CONTEXTS[ctx]))
+    shutil.rmtree(OUT, ignore_errors=True)
+    big = big_names()
+    fixed, scaled = [], []
+    for ctx in CONTEXTS:
+        for size in SIZES:
+            src = SRC / ctx / str(size)
+            if not src.is_dir():
+                continue
+            hi = OUT / ctx / f"{size}@2x"   # every icon, for scaled screens
+            lo = OUT / ctx / str(size)       # only icons Breeze has no big version of
+            hi.mkdir(parents=True)
+            lo.mkdir(parents=True)
+            entries = sorted(src.glob("*.svg"))
+            for f in entries:                # real files first, then aliases
+                if f.is_symlink() or f.stem in EXCLUDE:
+                    continue
+                text = f.read_text()
+                if monochrome(text):
+                    (hi / f.name).write_text(thicken(text, ctx in ACCENT))
+            for f in entries:
+                if not f.is_symlink() or f.stem in EXCLUDE:
+                    continue
+                target = f.resolve()
+                if target.stem in EXCLUDE:
+                    continue
+                if target.parent == src.resolve() and (hi / target.name).exists():
+                    (hi / f.name).symlink_to(target.name)
+                elif target.exists() and monochrome(target.read_text()):
+                    (hi / f.name).write_text(thicken(target.read_text(), ctx in ACCENT))
+            if ctx == "places" and (hi / "folder.svg").exists():
+                (hi / "inode-directory.svg").symlink_to("folder.svg")
+            for f in sorted(hi.iterdir()):
+                if f.stem not in big:
+                    (lo / f.name).symlink_to(f"../{hi.name}/{f.name}")
+            (OUT / ctx / f"{size}@3x").symlink_to(hi.name)
+            if any(lo.iterdir()):
+                fixed.append((ctx, size, f"{ctx}/{size}", 1))
+            else:
+                lo.rmdir()
+            scaled += [(ctx, size, f"{ctx}/{size}@2x", 2), (ctx, size, f"{ctx}/{size}@3x", 3)]
 
-    lines = ["[Icon Theme]", "Name=Golden Gate",
-             "Comment=Phosphor symbolic icons on top of the inherited theme",
-             f"Inherits={INHERITS}", "FollowsColorScheme=true",
-             "DisplayDepth=32", "SmallDefault=16", "SmallSizes=16",
-             "ToolbarDefault=22", "ToolbarSizes=16,22,24",
-             "MainToolbarDefault=22", "MainToolbarSizes=16,22,24",
-             "PanelDefault=48", "DialogDefault=32", "DesktopDefault=48",
-             "Directories=" + ",".join(s[0] for s in sections if s[2] == 1),
-             "ScaledDirectories=" + ",".join(s[0] for s in sections if s[2] > 1), ""]
-    for d, size, scale, ctx in sections:
-        lines += [f"[{d}]", f"Size={size}"] + ([f"Scale={scale}"] if scale > 1 else []) + \
-                 [f"Context={ctx}", "Type=Fixed", ""]
-    (OUT / "index.theme").write_text("\n".join(lines))
-    shutil.copy(src.parent.parent / "LICENSE", OUT / "LICENSE")
+    head = f"""[Icon Theme]
+Name=Golden Gate
+Comment=Breeze Dark symbolic icons with thicker, rounder strokes
+Inherits=WhiteSur-dark,breeze-dark,hicolor
+FollowsColorScheme=true
+DisplayDepth=32
+SmallDefault=16
+SmallSizes=16
+ToolbarDefault=22
+ToolbarSizes=16,22,24
+MainToolbarDefault=22
+MainToolbarSizes=16,22,24
+PanelDefault=48
+DialogDefault=32
+DesktopDefault=48
+Directories={",".join(d for *_, d, _ in fixed)}
+ScaledDirectories={",".join(d for *_, d, _ in scaled)}
+"""
+    sections = "".join(
+        f"\n[{d}]\nSize={size}\n" + (f"Scale={scale}\n" if scale > 1 else "")
+        + f"Context={ctx.capitalize()}\nType=Fixed\n"
+        for ctx, size, d, scale in fixed + scaled)
+    (OUT / "index.theme").write_text(head + sections)
+    shutil.copy("/usr/share/licenses/spdx/LGPL-3.0-or-later.txt", OUT / "LICENSE")
+    (OUT / "README").write_text(
+        "Modified Breeze icons (KDE, LGPL-3.0-or-later): monochrome icons from\n"
+        f"breeze-dark with every line widened by {WIDTH} px. See dev/gen-icons.py.\n")
 
 
 if __name__ == "__main__":

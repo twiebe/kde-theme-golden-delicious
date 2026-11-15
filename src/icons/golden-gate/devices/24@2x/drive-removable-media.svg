@@ -1,1 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><defs><style type="text/css" id="current-color-scheme">.ColorScheme-Text { color: #fcfcfc; } .ColorScheme-Highlight { color: #3daee9; } </style></defs><path class="ColorScheme-Highlight" style="fill:currentColor; fill-opacity:1; stroke:none" d="M224,60H32A20,20,0,0,0,12,80v96a20,20,0,0,0,20,20H224a20,20,0,0,0,20-20V80A20,20,0,0,0,224,60Zm-4,112H36V84H220Zm-56-44a16,16,0,1,1,16,16A16,16,0,0,1,164,128Z"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+  <defs id="defs3051">
+    <style type="text/css" id="current-color-scheme">.ColorScheme-Highlight { color: #fcfcfc; } </style>
+  </defs>
+  <g transform="translate(1,1)">
+    <path style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" d="m 7,1033.3622 0,8 -1,0 0,1 0,7 1,0 9,0 0,-1 0,-6 0,-1 -1,0 0,-8 -8,0 z m 1,2 1,0 0,4 -1,0 0,-4 z m 5,0 1,0 0,4 -1,0 0,-4 z m -3,2 2,0 0,2 -2,0 0,-2 z m -3,5 8,0 0,6 -8,0 0,-6 z m 4,1 -1,1 2,0 -1,-1 z m -3,3 0,1 6,0 0,-1 -6,0 z" transform="translate(0,-1030.3622)" class="ColorScheme-Highlight" />
+  </g>
+</svg>

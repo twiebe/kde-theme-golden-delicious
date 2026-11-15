@@ -1,1 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><defs><style type="text/css" id="current-color-scheme">.ColorScheme-Text { color: #fcfcfc; } .ColorScheme-Highlight { color: #3daee9; } </style></defs><path class="ColorScheme-Text" style="fill:currentColor; fill-opacity:1; stroke:none" d="M208,28H48A20,20,0,0,0,28,48V208a20,20,0,0,0,20,20H208a20,20,0,0,0,20-20V48A20,20,0,0,0,208,28Zm-4,24v92H179.31a19.86,19.86,0,0,0-14.14,5.86L147,168H109L90.83,149.86A19.86,19.86,0,0,0,76.69,144H52V52ZM52,204V168H75l18.14,18.14A19.86,19.86,0,0,0,107.31,192h41.38a19.86,19.86,0,0,0,14.14-5.86L181,168h23v36Zm35.51-87.51a12,12,0,0,1,17-17L116,111V76a12,12,0,0,1,24,0v35l11.51-11.52a12,12,0,0,1,17,17l-32,32a12,12,0,0,1-17,0Z"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" version="1.1">
+    <defs>
+        <style type="text/css" id="current-color-scheme">.ColorScheme-Text { color: #fcfcfc; } </style>
+    </defs>
+    <path class="ColorScheme-Text" style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:0.4;stroke-linejoin:round;stroke-linecap:round;stroke-opacity:1" d="M 13 5 L 13 12 L 8.91406 12 L 10.5352 13.6211 L 9.82812 14.3281 L 7 11.5 L 9.82812 8.67188 L 10.5352 9.37891 L 8.91406 11 L 12 11 L 12 6 L 9 6 L 9 3 L 4 3 L 4 13 L 7 13 L 7 14 L 3 14 L 3 2 L 10 2 L 13 5 Z" />
+</svg>
