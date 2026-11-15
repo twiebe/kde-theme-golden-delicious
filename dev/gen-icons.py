@@ -28,9 +28,10 @@ TWIN = re.compile(r"-symbolic$|(?<=^folder)-(brown|magenta|green|black|yellow|cy
 
 WIDTH = 0.4                     # px added to every line
 CONTEXTS = ["actions", "places", "devices", "status", "emblems"]
-ACCENT = {"places", "devices"}  # drawn in the accent colour, like Finder's sidebar
-# Devices that live in the tray (bluetooth, audio, input) stay in the text colour.
-ACCENT_DEVICES = re.compile(r"^(drive|media)-")
+# Everything is drawn in the text colour, like Breeze: icon names are shared
+# across contexts (a trash can in the sidebar and in a dialog), so tinting by
+# name put the accent colour where it didn't belong.
+ACCENT = set()
 # Our drawings use a 24 grid with a 3 px margin and 1.6 strokes. Shown as is
 # they look small and thin next to Breeze and app icons, so the build zooms in
 # to VIEW (or as far out as an icon's own extent needs) and thickens strokes.
@@ -91,7 +92,7 @@ def thicken(text, accent):
 
 
 def tint(ctx, name):
-    return ctx in ACCENT and (ctx != "devices" or bool(ACCENT_DEVICES.search(name)))
+    return ctx in ACCENT
 
 
 def restroke(text):
