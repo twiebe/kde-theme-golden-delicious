@@ -22,8 +22,9 @@ DIALOG_MARGIN = 6       # keeps content out of the rounded corners
 SHADOW = 18             # popup shadow reach
 SHADOW_INSET = 16       # tiles reach under the popup to fill around the round corners
 SHADOW_ALPHA = 0.30
-PANEL_SHADOW = 10       # the floating panel's own shadow, so it stands out from the wallpaper
-PANEL_SHADOW_ALPHA = 0.30
+PANEL_SHADOW = 14       # the floating panel's own shadow, so it stands out from the wallpaper
+PANEL_SHADOW_ALPHA = 0.20
+PANEL_SHADOW_FALLOFF = ((0, 1), (0.25, 0.6), (0.5, 0.3), (0.75, 0.1), (1, 0))  # soft, no hard line at the edge
 PANEL_RIM = 0           # opacity of a 1 px light rim like the windows'; 0 for none
 TASK_MARGIN = 4
 TASKS = {               # state: (color class, opacity)
@@ -87,22 +88,18 @@ def svg(content):
             f'<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><defs>{STYLE}</defs>{content}</svg>\n')
 
 
-def shadow(R=DIALOG_R, S=SHADOW, I=SHADOW_INSET, A=SHADOW_ALPHA):
+def shadow(R=DIALOG_R, S=SHADOW, I=SHADOW_INSET, A=SHADOW_ALPHA, falloff=((0, 1), (0.65, 0.35), (1, 0))):
     """Shadow 9-patch around a rounded popup. Corner gradients are centred on
     the popup's corner arc, so the shadow follows the curve; inside the popup
-    they stay clear, which matters under a translucent background."""
+    they stay clear, which matters under a translucent background. falloff
+    gives the opacity (times A) at fractions of the reach out from the edge."""
     T = S + I
     inner = R / (R + S)
-    stops = (f'<stop offset="0" stop-color="#000" stop-opacity="0"/>'
-             f'<stop offset="{inner - 0.001:.4f}" stop-color="#000" stop-opacity="0"/>'
-             f'<stop offset="{inner:.4f}" stop-color="#000" stop-opacity="{A}"/>'
-             f'<stop offset="{inner + (1 - inner) * 0.35:.4f}" stop-color="#000" stop-opacity="{A * 0.35:.3f}"/>'
-             f'<stop offset="1" stop-color="#000" stop-opacity="0"/>')
-    side = (f'<stop offset="0" stop-color="#000" stop-opacity="0"/>'
-            f'<stop offset="{0.35 * S / T:.4f}" stop-color="#000" stop-opacity="{A * 0.35:.3f}"/>'
-            f'<stop offset="{S / T:.4f}" stop-color="#000" stop-opacity="{A}"/>'
-            f'<stop offset="{S / T + 0.001:.4f}" stop-color="#000" stop-opacity="0"/>'
-            f'<stop offset="1" stop-color="#000" stop-opacity="0"/>')
+    stop = lambda o, a: f'<stop offset="{o:.4f}" stop-color="#000" stop-opacity="{A * a:.3f}"/>'
+    stops = (stop(0, 0) + stop(inner - 0.001, 0)
+             + "".join(stop(inner + (1 - inner) * t, a) for t, a in falloff))
+    side = ("".join(stop(S / T * (1 - t), a) for t, a in reversed(falloff))
+            + stop(S / T + 0.001, 0) + stop(1, 0))
     defs, out = [], []
     # corner: (id, centre of the corner arc in tile coords)
     for k, cx, cy in (("topleft", S + R, S + R), ("topright", I - R, S + R),
@@ -134,7 +131,7 @@ def panel(op):
                # scales the mask is not anti-aliased, and its saturated wallpaper
                # would show as a coloured line through the edge's partial pixels.
                + frame("mask", PANEL_R, "ColorScheme-Background", 1, PANEL_MARGIN, inset=1)
-               + shadow(PANEL_R, PANEL_SHADOW, PANEL_R, PANEL_SHADOW_ALPHA))
+               + shadow(PANEL_R, PANEL_SHADOW, PANEL_R, PANEL_SHADOW_ALPHA, PANEL_SHADOW_FALLOFF))
 
 
 BREEZE_WIDGETS = Path("/usr/share/plasma/desktoptheme/default/widgets")
