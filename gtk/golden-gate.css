@@ -30,11 +30,37 @@ windowcontrols > button > image {
   padding: 0;
   border-radius: 50%;
   color: transparent;
-  /* Lit from inside, like Golden Gate: light rim, brightest at the bottom. */
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 rgba(255, 255, 255, 0.6);
 }
-windowcontrols > button.close > image { background: radial-gradient(circle at 50% 80%, #ff9792, #ff5f57 70%); }
-windowcontrols > button.minimize > image { background: radial-gradient(circle at 50% 80%, #ffd159, #ffb800 70%); }
-windowcontrols > button.maximize > image { background: radial-gradient(circle at 50% 80%, #68d775, #16c22a 70%); }
+/* Same layers as the KWin lights (dev/gen-aurorae.py, scaled to 18 px): rim
+   crescents top and bottom, glow blob below, glow under the upper edge, body. */
+windowcontrols > button.close > image {
+  background:
+    radial-gradient(circle 12px at 50% 12.1px, transparent 10.7px, rgba(255, 255, 246, 0.4) 11px, rgba(255, 255, 246, 0.4) 11.3px, rgba(255, 255, 246, 0.61) 11.6px),
+    radial-gradient(circle 12px at 50% 5.9px, transparent 10.7px, rgba(255, 255, 246, 0.4) 11px, rgba(255, 255, 246, 0.4) 11.3px, rgba(255, 255, 246, 0.61) 11.6px),
+    radial-gradient(circle 6.21px at 50% 13.95px, #ef6760 38%, #f25f57 69%, rgba(242, 95, 87, 0)),
+    radial-gradient(circle 13.77px at 50% 14.22px, rgba(248, 99, 89, 0) 67.5%, #f86359 83.75%),
+    linear-gradient(#f75143, #ee554d);
+}
+windowcontrols > button.minimize > image {
+  background:
+    radial-gradient(circle 12px at 50% 12.1px, transparent 10.7px, rgba(248, 255, 128, 0.61) 11px, rgba(248, 255, 128, 0.61) 11.3px, rgba(248, 255, 128, 0.89) 11.6px),
+    radial-gradient(circle 12px at 50% 5.9px, transparent 10.7px, rgba(248, 255, 128, 0.61) 11px, rgba(248, 255, 128, 0.61) 11.3px, rgba(248, 255, 128, 0.89) 11.6px),
+    radial-gradient(circle 6.21px at 50% 13.95px, #fecc2d 38%, rgba(255, 211, 0, 0.28) 69%, rgba(255, 211, 0, 0)),
+    radial-gradient(circle 13.77px at 50% 14.22px, rgba(251, 182, 0, 0) 67.5%, #fbb600 83.75%),
+    linear-gradient(#fba800, #fdcc00);
+}
+windowcontrols > button.maximize > image {
+  background:
+    radial-gradient(circle 12px at 50% 12.1px, transparent 10.7px, rgba(165, 255, 146, 0.74) 11px, rgba(165, 255, 146, 0.74) 11.3px, #a5ff92 11.6px),
+    radial-gradient(circle 12px at 50% 5.9px, transparent 10.7px, rgba(165, 255, 146, 0.74) 11px, rgba(165, 255, 146, 0.74) 11.3px, #a5ff92 11.6px),
+    radial-gradient(circle 6.21px at 50% 13.95px, #4dc339 38%, #3cc004 69%, rgba(60, 192, 4, 0)),
+    radial-gradient(circle 13.77px at 50% 14.22px, rgba(68, 195, 15, 0) 67.5%, #44c30f 83.75%),
+    linear-gradient(#00bf00, #04b800);
+}
 windowcontrols > button:hover > image { color: rgba(58, 26, 16, 0.8); }
-windowcontrols > button:backdrop > image { background: #5a5a5e; box-shadow: none; }
+windowcontrols > button:backdrop > image {
+  background:
+    radial-gradient(circle 12px at 50% 12.1px, transparent 10.7px, rgba(255, 255, 255, 0.25) 11px, rgba(255, 255, 255, 0.25) 11.3px, rgba(255, 255, 255, 0.4) 11.6px),
+    radial-gradient(circle 12px at 50% 5.9px, transparent 10.7px, rgba(255, 255, 255, 0.25) 11px, rgba(255, 255, 255, 0.25) 11.3px, rgba(255, 255, 255, 0.4) 11.6px),
+    linear-gradient(#5a5a5c, #515153);
+}

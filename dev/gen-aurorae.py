@@ -18,11 +18,27 @@ STATES = {
     "decoration-inactive": ("#2B2B2D", 0.08),
 }
 
-LIGHTS = {"close": "#FF5F57", "minimize": "#FFB800", "maximize": "#16C22A"}
-LIGHT_INACTIVE = "#5A5A5E"
+# Fitted to the Golden Gate lights in a Retina screenshot.
+# base: body, top to bottom. top: glow hugging the upper edge. bot: glow blob in
+# the lower half, core and halo colour, halo opacity. rim: colour, outer and
+# inner opacity at the top and bottom, fading to nothing towards the sides.
+LIGHTS = {
+    "close": dict(base=("#F75143", "#EE554D"), top="#F86359", bot=("#EF6760", "#F25F57", 1),
+                  rim=("#FFFFF6", 0.61, 0.40)),
+    "minimize": dict(base=("#FBA800", "#FDCC00"), top="#FBB600", bot=("#FECC2D", "#FFD300", 0.28),
+                     rim=("#F8FF80", 0.89, 0.61)),
+    "maximize": dict(base=("#00BF00", "#04B800"), top="#44C30F", bot=("#4DC339", "#3CC004", 1),
+                     rim=("#A5FF92", 1, 0.74)),
+}
+LIGHT_INACTIVE = dict(base=("#5A5A5C", "#515153"), rim=("#FFFFFF", 0.4, 0.25))
 GLYPH = "#3A1A10"
-BTN = 28        # button box, must match ButtonWidth/ButtonHeight
-DOT = 9         # light radius -> 18 px diameter, 10 px gap in a 28 px box
+# Fractional scaling: KWin rasterizes the SVG at device scale, but a button box
+# that does not land on whole device pixels gets resampled and the lights go
+# soft. So the box and its offsets (TitleEdgeLeft, ButtonMarginTop, Padding*)
+# are multiples of 10, which is whole pixels at any scale in 10 % steps.
+BTN = 30        # button box, must match ButtonWidth/ButtonHeight
+DOT = 9         # light radius -> 18 px diameter
+CEN = BTN / 2 + 1   # light centre in the box: 26 px from the window's top and left
 
 
 def box(eid, w, h, body, defs=""):
@@ -80,7 +96,7 @@ def svg(content):
 
 
 def glyph(kind):
-    c, w = BTN / 2, 1.4
+    c, w = CEN, 1.4
     st = f'stroke="{GLYPH}" stroke-width="{w}" stroke-linecap="round" fill="none"'
     if kind == "close":
         d = 2.6
@@ -93,40 +109,42 @@ def glyph(kind):
            f'M{c+2.6},{c-2.6} L{c+2.6},{c+0.6} M{c+2.6},{c-2.6} L{c+0.6},{c-2.6}" {st}/>'  # restore
 
 
-def shade_hex(col, f):
-    """Scale a #RRGGBB color towards black (f < 1) or white (f > 1)."""
-    rgb = [int(col[i:i + 2], 16) for i in (1, 3, 5)]
-    rgb = [round(v * f) if f < 1 else round(v + (255 - v) * (f - 1)) for v in rgb]
-    return "#" + "".join(f"{min(255, max(0, v)):02X}" for v in rgb)
-
-
-def button(kind, color):
-    c = BTN / 2
+def button(kind, light):
+    c = CEN
     n = iter(range(100))
 
-    def dot(col, op=1):
-        # Lit from inside like Golden Gate: saturated top, a glow rising from
-        # the bottom, and a light rim that is brightest at the bottom.
+    def dot(l, op=1):
         gid = f"l{kind}{next(n)}"
-        grad = (f'<defs><radialGradient id="{gid}" cx="{c}" cy="{c + DOT * 0.6}" r="{DOT * 1.1}" '
-                f'gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="{shade_hex(col, 1.35)}"/>'
-                f'<stop offset="1" stop-color="{col}"/></radialGradient>'
-                f'<linearGradient id="{gid}r" x1="0" y1="{c - DOT}" x2="0" y2="{c + DOT}" '
-                f'gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFF" stop-opacity="0.5"/>'
-                f'<stop offset="0.5" stop-color="#FFF" stop-opacity="0.05"/>'
-                f'<stop offset="1" stop-color="#FFF" stop-opacity="0.6"/></linearGradient></defs>')
-        return (f'{grad}<g opacity="{op}"><circle cx="{c}" cy="{c}" r="{DOT}" fill="url(#{gid})"/>'
-                f'<circle cx="{c}" cy="{c}" r="{DOT - 0.5}" fill="none" stroke="url(#{gid}r)" '
-                f'stroke-width="1"/></g>')
+        user = 'gradientUnits="userSpaceOnUse"'
+        stop = lambda o, col, a=1: f'<stop offset="{o:.4g}" stop-color="{col}" stop-opacity="{a}"/>'
+        vert = f'x1="0" y1="{c - DOT}" x2="0" y2="{c + DOT}" {user}'
+        defs = f'<linearGradient id="{gid}b" {vert}>{stop(0, l["base"][0])}{stop(1, l["base"][1])}</linearGradient>'
+        body = f'<circle cx="{c}" cy="{c}" r="{DOT}" fill="url(#{gid}b)"/>'
+        if "top" in l:
+            # Transparent disc centred low, so only a crescent under the upper edge shows.
+            defs += (f'<radialGradient id="{gid}t" cx="{c}" cy="{c + DOT * 0.58:.4g}" r="{DOT * 1.53:.4g}" {user}>'
+                     f'{stop(0.675, l["top"], 0)}{stop(0.8375, l["top"])}</radialGradient>')
+            core, halo, a = l["bot"]
+            defs += (f'<radialGradient id="{gid}g" cx="{c}" cy="{c + DOT * 0.55:.4g}" r="{DOT * 0.69:.4g}" {user}>'
+                     f'{stop(0.38, core)}{stop(0.69, halo, a)}{stop(1, halo, 0)}</radialGradient>')
+            body += "".join(f'<circle cx="{c}" cy="{c}" r="{DOT}" fill="url(#{gid}{k})"/>' for k in "tg")
+        col, *alphas = l["rim"]
+        w = DOT / 14  # half a point on a 14 pt Mac light
+        for i, a in enumerate(alphas):
+            defs += (f'<linearGradient id="{gid}r{i}" {vert}>{stop(0, col, a)}{stop(0.265, col, 0)}'
+                     f'{stop(0.735, col, 0)}{stop(1, col, a)}</linearGradient>')
+            body += (f'<circle cx="{c}" cy="{c}" r="{DOT - w * (i + 0.5):.4g}" fill="none" '
+                     f'stroke="url(#{gid}r{i})" stroke-width="{w:.4g}"/>')
+        return f'<defs>{defs}</defs><g opacity="{op}">{body}</g>'
 
     shade = f'<circle cx="{c}" cy="{c}" r="{DOT}" fill="#000" fill-opacity="0.2"/>'
     els = {
-        "active": dot(color),
+        "active": dot(light),
         "inactive": dot(LIGHT_INACTIVE),
-        "hover": dot(color) + glyph(kind),
-        "hover-inactive": dot(color) + glyph(kind),
-        "pressed": dot(color) + shade + glyph(kind),
-        "pressed-inactive": dot(color) + shade + glyph(kind),
+        "hover": dot(light) + glyph(kind),
+        "hover-inactive": dot(light) + glyph(kind),
+        "pressed": dot(light) + shade + glyph(kind),
+        "pressed-inactive": dot(light) + shade + glyph(kind),
         "deactivated": dot(LIGHT_INACTIVE, 0.5),
         "deactivated-inactive": dot(LIGHT_INACTIVE, 0.5),
     }
@@ -137,8 +155,8 @@ def button(kind, color):
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "decoration.svg").write_text(svg("".join(frame(p, f, a) for p, (f, a) in STATES.items())))
-    for kind, color in LIGHTS.items():
-        (OUT / f"{kind}.svg").write_text(button(kind, color))
+    for kind, light in LIGHTS.items():
+        (OUT / f"{kind}.svg").write_text(button(kind, light))
     (OUT / "restore.svg").write_text(button("restore", LIGHTS["maximize"]))
 
 
