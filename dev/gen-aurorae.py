@@ -14,8 +14,8 @@ C = P + R       # corner piece size
 
 STATES = {
     # prefix: (titlebar fill, shadow opacity at window edge)
-    "decoration": ("#2B2B2D", 0.15),
-    "decoration-inactive": ("#2B2B2D", 0.08),
+    "decoration": ("#2B2B2D", 0.10),
+    "decoration-inactive": ("#2B2B2D", 0.055),
 }
 
 # Fitted to the Golden Gate lights in a Retina screenshot.
