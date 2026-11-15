@@ -46,7 +46,7 @@ SIZE = 256
 TILE = (14, 242)          # tile edges inside the 256 canvas, like a Breeze app icon's margin
 INNER = 0.72              # how much of the tile a non-square icon's content may fill
 OVERSCAN = 1.03           # a square icon is drawn a little past the tile so no corner shows
-TILE_OPACITY = 0.8        # the light tile lets the panel show through a little
+TILE_OPACITY = 0.6        # the light tile lets the panel show through a little
 SVG_NS = "http://www.w3.org/2000/svg"
 XLINK_NS = "http://www.w3.org/1999/xlink"
 for prefix, uri in [("", SVG_NS), ("xlink", XLINK_NS),
