@@ -23,7 +23,8 @@ SHADOW = 18             # popup shadow reach
 SHADOW_INSET = 16       # tiles reach under the popup to fill around the round corners
 SHADOW_ALPHA = 0.30
 PANEL_SHADOW = 10       # the floating panel's own shadow, so it stands out from the wallpaper
-PANEL_SHADOW_ALPHA = 0.45
+PANEL_SHADOW_ALPHA = 0.30
+PANEL_RIM = 0.10        # 1 px light rim like the windows have; covers the blur's fringe
 TASK_MARGIN = 4
 TASKS = {               # state: (color class, opacity)
     "normal": ("ColorScheme-Text", 0.05),
@@ -46,8 +47,9 @@ def fill(cls, op, extra):
     return f'class="{cls}" fill="currentColor" fill-opacity="{op}" {extra}'
 
 
-def frame(prefix, r, cls, op, margin):
-    """Rounded-rect 9-patch with radius r. prefix '' gives unprefixed names."""
+def frame(prefix, r, cls, op, margin, rim=0):
+    """Rounded-rect 9-patch with radius r. prefix '' gives unprefixed names.
+    rim > 0 adds a 1 px ColorScheme-Text ring of that opacity along the edge."""
     n = (lambda s: f"{prefix}-{s}") if prefix else (lambda s: s)
     f = lambda extra: f'<path {fill(cls, op, extra)}/>' if extra.startswith("d=") else f'<rect {fill(cls, op, extra)}/>'
     arcs = {
@@ -56,9 +58,19 @@ def frame(prefix, r, cls, op, margin):
         "bottomleft": f'd="M{r},{r} A{r},{r} 0 0 1 0,0 L{r},0 Z"',
         "bottomright": f'd="M{r},0 A{r},{r} 0 0 1 0,{r} L0,0 Z"',
     }
-    out = [piece(n(k), r, r, f(v)) for k, v in arcs.items()]
+    ring = lambda d: f'<path {fill("ColorScheme-Text", rim, d)}/>' if rim else ""
+    q = r - 1
+    rings = {  # the corner arc minus the same arc 1 px further in
+        "topleft": f'd="M0,{r} A{r},{r} 0 0 1 {r},0 L{r},1 A{q},{q} 0 0 0 1,{r} Z"',
+        "topright": f'd="M0,0 A{r},{r} 0 0 1 {r},{r} L{q},{r} A{q},{q} 0 0 0 0,1 Z"',
+        "bottomleft": f'd="M{r},{r} A{r},{r} 0 0 1 0,0 L1,0 A{q},{q} 0 0 0 {r},{q} Z"',
+        "bottomright": f'd="M{r},0 A{r},{r} 0 0 1 0,{r} L0,{q} A{q},{q} 0 0 0 {q},0 Z"',
+    }
+    out = [piece(n(k), r, r, f(v) + ring(rings[k])) for k, v in arcs.items()]
+    edges = {"top": "M0,0 h1 v1 h-1 Z", "bottom": f"M0,{q} h1 v1 h-1 Z",
+             "left": "M0,0 h1 v1 h-1 Z", "right": f"M{q},0 h1 v1 h-1 Z"}
     for k, w, h in (("top", 1, r), ("bottom", 1, r), ("left", r, 1), ("right", r, 1), ("center", 1, 1)):
-        out.append(piece(n(k), w, h, f(f'width="{w}" height="{h}"')))
+        out.append(piece(n(k), w, h, f(f'width="{w}" height="{h}"') + (ring(f'd="{edges[k]}"') if k in edges else "")))
     for side in ("top", "bottom", "left", "right"):
         out.append(f'<rect id="{n("hint-" + side + "-margin")}" width="{margin}" height="{margin}" fill="none"/>')
     return "".join(out)
@@ -111,7 +123,7 @@ def dialog(op):
 
 
 def panel(op):
-    return svg(frame("", PANEL_R, "ColorScheme-Background", op, PANEL_MARGIN)
+    return svg(frame("", PANEL_R, "ColorScheme-Background", op, PANEL_MARGIN, PANEL_RIM)
                + frame("mask", PANEL_R, "ColorScheme-Background", 1, PANEL_MARGIN)
                + shadow(PANEL_R, PANEL_SHADOW, PANEL_R, PANEL_SHADOW_ALPHA))
 
