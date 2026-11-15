@@ -180,7 +180,7 @@
          style="fill:currentColor"
          class="ColorScheme-Highlight"
          transform="matrix(.83333333333 0 0 .83333333333 1.83333333333 -52.6666666667)" />
-    </g>
+    <defs><radialGradient id="sht" cx="16" cy="43.83" r="12.75" gradientUnits="userSpaceOnUse"><stop offset="0.675" stop-color="#ffffff" stop-opacity="0"/><stop offset="0.8375" stop-color="#ffffff" stop-opacity="0.22"/></radialGradient><radialGradient id="shg" cx="16" cy="43.58" r="5.75" gradientUnits="userSpaceOnUse"><stop offset="0.38" stop-color="#ffffff" stop-opacity="0.16"/><stop offset="0.69" stop-color="#ffffff" stop-opacity="0.08"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient><linearGradient id="shr" x1="0" y1="30.6667" x2="0" y2="47.3333" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffffff" stop-opacity="0.6"/><stop offset="0.265" stop-color="#ffffff" stop-opacity="0"/><stop offset="0.735" stop-color="#ffffff" stop-opacity="0"/><stop offset="1" stop-color="#ffffff" stop-opacity="0.4"/></linearGradient></defs><circle cx="16" cy="39" r="8.3333" fill="url(#sht)"/><circle cx="16" cy="39" r="8.3333" fill="url(#shg)"/><circle cx="16" cy="39" r="8.036" fill="none" stroke="url(#shr)" stroke-width="0.5952"/></g>
     <g
        id="vertical-slider-hover"
        style=""
@@ -227,7 +227,7 @@
          style="fill:currentColor"
          class="ColorScheme-Highlight"
          transform="matrix(.83333333333 0 0 .83333333333 1.83333333333 -22.6666666667)" />
-    </g>
+    <defs><radialGradient id="svt" cx="16" cy="43.83" r="12.75" gradientUnits="userSpaceOnUse"><stop offset="0.675" stop-color="#ffffff" stop-opacity="0"/><stop offset="0.8375" stop-color="#ffffff" stop-opacity="0.22"/></radialGradient><radialGradient id="svg" cx="16" cy="43.58" r="5.75" gradientUnits="userSpaceOnUse"><stop offset="0.38" stop-color="#ffffff" stop-opacity="0.16"/><stop offset="0.69" stop-color="#ffffff" stop-opacity="0.08"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient><linearGradient id="svr" x1="0" y1="30.6667" x2="0" y2="47.3333" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffffff" stop-opacity="0.6"/><stop offset="0.265" stop-color="#ffffff" stop-opacity="0"/><stop offset="0.735" stop-color="#ffffff" stop-opacity="0"/><stop offset="1" stop-color="#ffffff" stop-opacity="0.4"/></linearGradient></defs><circle cx="16" cy="39" r="8.3333" fill="url(#svt)"/><circle cx="16" cy="39" r="8.3333" fill="url(#svg)"/><circle cx="16" cy="39" r="8.036" fill="none" stroke="url(#svr)" stroke-width="0.5952"/></g>
     <g
        id="vertical-slider-shadow"
        transform="translate(0 -36)"

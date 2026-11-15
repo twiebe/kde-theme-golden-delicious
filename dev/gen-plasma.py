@@ -114,19 +114,56 @@ def panel(op):
                + frame("mask", PANEL_R, "ColorScheme-Background", 1, PANEL_MARGIN))
 
 
-BREEZE_SLIDER = Path("/usr/share/plasma/desktoptheme/default/widgets/slider.svgz")
+BREEZE_WIDGETS = Path("/usr/share/plasma/desktoptheme/default/widgets")
+BREEZE_SLIDER = BREEZE_WIDGETS / "slider.svgz"
+
+
+def sheen(gid, cx, cy, r):
+    """Light on a round knob like on the traffic lights (dev/gen-aurorae.py):
+    a bright crescent under the top edge, a glow low inside and a rim that is
+    brightest at top and bottom. White over the accent colour, so it follows it."""
+    user = 'gradientUnits="userSpaceOnUse"'
+    stop = lambda o, a: f'<stop offset="{o}" stop-color="#ffffff" stop-opacity="{a}"/>'
+    vert = f'x1="0" y1="{cy - r:g}" x2="0" y2="{cy + r:g}" {user}'
+    w = r / 14
+    return (f'<defs>'
+            f'<radialGradient id="{gid}t" cx="{cx:g}" cy="{cy + r * 0.58:.4g}" r="{r * 1.53:.4g}" {user}>'
+            f'{stop(0.675, 0)}{stop(0.8375, 0.22)}</radialGradient>'
+            f'<radialGradient id="{gid}g" cx="{cx:g}" cy="{cy + r * 0.55:.4g}" r="{r * 0.69:.4g}" {user}>'
+            f'{stop(0.38, 0.16)}{stop(0.69, 0.08)}{stop(1, 0)}</radialGradient>'
+            f'<linearGradient id="{gid}r" {vert}>{stop(0, 0.6)}{stop(0.265, 0)}{stop(0.735, 0)}{stop(1, 0.4)}</linearGradient>'
+            f'</defs>'
+            f'<circle cx="{cx:g}" cy="{cy:g}" r="{r:g}" fill="url(#{gid}t)"/>'
+            f'<circle cx="{cx:g}" cy="{cy:g}" r="{r:g}" fill="url(#{gid}g)"/>'
+            f'<circle cx="{cx:g}" cy="{cy:g}" r="{r - w / 2:.4g}" fill="none" stroke="url(#{gid}r)" stroke-width="{w:.4g}"/>')
+
+
+def accent_knob(text, element, gid, cx, cy, r, new_id=None):
+    """The group element of a Breeze widget SVG with its knob in the accent
+    colour and the sheen on top; as a copy named new_id if given."""
+    start = text.rindex("<g", 0, text.index(f'id="{element}"'))
+    end = text.index("</g>", start)
+    part = re.sub(r'class="ColorScheme-(ButtonBackground|Frame)"', 'class="ColorScheme-Highlight"',
+                  text[start:end])
+    if new_id:
+        part = part.replace(f'id="{element}"', f'id="{new_id}"', 1)
+        part = re.sub(r'\sid="(?!' + re.escape(new_id) + r'")[^"]*"', "", part)  # no clashing ids
+        return text[:end + 4] + part + sheen(gid, cx, cy, r) + "</g>" + text[end + 4:]
+    return text[:start] + part + sheen(gid, cx, cy, r) + text[end:]
 
 
 def slider():
     """Breeze's slider with the knob in the accent colour, like the filled groove."""
     text = gzip.decompress(BREEZE_SLIDER.read_bytes()).decode()
     for knob in ("horizontal-slider-handle", "vertical-slider-handle"):
-        start = text.index(f'id="{knob}"')
-        end = text.index("</g>", start)
-        part = re.sub(r'class="ColorScheme-(ButtonBackground|Frame)"', 'class="ColorScheme-Highlight"',
-                      text[start:end])
-        text = text[:start] + part + text[end:]
+        text = accent_knob(text, knob, f"s{knob[0]}", 16, 39, 8.3333)
     return text
+
+
+def switch():
+    """Breeze's switch with a knob in the accent colour while it is on."""
+    text = gzip.decompress((BREEZE_WIDGETS / "switch.svgz").read_bytes()).decode()
+    return accent_knob(text, "handle", "sw", 78, 26, 11, new_id="handle-active")
 
 
 def main():
@@ -144,6 +181,7 @@ def main():
         svg("".join(frame(s, TASK_R, c, o, TASK_MARGIN) for s, (c, o) in TASKS.items())))
     if BREEZE_SLIDER.exists():
         (OUT / "widgets/slider.svg").write_text(slider())
+        (OUT / "widgets/switch.svg").write_text(switch())
     else:
         print(f"{BREEZE_SLIDER} missing: widgets/slider.svg left as is")
 
