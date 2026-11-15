@@ -1,0 +1,39 @@
+/* Golden Gate for GTK 3 and 4. Imported from ~/.config/gtk-*.0/gtk.css by install.sh. */
+
+/* No separator lines, as in the KDE part (frameContrast=0). */
+separator,
+paned > separator {
+  background: none;
+  background-image: none;
+  box-shadow: none;
+}
+
+/* libadwaita draws its lines with these. */
+:root {
+  --border-color: transparent;
+}
+@define-color borders transparent;
+@define-color unfocused_borders transparent;
+
+/* libadwaita window buttons as traffic lights. GTK 3 apps with Breeze get
+   them from the KWin decoration through kde-gtk-config instead. */
+windowcontrols > button {
+  min-width: 18px;
+  min-height: 18px;
+  padding: 0 4px;
+  background: none;
+  box-shadow: none;
+}
+windowcontrols > button > image {
+  min-width: 18px;
+  min-height: 18px;
+  padding: 0;
+  border-radius: 50%;
+  color: transparent;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.25);
+}
+windowcontrols > button.close > image { background: linear-gradient(#ff8780, #ff5f57); }
+windowcontrols > button.minimize > image { background: linear-gradient(#fecd62, #febc2e); }
+windowcontrols > button.maximize > image { background: linear-gradient(#5ed670, #28c840); }
+windowcontrols > button:hover > image { color: rgba(58, 26, 16, 0.8); }
+windowcontrols > button:backdrop > image { background: #5a5a5e; }

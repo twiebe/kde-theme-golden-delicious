@@ -11,6 +11,7 @@ RUN echo "Server=https://archive.archlinux.org/repos/${ARCH_DATE}/\$repo/os/\$ar
       kwin plasma-workspace plasma-desktop breeze kactivitymanagerd qt6-wayland \
       xorg-xwayland mesa vulkan-swrast noto-fonts \
       konsole dolphin spectacle imagemagick libcap \
+      kde-gtk-config breeze-gtk xdg-desktop-portal-kde gtk3-demos gtk4-demos libadwaita-demos \
  && pacman -Scc --noconfirm \
  # Docker drops CAP_SYS_NICE from the bounding set; with the file cap kwin cannot exec.
  && setcap -r /usr/bin/kwin_wayland \

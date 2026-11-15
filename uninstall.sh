@@ -14,3 +14,9 @@ fi
 kwriteconfig6 --file kwinrc --group org.kde.kdecoration2 --key ButtonsOnLeft --delete
 kwriteconfig6 --file kwinrc --group org.kde.kdecoration2 --key ButtonsOnRight --delete
 qdbus6 org.kde.KWin /KWin reconfigure 2>/dev/null || true
+
+config=${XDG_CONFIG_HOME:-$HOME/.config}
+for v in 3.0 4.0; do
+  rm -f "$config/gtk-$v/golden-gate.css"
+  [[ -f $config/gtk-$v/gtk.css ]] && sed -i "/^@import 'golden-gate.css';$/d" "$config/gtk-$v/gtk.css"
+done

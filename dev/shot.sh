@@ -31,6 +31,7 @@ run() {
   export WAYLAND_DISPLAY=wayland-shot QT_QPA_PLATFORM=wayland
   dbus-update-activation-environment --all
   /usr/lib/kactivitymanagerd >"$home/kamd.log" 2>&1 &
+  kded6 >"$home/kded.log" 2>&1 &
   sleep 1
   plasmashell >"$home/plasmashell.log" 2>&1 &
   sleep 5
