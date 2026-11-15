@@ -38,6 +38,8 @@ ICONS = {
         "user-home": ("house", ACCENT),
         "user-desktop": ("desktop", ACCENT),
         "folder": ("folder", ACCENT),
+        # Places you add yourself get the folder mime icon.
+        "inode-directory": ("folder", ACCENT),
         "folder-open": ("folder-open", ACCENT),
         "folder-documents": ("file-text", ACCENT),
         "folder-download": ("arrow-circle-down", ACCENT),
