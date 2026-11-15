@@ -46,6 +46,7 @@ SIZE = 256
 TILE = (14, 242)          # tile edges inside the 256 canvas, like a Breeze app icon's margin
 INNER = 0.72              # how much of the tile a non-square icon's content may fill
 OVERSCAN = 1.03           # a square icon is drawn a little past the tile so no corner shows
+TILE_OPACITY = 0.8        # the light tile lets the panel show through a little
 SVG_NS = "http://www.w3.org/2000/svg"
 XLINK_NS = "http://www.w3.org/1999/xlink"
 for prefix, uri in [("", SVG_NS), ("xlink", XLINK_NS),
@@ -305,7 +306,7 @@ def tile(files):
             '    <linearGradient id="gdt-tile" x1="0" y1="0" x2="0" y2="1">\n'
             '      <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e2e2e6"/>\n'
             '    </linearGradient>\n  </defs>\n'
-            f'  <path d="{sq}" fill="url(#gdt-tile)"/>\n'
+            f'  <path d="{sq}" fill="url(#gdt-tile)" fill-opacity="{TILE_OPACITY}"/>\n'
             f'  <path d="{sq}" fill="none" stroke="#000000" stroke-opacity="0.10" stroke-width="1.5"/>\n'
             f'  <g transform="{place(content, (off, off, size))}">{inner}</g>\n</svg>\n')
 
