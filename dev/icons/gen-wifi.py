@@ -10,10 +10,13 @@ import math
 from pathlib import Path
 
 OUT = Path(__file__).resolve().parent / "src"
-CX, CY = 12, 19.4       # fan centre
-ANGLE = 41              # half the fan's opening, degrees
+CX, CY = 12, 19.8       # fan centre
+ANGLE = 37              # half the fan's opening, degrees
 DIM = 0.35              # opacity of the unlit parts
-BANDS = [(7.2, 3.0), (12.6, 3.0)]   # (radius of the band's centre line, thickness)
+DOT = 3.6               # wedge radius; its rounded rim adds 0.6
+GAP = 2.2               # between dot and first band, and between the bands
+W = 3.2                 # band thickness
+BANDS = [(DOT + 0.6 + GAP + W / 2, W), (DOT + 0.6 + 2 * GAP + 1.5 * W, W)]  # (centre radius, thickness)
 
 HEAD = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
@@ -29,7 +32,7 @@ def parts(lit, slash=False):
     """lit: how many of dot, inner band, outer band are lit (0..3)."""
     op = lambda i: "" if i < lit else f' opacity="{DIM}"'
     # Dot: a small wedge with rounded corners (filled, plus a round-joined rim).
-    r = 3.2
+    r = DOT
     dot = f"M{CX} {CY} L{pt(r, -ANGLE)} A{r} {r} 0 0 1 {pt(r, ANGLE)} Z"
     out = (f'  <g class="ColorScheme-Text" fill="currentColor" stroke="currentColor" stroke-width="1.2" '
            f'stroke-linejoin="round"{op(0)}>\n    <path d="{dot}"/>\n  </g>\n')

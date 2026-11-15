@@ -13,6 +13,12 @@ PANEL_OPACITY = 0.96    # solid/: opaque panel, adaptive with a maximized window
 PANEL_TRANSLUCENT = 0.70  # widgets/: translucent panel
 PANEL_MARGIN = 4
 TASK_R = 10
+DIALOG_R = 16           # popups (applets, krunner): same radius as the windows
+DIALOG_OPACITY = 0.82   # dialogs/: translucent, KWin blurs behind it
+DIALOG_MARGIN = 6       # keeps content out of the rounded corners
+SHADOW = 18             # popup shadow reach
+SHADOW_INSET = 0        # shadow tiles start at the popup edge
+SHADOW_ALPHA = 0.30
 TASK_MARGIN = 4
 TASKS = {               # state: (color class, opacity)
     "normal": ("ColorScheme-Text", 0.05),
@@ -58,6 +64,46 @@ def svg(content):
             f'<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><defs>{STYLE}</defs>{content}</svg>\n')
 
 
+def shadow():
+    """Shadow 9-patch around a rounded popup. Corner gradients are centred on
+    the popup's corner arc, so the shadow follows the curve; inside the popup
+    they stay clear, which matters under a translucent background."""
+    S, I, R, A = SHADOW, SHADOW_INSET, DIALOG_R, SHADOW_ALPHA
+    T = S + I
+    inner = R / (R + S)
+    stops = (f'<stop offset="0" stop-color="#000" stop-opacity="0"/>'
+             f'<stop offset="{inner - 0.001:.4f}" stop-color="#000" stop-opacity="0"/>'
+             f'<stop offset="{inner:.4f}" stop-color="#000" stop-opacity="{A}"/>'
+             f'<stop offset="{inner + (1 - inner) * 0.35:.4f}" stop-color="#000" stop-opacity="{A * 0.35:.3f}"/>'
+             f'<stop offset="1" stop-color="#000" stop-opacity="0"/>')
+    side = (f'<stop offset="0" stop-color="#000" stop-opacity="0"/>'
+            f'<stop offset="{0.35 * S / T:.4f}" stop-color="#000" stop-opacity="{A * 0.35:.3f}"/>'
+            f'<stop offset="{S / T:.4f}" stop-color="#000" stop-opacity="{A}"/>'
+            f'<stop offset="{S / T + 0.001:.4f}" stop-color="#000" stop-opacity="0"/>'
+            f'<stop offset="1" stop-color="#000" stop-opacity="0"/>')
+    defs, out = [], []
+    # corner: (id, centre of the corner arc in tile coords)
+    for k, cx, cy in (("topleft", S + R, S + R), ("topright", I - R, S + R),
+                      ("bottomleft", S + R, I - R), ("bottomright", I - R, I - R)):
+        defs.append(f'<radialGradient id="g-{k}" gradientUnits="userSpaceOnUse" cx="{cx}" cy="{cy}" r="{R + S}">{stops}</radialGradient>')
+        out.append(piece(f"shadow-{k}", T, T, f'<rect width="{T}" height="{T}" fill="url(#g-{k})"/>'))
+    for k, w, h, x1, y1, x2, y2 in (("top", 1, T, 0, 0, 0, T), ("bottom", 1, T, 0, T, 0, 0),
+                                    ("left", T, 1, 0, 0, T, 0), ("right", T, 1, T, 0, 0, 0)):
+        defs.append(f'<linearGradient id="g-{k}" gradientUnits="userSpaceOnUse" x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}">{side}</linearGradient>')
+        out.append(piece(f"shadow-{k}", w, h, f'<rect width="{w}" height="{h}" fill="url(#g-{k})"/>'))
+    out.append(piece("shadow-center", 1, 1))
+    for side_ in ("top", "bottom", "left", "right"):
+        out.append(f'<rect id="shadow-hint-{side_}-margin" width="{T}" height="{T}" fill="none"/>')
+        out.append(f'<rect id="shadow-hint-{side_}-inset" width="{I}" height="{I}" fill="none"/>')
+    return "<defs>" + "".join(defs) + "</defs>" + "".join(out)
+
+
+def dialog(op):
+    return svg(frame("", DIALOG_R, "ColorScheme-Background", op, DIALOG_MARGIN)
+               + frame("mask", DIALOG_R, "ColorScheme-Background", 1, DIALOG_MARGIN)
+               + shadow())
+
+
 def panel(op):
     return svg(frame("", PANEL_R, "ColorScheme-Background", op, PANEL_MARGIN)
                + frame("mask", PANEL_R, "ColorScheme-Background", 1, PANEL_MARGIN))
@@ -70,6 +116,10 @@ def main():
     (OUT / "solid/widgets").mkdir(parents=True, exist_ok=True)
     (OUT / "widgets/panel-background.svg").write_text(panel(PANEL_TRANSLUCENT))
     (OUT / "solid/widgets/panel-background.svg").write_text(panel(PANEL_OPACITY))
+    for d in ("dialogs", "solid/dialogs"):
+        (OUT / d).mkdir(parents=True, exist_ok=True)
+    (OUT / "dialogs/background.svg").write_text(dialog(DIALOG_OPACITY))
+    (OUT / "solid/dialogs/background.svg").write_text(dialog(1))
     (OUT / "widgets/tasks.svg").write_text(
         svg("".join(frame(s, TASK_R, c, o, TASK_MARGIN) for s, (c, o) in TASKS.items())))
 
