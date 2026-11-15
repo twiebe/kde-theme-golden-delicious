@@ -14,6 +14,7 @@ Runs inside the harness image, which has the pinned Breeze icons:
 import os
 import re
 import shutil
+import sys
 import subprocess
 import tempfile
 import xml.etree.ElementTree as ET
@@ -178,6 +179,17 @@ def main():
     VIEWS.update(fit_views())
     print(f"{sum(v != f'{12 - VIEW} {12 - VIEW} {2 * VIEW} {2 * VIEW}' for v in VIEWS.values())} drawings need a wider view")
     big = big_names()
+    sys.path.insert(0, str(Path(__file__).resolve().parent / "icons"))
+    import folders
+    colour = set(folders.names()) | {"inode-directory"}
+    # A big name still goes into 1x when we draw it in colour at the big sizes,
+    # or when a shorter name we ship at 1x would catch it: KIconLoader tries
+    # user-trash, then user, in our theme before it asks Breeze.
+    small = {p.stem for p in SRC.glob("*/*/*.svg")} - big
+    def at_1x(name):
+        parts = name.split("-")
+        return (name not in big or name in colour
+                or any("-".join(parts[:i]) in small for i in range(1, len(parts))))
     fixed, scaled = [], []
     drawn, fallback = set(), set()
     for ctx in CONTEXTS:
@@ -186,7 +198,7 @@ def main():
             if not src.is_dir():
                 continue
             hi = OUT / ctx / f"{size}@2x"   # every icon, for scaled screens
-            lo = OUT / ctx / str(size)       # only icons Breeze has no big version of
+            lo = OUT / ctx / str(size)       # mostly icons Breeze has no big version of (at_1x)
             hi.mkdir(parents=True)
             lo.mkdir(parents=True)
             entries = sorted(src.glob("*.svg"))
@@ -217,7 +229,7 @@ def main():
             if ctx == "places" and (hi / "folder.svg").exists():
                 (hi / "inode-directory.svg").symlink_to("folder.svg")
             for f in sorted(hi.iterdir()):
-                if f.stem not in big:
+                if at_1x(f.stem):
                     (lo / f.name).symlink_to(f"../{hi.name}/{f.name}")
             (OUT / ctx / f"{size}@3x").symlink_to(hi.name)
             if any(lo.iterdir()):
@@ -225,6 +237,13 @@ def main():
             else:
                 lo.rmdir()
             scaled += [(ctx, size, f"{ctx}/{size}@2x", 2), (ctx, size, f"{ctx}/{size}@3x", 3)]
+
+    # Colour folders like macOS from 32 px up, where Breeze has its colour ones.
+    raw = lambda n: (OURS / f"{n}.svg").read_text() if (OURS / f"{n}.svg").exists() else None
+    print(f"{len(folders.build(OUT / 'places/scalable', raw))} colour folders")
+    for scale in (2, 3):
+        (OUT / f"places/scalable@{scale}x").symlink_to("scalable")
+    colour = [("places/scalable", 1), ("places/scalable@2x", 2), ("places/scalable@3x", 3)]
 
     head = f"""[Icon Theme]
 Name=Golden Delicious
@@ -241,13 +260,16 @@ MainToolbarSizes=16,22,24
 PanelDefault=48
 DialogDefault=32
 DesktopDefault=48
-Directories={",".join(d for *_, d, _ in fixed)}
-ScaledDirectories={",".join(d for *_, d, _ in scaled)}
+Directories={",".join([d for *_, d, _ in fixed] + ["places/scalable"])}
+ScaledDirectories={",".join([d for *_, d, _ in scaled] + ["places/scalable@2x", "places/scalable@3x"])}
 """
     sections = "".join(
         f"\n[{d}]\nSize={size}\n" + (f"Scale={scale}\n" if scale > 1 else "")
         + f"Context={ctx.capitalize()}\nType=Fixed\n"
-        for ctx, size, d, scale in fixed + scaled)
+        for ctx, size, d, scale in fixed + scaled) + "".join(
+        f"\n[{d}]\nSize=64\nMinSize=32\nMaxSize=512\n" + (f"Scale={scale}\n" if scale > 1 else "")
+        + "Context=Places\nType=Scalable\n"
+        for d, scale in colour)
     (OUT / "index.theme").write_text(head + sections)
     shutil.copy("/usr/share/licenses/spdx/LGPL-3.0-or-later.txt", OUT / "LICENSE")
     (OUT / "README").write_text(
