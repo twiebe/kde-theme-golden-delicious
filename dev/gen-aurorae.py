@@ -18,7 +18,7 @@ STATES = {
     "decoration-inactive": ("#2B2B2D", 0.08),
 }
 
-LIGHTS = {"close": "#FF5F57", "minimize": "#FEBC2E", "maximize": "#28C840"}
+LIGHTS = {"close": "#FF5F57", "minimize": "#FFB800", "maximize": "#16C22A"}
 LIGHT_INACTIVE = "#5A5A5E"
 GLYPH = "#3A1A10"
 BTN = 28        # button box, must match ButtonWidth/ButtonHeight
@@ -105,13 +105,19 @@ def button(kind, color):
     n = iter(range(100))
 
     def dot(col, op=1):
-        # Depth like macOS: lighter top, darker rim.
+        # Lit from inside like Golden Gate: saturated top, a glow rising from
+        # the bottom, and a light rim that is brightest at the bottom.
         gid = f"l{kind}{next(n)}"
-        grad = (f'<defs><radialGradient id="{gid}" cx="{c}" cy="{c - DOT * 0.45}" r="{DOT * 1.3}" '
-                f'gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="{shade_hex(col, 1.25)}"/>'
-                f'<stop offset="1" stop-color="{col}"/></radialGradient></defs>')
-        return (f'{grad}<circle cx="{c}" cy="{c}" r="{DOT - 0.4}" fill="url(#{gid})" fill-opacity="{op}" '
-                f'stroke="{shade_hex(col, 0.72)}" stroke-width="0.8" stroke-opacity="{op}"/>')
+        grad = (f'<defs><radialGradient id="{gid}" cx="{c}" cy="{c + DOT * 0.6}" r="{DOT * 1.1}" '
+                f'gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="{shade_hex(col, 1.35)}"/>'
+                f'<stop offset="1" stop-color="{col}"/></radialGradient>'
+                f'<linearGradient id="{gid}r" x1="0" y1="{c - DOT}" x2="0" y2="{c + DOT}" '
+                f'gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFF" stop-opacity="0.5"/>'
+                f'<stop offset="0.5" stop-color="#FFF" stop-opacity="0.05"/>'
+                f'<stop offset="1" stop-color="#FFF" stop-opacity="0.6"/></linearGradient></defs>')
+        return (f'{grad}<g opacity="{op}"><circle cx="{c}" cy="{c}" r="{DOT}" fill="url(#{gid})"/>'
+                f'<circle cx="{c}" cy="{c}" r="{DOT - 0.5}" fill="none" stroke="url(#{gid}r)" '
+                f'stroke-width="1"/></g>')
 
     shade = f'<circle cx="{c}" cy="{c}" r="{DOT}" fill="#000" fill-opacity="0.2"/>'
     els = {
