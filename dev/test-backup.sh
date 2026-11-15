@@ -13,8 +13,8 @@ echo "ColorScheme=Mine" >"$T/.config/kdeglobals"
 echo "user css" >"$T/.config/gtk-4.0/gtk.css"
 
 b1=$(./backup.sh)
-echo "ColorScheme=GoldenGate" >"$T/.config/kdeglobals"
-echo "@import 'golden-gate.css';" >>"$T/.config/gtk-4.0/gtk.css"
+echo "ColorScheme=GoldenDelicious" >"$T/.config/kdeglobals"
+echo "@import 'golden-delicious.css';" >>"$T/.config/gtk-4.0/gtk.css"
 mkdir -p "$T/.config/gtk-3.0"
 for _ in 1 2 3 4 5 6; do ./backup.sh >/dev/null; done
 check "rotation keeps 5" '[[ $(./restore.sh --list | wc -l) == 5 ]]'
@@ -32,7 +32,7 @@ echo gtk-3.0 >"$b0/absent"
 check "kdeglobals restored" 'grep -q Mine "$T/.config/kdeglobals"'
 check "gtk.css restored" '[[ $(cat "$T/.config/gtk-4.0/gtk.css") == "user css" ]]'
 check "absent path removed" '[[ ! -e $T/.config/gtk-3.0 ]]'
-check "restore backed up current state first" 'grep -q GoldenGate "$(./restore.sh --list | tail -n 1)/kdeglobals"'
+check "restore backed up current state first" 'grep -q GoldenDelicious "$(./restore.sh --list | tail -n 1)/kdeglobals"'
 
 rm -rf "${T:?}"
 exit $fail

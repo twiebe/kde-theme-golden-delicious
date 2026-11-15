@@ -8,7 +8,10 @@ set -euo pipefail
 
 here=$(cd "$(dirname "$0")" && pwd)
 config=${XDG_CONFIG_HOME:-$HOME/.config}
-root=${XDG_STATE_HOME:-$HOME/.local/state}/golden-gate/backups
+state=${XDG_STATE_HOME:-$HOME/.local/state}
+# Backups made under the old name Golden Gate move along.
+[[ -d $state/golden-gate && ! -e $state/golden-delicious ]] && mv "$state/golden-gate" "$state/golden-delicious"
+root=$state/golden-delicious/backups
 
 if [[ ${1:-} == --list ]]; then
   find "$root" -mindepth 1 -maxdepth 1 -type d 2>/dev/null | sort

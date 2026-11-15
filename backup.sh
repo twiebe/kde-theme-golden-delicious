@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
-# Back up the config files the Golden Gate install touches, keeping the newest
+# Back up the config files the Golden Delicious install touches, keeping the newest
 # few backups. install.sh and restore.sh call this before they change anything.
 # Usage: ./backup.sh   (prints the new backup directory)
 # Env: GG_KEEP_BACKUPS (default 5)
 set -euo pipefail
 
 config=${XDG_CONFIG_HOME:-$HOME/.config}
-root=${XDG_STATE_HOME:-$HOME/.local/state}/golden-gate/backups
+state=${XDG_STATE_HOME:-$HOME/.local/state}
+# Backups made under the old name Golden Gate move along.
+[[ -d $state/golden-gate && ! -e $state/golden-delicious ]] && mv "$state/golden-gate" "$state/golden-delicious"
+root=$state/golden-delicious/backups
 keep=${GG_KEEP_BACKUPS:-5}
 
 # Paths relative to $config.

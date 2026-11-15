@@ -6,7 +6,7 @@
 set -euo pipefail
 
 repo=$(cd "$(dirname "$0")/.." && pwd)
-image=golden-gate-shot:6.8
+image=golden-delicious-shot:6.8
 docker image inspect "$image" >/dev/null 2>&1 || docker build -t "$image" "$repo/dev/docker"
 
 out=$(realpath -m "$1"); shift

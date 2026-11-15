@@ -17,8 +17,8 @@ qdbus6 org.kde.KWin /KWin reconfigure 2>/dev/null || true
 
 config=${XDG_CONFIG_HOME:-$HOME/.config}
 for v in 3.0 4.0; do
-  rm -f "$config/gtk-$v/golden-gate.css"
-  [[ -f $config/gtk-$v/gtk.css ]] && sed -i "/^@import 'golden-gate.css';$/d" "$config/gtk-$v/gtk.css"
+  rm -f "$config/gtk-$v/golden-delicious.css"
+  [[ -f $config/gtk-$v/gtk.css ]] && sed -i "/^@import 'golden-delicious.css';$/d" "$config/gtk-$v/gtk.css"
 done
 
 if command -v flatpak >/dev/null; then

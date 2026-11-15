@@ -1,7 +1,7 @@
 # Splits the Breeze names still to draw into batch lists tmp/batches/NN.txt and
 # copies the Breeze originals to tmp/breeze22/<context>/ for reference (22 px,
 # or 16 px where Breeze has no 22). Run in the harness image:
-#   docker run --rm -v "$PWD:/repo" -w /repo --entrypoint python3 golden-gate-shot:6.8 dev/icons/plan-batches.py [first-batch-number]
+#   docker run --rm -v "$PWD:/repo" -w /repo --entrypoint python3 golden-delicious-shot:6.8 dev/icons/plan-batches.py [first-batch-number]
 import os
 import re
 import shutil

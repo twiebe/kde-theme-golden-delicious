@@ -27,7 +27,7 @@ Consistency inside families matters more than detail:
 Output: dev/icons/src/<name>.svg, one per name in your batch file. Overwrite if it exists.
 
 Check: build one contact sheet of your batch instead of one render per file, e.g.
-  docker run --rm -v "$PWD:/repo" -w /repo --entrypoint bash golden-gate-shot:6.8 -c '
+  docker run --rm -v "$PWD:/repo" -w /repo --entrypoint bash golden-delicious-shot:6.8 -c '
     for n in $(cat tmp/batches/NN.txt); do
       rsvg-convert -w 48 -h 48 dev/icons/src/$n.svg -o /tmp/$n-48.png
       rsvg-convert -w 16 -h 16 dev/icons/src/$n.svg -o /tmp/$n-16.png; done

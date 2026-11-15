@@ -131,8 +131,8 @@ ForegroundPositive=48,209,88
 ForegroundVisited=191,90,242
 
 [General]
-ColorScheme=GoldenGate
-Name=Golden Gate
+ColorScheme=GoldenDelicious
+Name=Golden Delicious
 shadeSortColumn=true
 
 [KDE]

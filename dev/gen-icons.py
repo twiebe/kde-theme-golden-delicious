@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate the Golden Gate icon theme from our own drawings in dev/icons/src,
+"""Generate the Golden Delicious icon theme from our own drawings in dev/icons/src,
 under Breeze Dark's names, sizes and aliases.
 
 A name we have not drawn yet falls back to Breeze's monochrome icon with
@@ -9,7 +9,7 @@ icons are left out and keep coming from the inherited themes.
 
 Runs inside the harness image, which has the pinned Breeze icons:
   docker run --rm -v "$PWD:/repo" -w /repo --entrypoint python3 \\
-    golden-gate-shot:6.8 dev/gen-icons.py
+    golden-delicious-shot:6.8 dev/gen-icons.py
 """
 import os
 import re
@@ -19,7 +19,7 @@ from pathlib import Path
 
 SRC = Path("/usr/share/icons/breeze-dark")
 REPO = Path(__file__).resolve().parent.parent
-OUT = REPO / "src/icons/golden-gate"
+OUT = REPO / "src/icons/golden-delicious"
 OURS = REPO / "dev/icons/src"
 # Names we don't draw separately: -symbolic twins and coloured folders.
 TWIN = re.compile(r"-symbolic$|(?<=^folder)-(brown|magenta|green|black|yellow|cyan|orange|violet|grey|blue|red)$")
@@ -158,7 +158,7 @@ def main():
             scaled += [(ctx, size, f"{ctx}/{size}@2x", 2), (ctx, size, f"{ctx}/{size}@3x", 3)]
 
     head = f"""[Icon Theme]
-Name=Golden Gate
+Name=Golden Delicious
 Comment=Soft line icons in the spirit of macOS, under Breeze's names
 Inherits=WhiteSur-dark,breeze-dark,hicolor
 FollowsColorScheme=true
@@ -182,7 +182,7 @@ ScaledDirectories={",".join(d for *_, d, _ in scaled)}
     (OUT / "index.theme").write_text(head + sections)
     shutil.copy("/usr/share/licenses/spdx/LGPL-3.0-or-later.txt", OUT / "LICENSE")
     (OUT / "README").write_text(
-        "Golden Gate icons, drawn for this theme (dev/icons/src). Names not drawn\n"
+        "Golden Delicious icons, drawn for this theme (dev/icons/src). Names not drawn\n"
         "yet are modified Breeze icons (KDE, LGPL-3.0-or-later): monochrome icons\n"
         f"from breeze-dark with every line widened by {WIDTH} px. See dev/gen-icons.py.\n")
     fallback -= drawn

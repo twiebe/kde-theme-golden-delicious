@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Install the Golden Gate theme into ~/.local/share and apply it.
+# Install the Golden Delicious theme into ~/.local/share and apply it.
 # Run inside a Plasma session. Safe to run again; each run backs up the
 # config it changes first (see backup.sh, undo with restore.sh).
 # Usage: ./install.sh [--layout]
@@ -14,16 +14,25 @@ config=${XDG_CONFIG_HOME:-$HOME/.config}
 echo "backup: $("$here/backup.sh")"
 
 mkdir -p "$data"
+# The theme used to be called Golden Gate: drop what an old install left.
+for p in aurorae/themes/golden-gate plasma/desktoptheme/golden-gate plasma/look-and-feel/golden-gate \
+  icons/golden-gate color-schemes/GoldenGate.colors; do
+  rm -rf "${data:?}/$p"
+done
+for v in 3.0 4.0; do
+  rm -f "$config/gtk-$v/golden-gate.css"
+  [[ -f $config/gtk-$v/gtk.css ]] && sed -i "/^@import 'golden-gate.css';$/d" "$config/gtk-$v/gtk.css"
+done
 # Replace our own theme dirs whole, so files dropped from the repo don't linger.
-(cd "$here/src" && find . -mindepth 2 -maxdepth 3 -name 'golden-gate' -o -name 'GoldenGate.colors') |
+(cd "$here/src" && find . -mindepth 2 -maxdepth 3 -name 'golden-delicious' -o -name 'GoldenDelicious.colors') |
   while read -r p; do rm -rf "${data:?}/$p"; done
 cp -r "$here/src/." "$data/"
 
 # Global theme: colors, Plasma style and decoration (and the panel layout on request).
 if [[ ${1:-} == --layout ]]; then
-  plasma-apply-lookandfeel -a golden-gate --resetLayout
+  plasma-apply-lookandfeel -a golden-delicious --resetLayout
 else
-  plasma-apply-lookandfeel -a golden-gate
+  plasma-apply-lookandfeel -a golden-delicious
 fi
 
 # Things a global theme does not carry.
@@ -44,9 +53,9 @@ for v in 3.0 4.0; do
   mkdir -p "$dir"
   kwriteconfig6 --file "$dir/settings.ini" --group Settings --key gtk-theme-name Breeze
   kwriteconfig6 --file "$dir/settings.ini" --group Settings --key gtk-decoration-layout "close,minimize,maximize:"
-  cp "$here/gtk/golden-gate.css" "$dir/"
-  grep -qxF "@import 'golden-gate.css';" "$dir/gtk.css" 2>/dev/null ||
-    echo "@import 'golden-gate.css';" >>"$dir/gtk.css"
+  cp "$here/gtk/golden-delicious.css" "$dir/"
+  grep -qxF "@import 'golden-delicious.css';" "$dir/gtk.css" 2>/dev/null ||
+    echo "@import 'golden-delicious.css';" >>"$dir/gtk.css"
 done
 
 # Flatpak apps cannot see the host GTK config or themes: let them read the

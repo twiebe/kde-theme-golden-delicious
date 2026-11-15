@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Generate the Plasma style SVGs for Golden Gate.
+"""Generate the Plasma style SVGs for Golden Delicious.
 
 Run from the repo root: python3 dev/gen-plasma.py
-Writes into src/plasma/desktoptheme/golden-gate/.
+Writes into src/plasma/desktoptheme/golden-delicious/.
 """
 from pathlib import Path
 
-OUT = Path(__file__).resolve().parent.parent / "src/plasma/desktoptheme/golden-gate"
+OUT = Path(__file__).resolve().parent.parent / "src/plasma/desktoptheme/golden-delicious"
 
 PANEL_R = 14            # panel corner radius
 PANEL_OPACITY = 0.96    # solid/: opaque panel, adaptive with a maximized window

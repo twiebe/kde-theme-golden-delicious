@@ -1,4 +1,4 @@
-# Golden Gate icon style
+# Golden Delicious icon style
 
 Monochrome symbolic icons in the spirit of SF Symbols (regular weight), not a
 copy of them. Softer and rounder than Breeze. The references in `src/`

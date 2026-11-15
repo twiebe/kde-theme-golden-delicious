@@ -1,8 +1,8 @@
 {
     "KPackageStructure": "Plasma/LookAndFeel",
     "KPlugin": {
-        "Id": "golden-gate",
-        "Name": "Golden Gate",
+        "Id": "golden-delicious",
+        "Name": "Golden Delicious",
         "Description": "Dark theme with traffic-light windows and a soft floating panel, in the style of macOS Golden Gate",
         "License": "MIT",
         "Version": "0.1"

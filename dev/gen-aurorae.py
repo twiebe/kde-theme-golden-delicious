@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-"""Generate the Aurorae decoration SVGs for Golden Gate.
+"""Generate the Aurorae decoration SVGs for Golden Delicious.
 
 Run from the repo root: python3 dev/gen-aurorae.py
-Writes into src/aurorae/themes/golden-gate/. Tune the constants below and rerun.
+Writes into src/aurorae/themes/golden-delicious/. Tune the constants below and rerun.
 """
 from pathlib import Path
 
-OUT = Path(__file__).resolve().parent.parent / "src/aurorae/themes/golden-gate"
+OUT = Path(__file__).resolve().parent.parent / "src/aurorae/themes/golden-delicious"
 
-P = 20          # shadow padding, must match Padding* in golden-gaterc
+P = 20          # shadow padding, must match Padding* in golden-deliciousrc
 R = 16          # top corner radius
 C = P + R       # corner piece size
 

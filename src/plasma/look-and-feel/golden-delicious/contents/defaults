@@ -1,18 +1,18 @@
 [kdeglobals][General]
-ColorScheme=GoldenGate
+ColorScheme=GoldenDelicious
 
 [kdeglobals][KDE]
 widgetStyle=Breeze
 
 [kdeglobals][Icons]
-Theme=golden-gate
+Theme=golden-delicious
 
 [plasmarc][Theme]
-name=golden-gate
+name=golden-delicious
 
 [kwinrc][org.kde.kdecoration2]
 library=org.kde.kwin.aurorae
-theme=__aurorae__svg__golden-gate
+theme=__aurorae__svg__golden-delicious
 # No visible borders; KWin then adds invisible resize edges.
 BorderSize=None
 ButtonsOnLeft=XIA
