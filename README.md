@@ -4,6 +4,10 @@ A lean Plasma 6 theme with the feel of macOS Golden Gate: traffic-light window
 buttons, rounded corners with a soft shadow, a floating translucent top panel
 with soft rounded task highlights, and a dark color scheme with blur.
 
+![Dolphin and a libadwaita app with Golden Gate](docs/screenshots/overview.png)
+
+![Traffic lights, titlebar and sidebar icons up close](docs/screenshots/titlebar.png)
+
 ## Install
 
 Run inside a Plasma session:
