@@ -45,3 +45,11 @@ for v in 3.0 4.0; do
   grep -qxF "@import 'golden-gate.css';" "$dir/gtk.css" 2>/dev/null ||
     echo "@import 'golden-gate.css';" >>"$dir/gtk.css"
 done
+
+# Flatpak apps cannot see the host GTK config or themes: let them read the
+# config, and give GTK3 apps Breeze from Flathub.
+if command -v flatpak >/dev/null; then
+  flatpak override --user --filesystem=xdg-config/gtk-3.0:ro --filesystem=xdg-config/gtk-4.0:ro
+  flatpak install --user -y --noninteractive flathub org.gtk.Gtk3theme.Breeze >/dev/null 2>&1 ||
+    echo "note: could not install org.gtk.Gtk3theme.Breeze for Flatpak GTK3 apps" >&2
+fi

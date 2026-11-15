@@ -20,3 +20,7 @@ for v in 3.0 4.0; do
   rm -f "$config/gtk-$v/golden-gate.css"
   [[ -f $config/gtk-$v/gtk.css ]] && sed -i "/^@import 'golden-gate.css';$/d" "$config/gtk-$v/gtk.css"
 done
+
+if command -v flatpak >/dev/null; then
+  flatpak override --user --nofilesystem=xdg-config/gtk-3.0 --nofilesystem=xdg-config/gtk-4.0
+fi
