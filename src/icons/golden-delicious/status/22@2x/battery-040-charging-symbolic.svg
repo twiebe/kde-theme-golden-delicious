@@ -1,6 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="1.35 1.35 21.3 21.3">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="1.55 1.55 20.9 20.9">
   <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
-  <path class="ColorScheme-Text" fill="currentColor" opacity="0.35" d="M12.4,7.4 L9.04,11.524 L9.04,5.6 L16.4,5.6 C18.499,5.6 20.2,7.301 20.2,9.4 L20.2,14.6 C20.2,16.699 18.499,18.4 16.4,18.4 L9.04,18.4 L9.04,12.8 L10.9,12.8 L9.8,16.6 L14.2,11.2 L11.3,11.2 Z"/>
-  <path class="ColorScheme-Text" fill="currentColor" d="M5.4,5.6 L9.04,5.6 L9.04,11.524 L8,12.8 L9.04,12.8 L9.04,18.4 L5.4,18.4 C3.301,18.4 1.6,16.699 1.6,14.6 L1.6,9.4 C1.6,7.301 3.301,5.6 5.4,5.6 Z"/>
-  <path class="ColorScheme-Text" fill="currentColor" opacity="0.35" d="M21.8,9.6 L21.8,9.6 C22.242,9.6 22.6,9.958 22.6,10.4 L22.6,13.6 C22.6,14.042 22.242,14.4 21.8,14.4 L21.8,14.4 C21.358,14.4 21,14.042 21,13.6 L21,10.4 C21,9.958 21.358,9.6 21.8,9.6 Z"/>
+  <path class="ColorScheme-Text" fill="currentColor" opacity="0.45" d="M11.792,18.4 L16.14,10.55 L12.88,10.55 L13.574,5.6 L16.4,5.6 C18.499,5.6 20.2,7.301 20.2,9.4 L20.2,14.6 C20.2,16.699 18.499,18.4 16.4,18.4 Z M9.04,9.374 L9.04,5.6 L11.182,5.6 Z M9.04,18.4 L9.04,13.25 L10.13,13.25 L9.422,18.4 Z"/>
+  <path class="ColorScheme-Text" fill="currentColor" d="M5.4,5.6 L9.04,5.6 L9.04,9.374 L6.84,13.25 L9.04,13.25 L9.04,18.4 L5.4,18.4 C3.301,18.4 1.6,16.699 1.6,14.6 L1.6,9.4 C1.6,7.301 3.301,5.6 5.4,5.6 Z"/>
+  <path class="ColorScheme-Text" fill="currentColor" opacity="0.45" d="M21.6,10.2 L21.6,10.2 A0.7 0.7 0 0 1 22.3,10.9 L22.3,13.1 A0.7 0.7 0 0 1 21.6,13.8 L21.6,13.8 A0.7 0.7 0 0 1 20.9,13.1 L20.9,10.9 A0.7 0.7 0 0 1 21.6,10.2 Z"/>
+  <path class="ColorScheme-Text" fill="currentColor" d="M12.9,4.3 L8.3,12.4 L11.1,12.4 L10.1,19.7 L14.7,11.4 L11.9,11.4 Z"/>
 </svg>
