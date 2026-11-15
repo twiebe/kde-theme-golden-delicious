@@ -6,6 +6,7 @@ Writes into src/plasma/desktoptheme/golden-delicious/. The slider comes from
 Breeze's, so run it in the harness image to refresh that one.
 """
 import gzip
+import math
 import re
 from pathlib import Path
 
@@ -19,6 +20,7 @@ TASK_R = 10
 DIALOG_R = 16           # popups (applets, krunner): same radius as the windows
 DIALOG_OPACITY = 0.82   # dialogs/: translucent, KWin blurs behind it
 DIALOG_MARGIN = 6       # keeps content out of the rounded corners
+BUSY_ARC = 90           # degrees of the spinner's arc
 TOOLTIP_GAP = 6         # space between a tooltip and the panel (or whatever it points at)
 SHADOW = 18             # popup shadow reach
 SHADOW_INSET = 16       # tiles reach under the popup to fill around the round corners
@@ -137,6 +139,21 @@ def tooltip(op):
                + shadow(I=SHADOW_INSET + g, pad=g))
 
 
+def busy():
+    """Plasma's one spinner (task launch feedback, connecting, loading): a
+    faint ring with a short arc on it, thinner and quieter than Breeze's."""
+    n, c, r, w = 136, 68, 54, 7
+    a0, a1 = math.radians(-90), math.radians(-90 + BUSY_ARC)
+    arc = (f"M{c + r * math.cos(a0):.2f},{c + r * math.sin(a0):.2f} "
+           f"A{r},{r} 0 0 1 {c + r * math.cos(a1):.2f},{c + r * math.sin(a1):.2f}")
+    st = f'class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="{w}"'
+    body = (f'<circle cx="{c}" cy="{c}" r="{r}" {st} stroke-opacity="0.15"/>'
+            f'<path d="{arc}" {st} stroke-opacity="0.75" stroke-linecap="round"/>')
+    return ('<?xml version="1.0" encoding="UTF-8"?>\n'
+            f'<svg xmlns="http://www.w3.org/2000/svg" width="{n}" height="{n}"><defs>{STYLE}</defs>'
+            f'{piece("busywidget", n, n, body)}</svg>\n')
+
+
 def panel(op):
     return svg(frame("", PANEL_R, "ColorScheme-Background", op, PANEL_MARGIN, PANEL_RIM)
                # Blur and contrast stop 1 px short of the edge: at fractional
@@ -220,6 +237,7 @@ def main():
     (OUT / "dialogs/background.svg").write_text(dialog(DIALOG_OPACITY))
     (OUT / "solid/dialogs/background.svg").write_text(dialog(1))
     (OUT / "widgets/tooltip.svg").write_text(tooltip(DIALOG_OPACITY))
+    (OUT / "widgets/busywidget.svg").write_text(busy())
     (OUT / "solid/widgets/tooltip.svg").write_text(tooltip(1))
     (OUT / "widgets/tasks.svg").write_text(
         svg("".join(frame(s, TASK_R, c, o, TASK_MARGIN) for s, (c, o) in TASKS.items())))
