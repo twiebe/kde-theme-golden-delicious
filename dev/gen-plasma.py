@@ -22,6 +22,8 @@ DIALOG_MARGIN = 6       # keeps content out of the rounded corners
 SHADOW = 18             # popup shadow reach
 SHADOW_INSET = 16       # tiles reach under the popup to fill around the round corners
 SHADOW_ALPHA = 0.30
+PANEL_SHADOW = 10       # the floating panel's own shadow, so it stands out from the wallpaper
+PANEL_SHADOW_ALPHA = 0.45
 TASK_MARGIN = 4
 TASKS = {               # state: (color class, opacity)
     "normal": ("ColorScheme-Text", 0.05),
@@ -67,11 +69,10 @@ def svg(content):
             f'<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><defs>{STYLE}</defs>{content}</svg>\n')
 
 
-def shadow():
+def shadow(R=DIALOG_R, S=SHADOW, I=SHADOW_INSET, A=SHADOW_ALPHA):
     """Shadow 9-patch around a rounded popup. Corner gradients are centred on
     the popup's corner arc, so the shadow follows the curve; inside the popup
     they stay clear, which matters under a translucent background."""
-    S, I, R, A = SHADOW, SHADOW_INSET, DIALOG_R, SHADOW_ALPHA
     T = S + I
     inner = R / (R + S)
     stops = (f'<stop offset="0" stop-color="#000" stop-opacity="0"/>'
@@ -111,7 +112,8 @@ def dialog(op):
 
 def panel(op):
     return svg(frame("", PANEL_R, "ColorScheme-Background", op, PANEL_MARGIN)
-               + frame("mask", PANEL_R, "ColorScheme-Background", 1, PANEL_MARGIN))
+               + frame("mask", PANEL_R, "ColorScheme-Background", 1, PANEL_MARGIN)
+               + shadow(PANEL_R, PANEL_SHADOW, PANEL_R, PANEL_SHADOW_ALPHA))
 
 
 BREEZE_WIDGETS = Path("/usr/share/plasma/desktoptheme/default/widgets")
