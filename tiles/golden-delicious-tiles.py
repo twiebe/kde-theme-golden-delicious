@@ -131,8 +131,8 @@ def rasterise(svg):
 
 
 def alpha_box(data):
-    """Content box of PNG data as fractions (x0, y0, x1, y1) and how much of
-    that box is opaque, or None if the PNG can't be read here."""
+    """Content box of PNG data as fractions (x0, y0, x1, y1) and how fully its
+    edges are covered (0..1), or None if the PNG can't be read here."""
     if not data or data[:8] != b"\x89PNG\r\n\x1a\n":
         return None
     pos, idat, trns, ihdr = 8, b"", None, None
@@ -194,14 +194,20 @@ def alpha_box(data):
     if not xs:
         return None
     x0, x1, y0, y1 = min(xs), max(xs) + 1, min(ys), max(ys) + 1
-    fill = len(xs) / ((x1 - x0) * (y1 - y0))
-    return (x0 / w, y0 / h, x1 / w, y1 / h), fill
+    # Fill measured as the least covered of four lines just inside the box's
+    # edges: a filled (rounded) square covers all four nearly whole, a shape
+    # with feet, a round top or an open side does not.
+    ix, iy = max(1, (x1 - x0) // 20), max(1, (y1 - y0) // 20)
+    lines = [[mask[y0 + iy][x] for x in range(x0, x1)], [mask[y1 - 1 - iy][x] for x in range(x0, x1)],
+             [mask[y][x0 + ix] for y in range(y0, y1)], [mask[y][x1 - 1 - ix] for y in range(y0, y1)]]
+    edges = min(sum(line) / len(line) for line in lines)
+    return (x0 / w, y0 / h, x1 / w, y1 / h), edges
 
 
-def is_square(box, fill):
+def is_square(box, edges):
     x0, y0, x1, y1 = box
     w, h = x1 - x0, y1 - y0
-    return fill >= 0.88 and 0.9 <= w / h <= 1.1 and min(w, h) >= 0.6
+    return edges >= 0.75 and 0.9 <= w / h <= 1.1 and min(w, h) >= 0.6
 
 
 # --- drawing -----------------------------------------------------------------
