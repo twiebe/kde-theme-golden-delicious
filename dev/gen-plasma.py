@@ -24,7 +24,7 @@ SHADOW_INSET = 16       # tiles reach under the popup to fill around the round c
 SHADOW_ALPHA = 0.30
 PANEL_SHADOW = 10       # the floating panel's own shadow, so it stands out from the wallpaper
 PANEL_SHADOW_ALPHA = 0.30
-PANEL_RIM = 0.10        # 1 px light rim like the windows have; covers the blur's fringe
+PANEL_RIM = 0           # opacity of a 1 px light rim like the windows'; 0 for none
 TASK_MARGIN = 4
 TASKS = {               # state: (color class, opacity)
     "normal": ("ColorScheme-Text", 0.05),
