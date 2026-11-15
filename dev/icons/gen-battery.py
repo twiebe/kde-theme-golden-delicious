@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Draw the battery family into dev/icons/src, wide like the macOS menu bar
-battery: a long rounded body, the charge as a solid bar and, while charging, a
-bolt cut out of the bar (even-odd fill, so it shows on full and empty alike).
+"""Draw the battery family into dev/icons/src like the macOS menu bar battery:
+no outline, the whole body is one solid shape. The charged part is opaque, the
+rest dim; while charging a bolt is cut out of both (even-odd fill).
 
 Power profile variants look like the plain icon: the badge doesn't survive the
 tray size. battery-profile-*, battery-missing and battery-ups stay hand drawn.
@@ -14,13 +14,13 @@ OUT = Path(__file__).resolve().parent / "src"
 LEVELS = range(0, 101, 10)
 PROFILES = ["", "-profile-balanced", "-profile-performance", "-profile-powersave"]
 
-X0, X1, Y0, Y1, R = 2.2, 19.6, 5.5, 18.5, 3.6     # body outline, stroke centred
-IX0, IX1, IY0, IY1, IR = 4.1, 17.7, 7.4, 16.6, 1.8   # charge bar area
-BOLT = "M12.6 7.6 L8.3 12.6 H11 L9.9 16.4 L14.2 11.4 H11.5 Z"
+X0, X1, Y0, Y1, R = 1.6, 20.2, 5.6, 18.4, 3.8    # body
+NUB = (21, 9.6, 22.6, 14.4, 0.8)                  # x0, y0, x1, y1, r
+DIM = 0.35                                        # opacity of the empty part
+BOLT = "M12.4 7.4 L8 12.8 H10.9 L9.8 16.6 L14.2 11.2 H11.3 Z"
 
 HEAD = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
-  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
 """
 
 
@@ -31,18 +31,18 @@ def rrect(x0, y0, x1, y1, r):
 
 
 def battery(level, charging):
-    out = HEAD
-    out += f'    <path d="{rrect(X0, Y0, X1, Y1, R)}"/>\n'
-    out += '    <path d="M21.4 10 V14"/>\n  </g>\n'
-    fill = []
-    if level:
-        w = max((IX1 - IX0) * level / 100, 2 * IR)
-        fill.append(rrect(IX0, IY0, round(IX0 + w, 2), IY1, IR))
-    if charging:
-        fill.append(BOLT)
-    if fill:
-        out += ('  <g class="ColorScheme-Text" fill="currentColor" fill-rule="evenodd" stroke="none">\n'
-                f'    <path d="{" ".join(fill)}"/>\n  </g>\n')
+    split = round(X0 + (X1 - X0) * level / 100, 2)
+    body = rrect(X0, Y0, X1, Y1, R) + (" " + BOLT if charging else "")
+    out = HEAD + ('  <defs>\n'
+                  f'    <clipPath id="lit"><path d="M0 0 H{split:g} V24 H0 Z"/></clipPath>\n'
+                  f'    <clipPath id="empty"><path d="M{split:g} 0 H24 V24 H{split:g} Z"/></clipPath>\n'
+                  '  </defs>\n')
+    g = '  <g class="ColorScheme-Text" fill="currentColor" fill-rule="evenodd"{}>\n    <path d="{}"{}/>\n  </g>\n'
+    if level < 100:
+        out += g.format(f' opacity="{DIM}"', body, ' clip-path="url(#empty)"')
+    if level > 0:
+        out += g.format("", body, ' clip-path="url(#lit)"')
+    out += g.format("" if level == 100 else f' opacity="{DIM}"', rrect(*NUB), "")
     return out + "</svg>\n"
 
 
