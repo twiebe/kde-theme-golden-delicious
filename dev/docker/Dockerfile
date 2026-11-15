@@ -12,7 +12,10 @@ RUN echo "Server=https://archive.archlinux.org/repos/${ARCH_DATE}/\$repo/os/\$ar
       xorg-xwayland mesa vulkan-swrast noto-fonts \
       konsole dolphin spectacle imagemagick libcap \
       kde-gtk-config breeze-gtk xdg-desktop-portal-kde gtk3-demos gtk4-demos libadwaita-demos \
+      python-pip \
  && pacman -Scc --noconfirm \
+ # picosvg turns the icon strokes into fills (dev/gen-icons.py).
+ && pip install --break-system-packages --no-cache-dir picosvg==0.23.0 \
  # Docker drops CAP_SYS_NICE from the bounding set; with the file cap kwin cannot exec.
  && setcap -r /usr/bin/kwin_wayland \
  && useradd -m -u 1000 shot

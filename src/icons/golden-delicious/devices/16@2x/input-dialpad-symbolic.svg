@@ -1,15 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="2 2 20 20">
   <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
-  <g class="ColorScheme-Text" fill="currentColor" stroke="none">
-    <path d="M7 3.05 a1.45 1.45 0 1 1 0 2.9 a1.45 1.45 0 1 1 0 -2.9 Z"/>
-    <path d="M12 3.05 a1.45 1.45 0 1 1 0 2.9 a1.45 1.45 0 1 1 0 -2.9 Z"/>
-    <path d="M17 3.05 a1.45 1.45 0 1 1 0 2.9 a1.45 1.45 0 1 1 0 -2.9 Z"/>
-    <path d="M7 7.8 a1.45 1.45 0 1 1 0 2.9 a1.45 1.45 0 1 1 0 -2.9 Z"/>
-    <path d="M12 7.8 a1.45 1.45 0 1 1 0 2.9 a1.45 1.45 0 1 1 0 -2.9 Z"/>
-    <path d="M17 7.8 a1.45 1.45 0 1 1 0 2.9 a1.45 1.45 0 1 1 0 -2.9 Z"/>
-    <path d="M7 12.55 a1.45 1.45 0 1 1 0 2.9 a1.45 1.45 0 1 1 0 -2.9 Z"/>
-    <path d="M12 12.55 a1.45 1.45 0 1 1 0 2.9 a1.45 1.45 0 1 1 0 -2.9 Z"/>
-    <path d="M17 12.55 a1.45 1.45 0 1 1 0 2.9 a1.45 1.45 0 1 1 0 -2.9 Z"/>
-    <path d="M12 17.05 a1.45 1.45 0 1 1 0 2.9 a1.45 1.45 0 1 1 0 -2.9 Z"/>
-  </g>
+  <path class="ColorScheme-Text" fill="currentColor" d="M7,3.05 A1.45 1.45 0 1 1 7,5.95 A1.45 1.45 0 1 1 7,3.05 Z"/>
+  <path class="ColorScheme-Text" fill="currentColor" d="M12,3.05 A1.45 1.45 0 1 1 12,5.95 A1.45 1.45 0 1 1 12,3.05 Z"/>
+  <path class="ColorScheme-Text" fill="currentColor" d="M17,3.05 A1.45 1.45 0 1 1 17,5.95 A1.45 1.45 0 1 1 17,3.05 Z"/>
+  <path class="ColorScheme-Text" fill="currentColor" d="M7,7.8 A1.45 1.45 0 1 1 7,10.7 A1.45 1.45 0 1 1 7,7.8 Z"/>
+  <path class="ColorScheme-Text" fill="currentColor" d="M12,7.8 A1.45 1.45 0 1 1 12,10.7 A1.45 1.45 0 1 1 12,7.8 Z"/>
+  <path class="ColorScheme-Text" fill="currentColor" d="M17,7.8 A1.45 1.45 0 1 1 17,10.7 A1.45 1.45 0 1 1 17,7.8 Z"/>
+  <path class="ColorScheme-Text" fill="currentColor" d="M7,12.55 A1.45 1.45 0 1 1 7,15.45 A1.45 1.45 0 1 1 7,12.55 Z"/>
+  <path class="ColorScheme-Text" fill="currentColor" d="M12,12.55 A1.45 1.45 0 1 1 12,15.45 A1.45 1.45 0 1 1 12,12.55 Z"/>
+  <path class="ColorScheme-Text" fill="currentColor" d="M17,12.55 A1.45 1.45 0 1 1 17,15.45 A1.45 1.45 0 1 1 17,12.55 Z"/>
+  <path class="ColorScheme-Text" fill="currentColor" d="M12,17.05 A1.45 1.45 0 1 1 12,19.95 A1.45 1.45 0 1 1 12,17.05 Z"/>
 </svg>

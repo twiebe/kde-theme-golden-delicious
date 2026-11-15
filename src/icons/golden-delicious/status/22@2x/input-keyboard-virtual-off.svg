@@ -1,16 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="1.55 1.55 20.9 20.9">
   <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
-  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M4.5 4.5 H19.5 a2 2 0 0 1 2 2 V14.5 a2 2 0 0 1 -2 2 H8.5 L4.5 20.5 V16.5 a2 2 0 0 1 -2 -2 V6.5 a2 2 0 0 1 2 -2 Z"/>
-    <path d="M7 13.5 H10.5"/>
-    <path d="M3.5 3.5 L20.5 20.5"/>
-  </g>
-  <g class="ColorScheme-Text" fill="currentColor" stroke="none">
-    <path d="M12 6.55 a0.95 0.95 0 1 1 0 1.9 a0.95 0.95 0 1 1 0 -1.9 Z"/>
-    <path d="M15 6.55 a0.95 0.95 0 1 1 0 1.9 a0.95 0.95 0 1 1 0 -1.9 Z"/>
-    <path d="M18 6.55 a0.95 0.95 0 1 1 0 1.9 a0.95 0.95 0 1 1 0 -1.9 Z"/>
-    <path d="M6 9.55 a0.95 0.95 0 1 1 0 1.9 a0.95 0.95 0 1 1 0 -1.9 Z"/>
-    <path d="M15 9.55 a0.95 0.95 0 1 1 0 1.9 a0.95 0.95 0 1 1 0 -1.9 Z"/>
-    <path d="M18 9.55 a0.95 0.95 0 1 1 0 1.9 a0.95 0.95 0 1 1 0 -1.9 Z"/>
-  </g>
+  <path class="ColorScheme-Text" fill="currentColor" d="M4.5,3.625 L19.5,3.625 Q22.375,3.625 22.375,6.5 L22.375,14.5 Q22.375,17.375 19.5,17.375 L8.862,17.375 L5.119,21.119 Q4.862,21.375 4.5,21.375 Q4.138,21.375 3.881,21.119 Q3.625,20.862 3.625,20.5 L3.625,17.296 Q1.625,16.898 1.625,14.5 L1.625,6.5 Q1.625,3.625 4.5,3.625 Z M4.5,5.375 Q3.375,5.375 3.375,6.5 L3.375,14.5 Q3.375,15.625 4.5,15.625 Q4.862,15.625 5.119,15.881 Q5.375,16.138 5.375,16.5 L5.375,18.388 L7.881,15.881 Q8.138,15.625 8.5,15.625 L19.5,15.625 Q20.625,15.625 20.625,14.5 L20.625,6.5 Q20.625,5.375 19.5,5.375 Z"/>
+  <path class="ColorScheme-Text" fill="currentColor" d="M7,12.625 L10.5,12.625 Q10.862,12.625 11.119,12.881 Q11.375,13.138 11.375,13.5 Q11.375,13.862 11.119,14.119 Q10.862,14.375 10.5,14.375 L7,14.375 Q6.638,14.375 6.381,14.119 Q6.125,13.862 6.125,13.5 Q6.125,13.138 6.381,12.881 Q6.638,12.625 7,12.625 Z"/>
+  <path class="ColorScheme-Text" fill="currentColor" d="M4.119,2.881 L21.119,19.881 Q21.375,20.138 21.375,20.5 Q21.375,20.862 21.119,21.119 Q20.862,21.375 20.5,21.375 Q20.138,21.375 19.881,21.119 L2.881,4.119 Q2.625,3.862 2.625,3.5 Q2.625,3.138 2.881,2.881 Q3.138,2.625 3.5,2.625 Q3.862,2.625 4.119,2.881 Z"/>
+  <path class="ColorScheme-Text" fill="currentColor" d="M12,6.55 A0.95 0.95 0 1 1 12,8.45 A0.95 0.95 0 1 1 12,6.55 Z"/>
+  <path class="ColorScheme-Text" fill="currentColor" d="M15,6.55 A0.95 0.95 0 1 1 15,8.45 A0.95 0.95 0 1 1 15,6.55 Z"/>
+  <path class="ColorScheme-Text" fill="currentColor" d="M18,6.55 A0.95 0.95 0 1 1 18,8.45 A0.95 0.95 0 1 1 18,6.55 Z"/>
+  <path class="ColorScheme-Text" fill="currentColor" d="M6,9.55 A0.95 0.95 0 1 1 6,11.45 A0.95 0.95 0 1 1 6,9.55 Z"/>
+  <path class="ColorScheme-Text" fill="currentColor" d="M15,9.55 A0.95 0.95 0 1 1 15,11.45 A0.95 0.95 0 1 1 15,9.55 Z"/>
+  <path class="ColorScheme-Text" fill="currentColor" d="M18,9.55 A0.95 0.95 0 1 1 18,11.45 A0.95 0.95 0 1 1 18,9.55 Z"/>
 </svg>

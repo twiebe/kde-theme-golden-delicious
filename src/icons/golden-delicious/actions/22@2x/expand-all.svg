@@ -1,7 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="2 2 20 20">
   <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
-  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M4 5.5 H20"/>
-    <path d="M5 11 L12 18 L19 11"/>
-  </g>
+  <path class="ColorScheme-Text" fill="currentColor" d="M4,4.625 L20,4.625 Q20.362,4.625 20.619,4.881 Q20.875,5.138 20.875,5.5 Q20.875,5.862 20.619,6.119 Q20.362,6.375 20,6.375 L4,6.375 Q3.638,6.375 3.381,6.119 Q3.125,5.862 3.125,5.5 Q3.125,5.138 3.381,4.881 Q3.638,4.625 4,4.625 Z"/>
+  <path class="ColorScheme-Text" fill="currentColor" d="M5.619,10.381 L12,16.763 L18.381,10.381 Q18.638,10.125 19,10.125 Q19.362,10.125 19.619,10.381 Q19.875,10.638 19.875,11 Q19.875,11.362 19.619,11.619 L12.619,18.619 Q12.362,18.875 12,18.875 Q11.638,18.875 11.381,18.619 L4.381,11.619 Q4.125,11.362 4.125,11 Q4.125,10.638 4.381,10.381 Q4.638,10.125 5,10.125 Q5.362,10.125 5.619,10.381 Z"/>
 </svg>

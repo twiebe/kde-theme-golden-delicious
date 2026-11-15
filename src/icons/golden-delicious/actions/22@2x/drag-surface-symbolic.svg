@@ -1,19 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="2 2 20 20">
   <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
-  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-  </g>
-  <g class="ColorScheme-Text" fill="currentColor" stroke="none">
-    <path d="M4.5 5.75 a1.25 1.25 0 1 1 0 2.5 a1.25 1.25 0 1 1 0 -2.5 Z"/>
-    <path d="M9.5 5.75 a1.25 1.25 0 1 1 0 2.5 a1.25 1.25 0 1 1 0 -2.5 Z"/>
-    <path d="M14.5 5.75 a1.25 1.25 0 1 1 0 2.5 a1.25 1.25 0 1 1 0 -2.5 Z"/>
-    <path d="M19.5 5.75 a1.25 1.25 0 1 1 0 2.5 a1.25 1.25 0 1 1 0 -2.5 Z"/>
-    <path d="M4.5 10.75 a1.25 1.25 0 1 1 0 2.5 a1.25 1.25 0 1 1 0 -2.5 Z"/>
-    <path d="M9.5 10.75 a1.25 1.25 0 1 1 0 2.5 a1.25 1.25 0 1 1 0 -2.5 Z"/>
-    <path d="M14.5 10.75 a1.25 1.25 0 1 1 0 2.5 a1.25 1.25 0 1 1 0 -2.5 Z"/>
-    <path d="M19.5 10.75 a1.25 1.25 0 1 1 0 2.5 a1.25 1.25 0 1 1 0 -2.5 Z"/>
-    <path d="M4.5 15.75 a1.25 1.25 0 1 1 0 2.5 a1.25 1.25 0 1 1 0 -2.5 Z"/>
-    <path d="M9.5 15.75 a1.25 1.25 0 1 1 0 2.5 a1.25 1.25 0 1 1 0 -2.5 Z"/>
-    <path d="M14.5 15.75 a1.25 1.25 0 1 1 0 2.5 a1.25 1.25 0 1 1 0 -2.5 Z"/>
-    <path d="M19.5 15.75 a1.25 1.25 0 1 1 0 2.5 a1.25 1.25 0 1 1 0 -2.5 Z"/>
-  </g>
+  <path class="ColorScheme-Text" fill="currentColor" d="M4.5,5.75 A1.25 1.25 0 1 1 4.5,8.25 A1.25 1.25 0 1 1 4.5,5.75 Z"/>
+  <path class="ColorScheme-Text" fill="currentColor" d="M9.5,5.75 A1.25 1.25 0 1 1 9.5,8.25 A1.25 1.25 0 1 1 9.5,5.75 Z"/>
+  <path class="ColorScheme-Text" fill="currentColor" d="M14.5,5.75 A1.25 1.25 0 1 1 14.5,8.25 A1.25 1.25 0 1 1 14.5,5.75 Z"/>
+  <path class="ColorScheme-Text" fill="currentColor" d="M19.5,5.75 A1.25 1.25 0 1 1 19.5,8.25 A1.25 1.25 0 1 1 19.5,5.75 Z"/>
+  <path class="ColorScheme-Text" fill="currentColor" d="M4.5,10.75 A1.25 1.25 0 1 1 4.5,13.25 A1.25 1.25 0 1 1 4.5,10.75 Z"/>
+  <path class="ColorScheme-Text" fill="currentColor" d="M9.5,10.75 A1.25 1.25 0 1 1 9.5,13.25 A1.25 1.25 0 1 1 9.5,10.75 Z"/>
+  <path class="ColorScheme-Text" fill="currentColor" d="M14.5,10.75 A1.25 1.25 0 1 1 14.5,13.25 A1.25 1.25 0 1 1 14.5,10.75 Z"/>
+  <path class="ColorScheme-Text" fill="currentColor" d="M19.5,10.75 A1.25 1.25 0 1 1 19.5,13.25 A1.25 1.25 0 1 1 19.5,10.75 Z"/>
+  <path class="ColorScheme-Text" fill="currentColor" d="M4.5,15.75 A1.25 1.25 0 1 1 4.5,18.25 A1.25 1.25 0 1 1 4.5,15.75 Z"/>
+  <path class="ColorScheme-Text" fill="currentColor" d="M9.5,15.75 A1.25 1.25 0 1 1 9.5,18.25 A1.25 1.25 0 1 1 9.5,15.75 Z"/>
+  <path class="ColorScheme-Text" fill="currentColor" d="M14.5,15.75 A1.25 1.25 0 1 1 14.5,18.25 A1.25 1.25 0 1 1 14.5,15.75 Z"/>
+  <path class="ColorScheme-Text" fill="currentColor" d="M19.5,15.75 A1.25 1.25 0 1 1 19.5,18.25 A1.25 1.25 0 1 1 19.5,15.75 Z"/>
 </svg>

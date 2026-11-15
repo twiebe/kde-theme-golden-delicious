@@ -1,11 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="2 2 20 20">
   <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>
-  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M3.5 5.5 L8.5 12 L13.5 5.5"/>
-    <path d="M8.5 12 V19"/>
-    <path d="M18.5 5.5 V14"/>
-  </g>
-  <g class="ColorScheme-Text" fill="currentColor" stroke="none">
-    <path d="M18.5 16.85 a1.15 1.15 0 1 1 0 2.3 a1.15 1.15 0 1 1 0 -2.3 Z"/>
-  </g>
+  <path class="ColorScheme-Text" fill="currentColor" d="M4.194,4.967 L8.5,10.565 L12.806,4.967 Q13.027,4.679 13.387,4.632 Q13.746,4.585 14.033,4.806 Q14.321,5.027 14.368,5.387 Q14.415,5.746 14.194,6.033 L9.194,12.533 Q9.124,12.624 9.033,12.694 Q8.746,12.915 8.387,12.868 Q8.027,12.821 7.806,12.533 L2.806,6.033 Q2.585,5.746 2.632,5.387 Q2.679,5.027 2.967,4.806 Q3.254,4.585 3.613,4.632 Q3.973,4.679 4.194,4.967 Z"/>
+  <path class="ColorScheme-Text" fill="currentColor" d="M9.375,12 L9.375,19 Q9.375,19.362 9.119,19.619 Q8.862,19.875 8.5,19.875 Q8.138,19.875 7.881,19.619 Q7.625,19.362 7.625,19 L7.625,12 Q7.625,11.638 7.881,11.381 Q8.138,11.125 8.5,11.125 Q8.862,11.125 9.119,11.381 Q9.375,11.638 9.375,12 Z"/>
+  <path class="ColorScheme-Text" fill="currentColor" d="M19.375,5.5 L19.375,14 Q19.375,14.362 19.119,14.619 Q18.862,14.875 18.5,14.875 Q18.138,14.875 17.881,14.619 Q17.625,14.362 17.625,14 L17.625,5.5 Q17.625,5.138 17.881,4.881 Q18.138,4.625 18.5,4.625 Q18.862,4.625 19.119,4.881 Q19.375,5.138 19.375,5.5 Z"/>
+  <path class="ColorScheme-Text" fill="currentColor" d="M18.5,16.85 A1.15 1.15 0 1 1 18.5,19.15 A1.15 1.15 0 1 1 18.5,16.85 Z"/>
 </svg>

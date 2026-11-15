@@ -124,6 +124,25 @@ def fit_views():
 
 
 VIEWS = {}
+FILLED = {}
+
+
+def to_fills(text):
+    """Outline every stroke into a filled path. GTK recolours symbolic icons by
+    forcing the fill of each shape to the text colour, which turns a stroked
+    circle into a solid disc; outlines look the same everywhere."""
+    from picosvg.svg import SVG as Pico
+    plain = re.sub(r"<style.*?</style>", "", text, flags=re.S)
+    plain = plain.replace(' class="ColorScheme-Text"', "").replace("currentColor", "#000")
+    pico = ET.fromstring(Pico.fromstring(plain).topicosvg().tostring())
+    paths = []
+    for el in pico.iter(f"{{{SVG}}}path"):
+        op = el.get("opacity") or el.get("fill-opacity")
+        attr = f' opacity="{op}"' if op and float(op) < 1 else ""
+        paths.append(f'  <path class="ColorScheme-Text" fill="currentColor"{attr} d="{el.get("d")}"/>')
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{pico.get("viewBox")}">\n'
+            '  <style id="current-color-scheme">.ColorScheme-Text{color:#fcfcfc}</style>\n'
+            + "\n".join(paths) + "\n</svg>\n")
 
 
 def ours(name, accent):
@@ -131,7 +150,10 @@ def ours(name, accent):
     for n in (name, TWIN.sub("", name)):
         f = OURS / f"{n}.svg"
         if f.exists():
-            text = restroke(f.read_text()).replace('viewBox="0 0 24 24"', f'viewBox="{VIEWS[n]}"')
+            if n not in FILLED:
+                FILLED[n] = to_fills(restroke(f.read_text()).replace(
+                    'viewBox="0 0 24 24"', f'viewBox="{VIEWS[n]}"'))
+            text = FILLED[n]
             return text.replace("ColorScheme-Text", "ColorScheme-Highlight") if accent else text
     return None
 
