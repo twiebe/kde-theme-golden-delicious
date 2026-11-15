@@ -25,6 +25,8 @@ export XDG_RUNTIME_DIR=$home/run
 mkdir -p "$XDG_RUNTIME_DIR" && chmod 700 "$XDG_RUNTIME_DIR"
 export XDG_CURRENT_DESKTOP=KDE XDG_SESSION_TYPE=wayland KDE_FULL_SESSION=true
 export LIBGL_ALWAYS_SOFTWARE=1
+# startplasma puts the look-and-feel defaults layer on the config path; do the same.
+export XDG_CONFIG_DIRS=$XDG_CONFIG_HOME/kdedefaults:/etc/xdg
 
 Xvfb :99 -screen 0 "${w}x${h}x24" +extension GLX -nolisten tcp >"$home/xvfb.log" 2>&1 &
 xvfb=$!
@@ -32,7 +34,8 @@ trap 'kill $xvfb 2>/dev/null || true' EXIT
 sleep 1
 
 run() {
-  DISPLAY=:99 "$kwin" --x11-display :99 --no-lockscreen --xwayland \
+  # Restricted protocols are granted by exe path; skip that check in this fake session.
+  KWIN_WAYLAND_NO_PERMISSION_CHECKS=1 DISPLAY=:99 "$kwin" --x11-display :99 --no-lockscreen --xwayland \
     --width "$w" --height "$h" --socket wayland-shot >"$home/kwin.log" 2>&1 &
   for _ in $(seq 50); do [[ -S $XDG_RUNTIME_DIR/wayland-shot ]] && break; sleep 0.2; done
   export WAYLAND_DISPLAY=wayland-shot QT_QPA_PLATFORM=wayland
@@ -42,13 +45,21 @@ run() {
   sleep 1
   plasmashell >"$home/plasmashell.log" 2>&1 &
   sleep 5
-  if [[ $install == 1 ]]; then "$repo/install.sh" >"$home/install.log" 2>&1 || true; fi
+  if [[ $install == 1 ]]; then
+    "$repo/install.sh" --layout >"$home/install.log" 2>&1 || true
+    # A live session picks the new style up on its own; this fake one starts
+    # without the kdedefaults watcher, so restart the shell.
+    kquitapp6 plasmashell >/dev/null 2>&1 || true
+    sleep 1
+    plasmashell >>"$home/plasmashell.log" 2>&1 &
+    sleep 4
+  fi
   sleep 2
   local app
   for app in "$@"; do $app >/dev/null 2>&1 & sleep 1.5; done
   sleep "${SHOT_WAIT:-10}"
   import -display :99 -window root "$out"
-  kill $(jobs -p) 2>/dev/null || true
+  jobs -p | xargs -r kill 2>/dev/null || true
 }
 
 export -f run
