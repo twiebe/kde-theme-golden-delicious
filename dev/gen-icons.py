@@ -241,9 +241,16 @@ def main():
     # Colour folders like macOS from 32 px up, where Breeze has its colour ones.
     raw = lambda n: (OURS / f"{n}.svg").read_text() if (OURS / f"{n}.svg").exists() else None
     print(f"{len(folders.build(OUT / 'places/scalable', raw))} colour folders")
-    for scale in (2, 3):
-        (OUT / f"places/scalable@{scale}x").symlink_to("scalable")
-    colour = [("places/scalable", 1), ("places/scalable@2x", 2), ("places/scalable@3x", 3)]
+    # File types as macOS documents, at every size: Breeze's are colour ones too.
+    import filetypes
+    print(f"{len(filetypes.build(OUT / 'mimetypes/scalable', raw))} file types")
+    colour = []  # (dir, scale, context, min size)
+    for ctx, low in (("places", 32), ("mimetypes", 8)):
+        for scale in (1, 2, 3):
+            if scale > 1:
+                (OUT / f"{ctx}/scalable@{scale}x").symlink_to("scalable")
+            colour.append((f"{ctx}/scalable" + (f"@{scale}x" if scale > 1 else ""), scale,
+                           "MimeTypes" if ctx == "mimetypes" else "Places", low))
 
     head = f"""[Icon Theme]
 Name=Golden Delicious
@@ -260,16 +267,16 @@ MainToolbarSizes=16,22,24
 PanelDefault=48
 DialogDefault=32
 DesktopDefault=48
-Directories={",".join([d for *_, d, _ in fixed] + ["places/scalable"])}
-ScaledDirectories={",".join([d for *_, d, _ in scaled] + ["places/scalable@2x", "places/scalable@3x"])}
+Directories={",".join([d for *_, d, _ in fixed] + [d for d, scale, *_ in colour if scale == 1])}
+ScaledDirectories={",".join([d for *_, d, _ in scaled] + [d for d, scale, *_ in colour if scale > 1])}
 """
     sections = "".join(
         f"\n[{d}]\nSize={size}\n" + (f"Scale={scale}\n" if scale > 1 else "")
         + f"Context={ctx.capitalize()}\nType=Fixed\n"
         for ctx, size, d, scale in fixed + scaled) + "".join(
-        f"\n[{d}]\nSize=64\nMinSize=32\nMaxSize=512\n" + (f"Scale={scale}\n" if scale > 1 else "")
-        + "Context=Places\nType=Scalable\n"
-        for d, scale in colour)
+        f"\n[{d}]\nSize=64\nMinSize={low}\nMaxSize=512\n" + (f"Scale={scale}\n" if scale > 1 else "")
+        + f"Context={context}\nType=Scalable\n"
+        for d, scale, context, low in colour)
     (OUT / "index.theme").write_text(head + sections)
     shutil.copy("/usr/share/licenses/spdx/LGPL-3.0-or-later.txt", OUT / "LICENSE")
     (OUT / "README").write_text(

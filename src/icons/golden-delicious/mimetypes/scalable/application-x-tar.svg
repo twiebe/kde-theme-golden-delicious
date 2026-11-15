@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <path d="M30 10 H82 L104 32 V112 a6 6 0 0 1 -6 6 H30 a6 6 0 0 1 -6 -6 V16 a6 6 0 0 1 6 -6 Z" fill="#fbfbfd" stroke="#000" stroke-opacity="0.18" stroke-width="1.2"/>
+  <path d="M82 10 V26 a6 6 0 0 0 6 6 H104 Z" fill="#e2e2e8" stroke="#000" stroke-opacity="0.12" stroke-width="1"/>
+  <g transform="translate(64 56) scale(3.7624) translate(-16.750 -16.900)" opacity="1">
+    <g fill="none" stroke="#8a8a90" stroke-width="0.723" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M13.25 13 H20.25 a.75 .75 0 0 1 .75 .75 V14.75 a.75 .75 0 0 1 -.75 .75 H13.25 a.75 .75 0 0 1 -.75 -.75 V13.75 a.75 .75 0 0 1 .75 -.75 Z"/>
+    <path d="M13.25 15.5 V19.75 a1 1 0 0 0 1 1 H19.25 a1 1 0 0 0 1 -1 V15.5"/>
+    <path d="M15.75 18 H17.75"/>
+  </g>
+  </g>
+  <rect x="43.7" y="88" width="40.6" height="22" rx="6" fill="#a2845e"/>
+  <text x="64" y="104" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="14" fill="#ffffff">TAR</text>
+</svg>

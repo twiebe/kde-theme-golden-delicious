@@ -61,8 +61,9 @@ edit `dev/gen-aurorae.py` or `dev/gen-plasma.py` and rerun them.
 drawings in `dev/icons/src` (style in `dev/icons/STYLE.md`), under Breeze's
 names and aliases; a name not drawn yet gets Breeze Dark's icon with every line
 0.4 px wider. From 32 px up, folders are colour folders like macOS with
-the place's symbol embossed (`dev/icons/folders.py`). It runs in the harness
-image, which has the pinned Breeze icons.
+the place's symbol embossed (`dev/icons/folders.py`); file types are white
+pages with the extension on a coloured label (`dev/icons/filetypes.py`). It
+runs in the harness image, which has the pinned Breeze icons.
 
 To see the result without touching your desktop, render a screenshot in a
 pinned headless Plasma 6.8 (needs Docker and `/dev/dri`):

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <path d="M30 10 H82 L104 32 V112 a6 6 0 0 1 -6 6 H30 a6 6 0 0 1 -6 -6 V16 a6 6 0 0 1 6 -6 Z" fill="#fbfbfd" stroke="#000" stroke-opacity="0.18" stroke-width="1.2"/>
+  <path d="M82 10 V26 a6 6 0 0 0 6 6 H104 Z" fill="#e2e2e8" stroke="#000" stroke-opacity="0.12" stroke-width="1"/>
+  <g transform="translate(64 56) scale(1.9388) translate(-12.250 -12.000)" opacity="1">
+    <g fill="none" stroke="#8a8a90" stroke-width="1.403" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M7.5 3 H13.5 L19 8.5 V19 A2 2 0 0 1 17 21 H7.5 A2 2 0 0 1 5.5 19 V5 A2 2 0 0 1 7.5 3 Z"/>
+    <path d="M13.5 3.5 V7 A1.5 1.5 0 0 0 15 8.5 H18.5"/>
+    <path d="M9 3.5 V10.5 L11 9 L13 10.5 V3.5"/>
+    <path d="M8.5 17.5 C10.5 16 12 14 12.5 12.5 C13 14.5 14.5 16 16 16.5 C13.5 16.5 11 17 8.5 17.5 Z"/>
+  </g>
+  </g>
+  <rect x="43.7" y="88" width="40.6" height="22" rx="6" fill="#e5413a"/>
+  <text x="64" y="104" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="14" fill="#ffffff">PDF</text>
+</svg>

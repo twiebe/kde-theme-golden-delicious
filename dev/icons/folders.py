@@ -76,20 +76,21 @@ def bbox(text):
     return x, y, x + w, y + h
 
 
-def emboss(text, colour):
-    """The drawing as a symbol centred on the folder's front panel."""
+def emboss(text, colour, centre=(64, 73), span=38, opacity=0.85):
+    """The drawing as a symbol centred on the folder's front panel (or at
+    centre, span units across)."""
     box = bbox(text)
     if not box:
         return ""
     x0, y0, x1, y1 = box
-    size = 38 / max(x1 - x0, y1 - y0)
+    size = span / max(x1 - x0, y1 - y0)
     cx, cy = (x0 + x1) / 2, (y0 + y1) / 2
     body = re.sub(r"<style.*?</style>\s*", "", text, flags=re.S)
     body = re.sub(r"^.*?<svg[^>]*>\s*|\s*</svg>\s*$", "", body, flags=re.S)
     body = body.replace(' class="ColorScheme-Text"', "").replace("currentColor", colour)
     # The symbol keeps its line weight at any symbol size: 1.6 of 24 at 64 px.
     body = re.sub(r'stroke-width="([\d.]+)"', lambda m: f'stroke-width="{float(m[1]) * 1.7 / size:.3f}"', body)
-    return (f'  <g transform="translate(64 73) scale({size:.4f}) translate({-cx:.3f} {-cy:.3f})" opacity="0.85">\n'
+    return (f'  <g transform="translate({centre[0]} {centre[1]}) scale({size:.4f}) translate({-cx:.3f} {-cy:.3f})" opacity="{opacity}">\n'
             f"    {body}\n  </g>\n")
 
 
