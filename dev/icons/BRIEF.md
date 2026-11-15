@@ -9,7 +9,9 @@ Do not commit. Write only the SVGs of your own batch (plus scratch PNGs in your 
 Read first:
 - dev/icons/STYLE.md: the style rules. Follow them exactly (skeleton, stroke 1.6, round caps/joins,
   24 grid, live area 3..21, paths only).
-- dev/icons/src/*.svg: the existing icons. Yours must look like they belong to this set. Good
+- dev/icons/src/*.svg: the existing icons (several hundred; read the ones related to your batch,
+  not all of them). Yours must look like they belong to this set. When the base icon of a family
+  already exists (document-new for document-*, drive-harddisk for drive-*), reuse its shape. Good
   references: folder, user-home, edit-find, configure, view-refresh, document-open, help-about.
 - tmp/breeze22/<context>/<name>.svg (context = actions, places, devices, status or emblems): the
   Breeze original for each name. Keep its metaphor, draw it fresh, don't trace. Breeze details that

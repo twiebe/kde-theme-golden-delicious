@@ -1,31 +1,37 @@
-# Splits the Breeze names still to draw into batch lists in tmp/batches and copies
-# the Breeze 22px originals to tmp/breeze22 for reference. Run in the harness image:
-#   docker run --rm -v "$PWD:/repo" -w /repo --entrypoint python3 golden-gate-shot:6.8 dev/icons/plan-batches.py
-import os, re, shutil
+# Splits the Breeze names still to draw into batch lists tmp/batches/NN.txt and
+# copies the Breeze originals to tmp/breeze22/<context>/ for reference (22 px,
+# or 16 px where Breeze has no 22). Run in the harness image:
+#   docker run --rm -v "$PWD:/repo" -w /repo --entrypoint python3 golden-gate-shot:6.8 dev/icons/plan-batches.py [first-batch-number]
+import os
+import re
+import shutil
+import sys
+
 B = "/usr/share/icons/breeze-dark"
+CONTEXTS = ["actions", "places", "devices", "status", "emblems"]
+SIZE = 28
+first = int(sys.argv[1]) if len(sys.argv) > 1 else 1
+
 done = {f[:-4] for f in os.listdir("dev/icons/src")}
-redo = "go-previous go-next go-up view-list-icons view-list-details view-split-left-right edit-copy edit-cut edit-paste edit-delete edit-rename edit-undo edit-redo document-new folder-new tab-new tab-close".split()
-colors = r"-(brown|magenta|green|black|yellow|cyan|orange|violet|grey|blue|red)$"
-def names(ctx):
-    d = f"{B}/{ctx}/22"
-    return sorted(f[:-4] for f in os.listdir(d) if f.endswith(".svg") and not os.path.islink(f"{d}/{f}"))
-# copy refs (resolved) for every context
-for ctx in ["actions", "places", "devices", "status", "emblems"]:
+# Colour variants of folders and -symbolic twins get aliased by the build, not drawn.
+skip = re.compile(r"-(brown|magenta|green|black|yellow|cyan|orange|violet|grey|blue|red)$|-symbolic$")
+
+todo = {}
+for ctx in CONTEXTS:
     os.makedirs(f"tmp/breeze22/{ctx}", exist_ok=True)
-    d = f"{B}/{ctx}/22"
-    for f in os.listdir(d):
-        if f.endswith(".svg"):
+    for size in ("16", "22"):  # 22 wins: copied last
+        d = f"{B}/{ctx}/{size}"
+        for f in os.listdir(d):
+            if not f.endswith(".svg"):
+                continue
             shutil.copy(os.path.realpath(f"{d}/{f}"), f"tmp/breeze22/{ctx}/{f}")
-skip = lambda n: n in done or n.endswith("-symbolic") or re.search(colors, n)
-places = [n for n in names("places") if not skip(n)]
-devices = [n for n in names("devices") if not skip(n)]
-act = [n for n in names("actions") if not skip(n) and n not in redo
-       and re.match(r"(go|edit|document|list|zoom|window|media|view)-", n)]
-def chunks(l, k): 
-    s = -(-len(l) // k); return [l[i:i+s] for i in range(0, len(l), s)]
-batches = [redo] + chunks(places, 2) + chunks(devices, 2) + chunks(act[:140], 5)
-for i, b in enumerate(batches, 1):
-    open(f"tmp/batches/{i:02}.txt", "w").write("\n".join(b) + "\n")
-    print(i, len(b), " ".join(b[:6]), "...")
-print("places", len(places), "devices", len(devices), "actions core", len(act))
-open("tmp/batches/actions-rest.txt", "w").write("\n".join(act[140:]) + "\n")
+            n = f[:-4]
+            if not os.path.islink(f"{d}/{f}") and n not in done and not skip.search(n):
+                todo.setdefault(n, ctx)
+
+names = sorted(todo)
+for i in range(0, len(names), SIZE):
+    num = first + i // SIZE
+    with open(f"tmp/batches/{num:02}.txt", "w") as fh:
+        fh.write("\n".join(names[i:i + SIZE]) + "\n")
+print(f"{len(names)} names in batches {first:02}..{num:02}")
