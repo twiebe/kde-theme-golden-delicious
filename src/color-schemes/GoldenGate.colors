@@ -137,6 +137,8 @@ shadeSortColumn=true
 
 [KDE]
 contrast=4
+# Breeze and Kirigami draw separators and frames this far from the background (default 0.2).
+frameContrast=0.06
 
 [WM]
 activeBackground=43,43,45

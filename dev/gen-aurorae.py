@@ -14,8 +14,8 @@ C = P + R       # corner piece size
 
 STATES = {
     # prefix: (titlebar fill, shadow opacity at window edge)
-    "decoration": ("#2B2B2D", 0.45),
-    "decoration-inactive": ("#2B2B2D", 0.25),
+    "decoration": ("#2B2B2D", 0.22),
+    "decoration-inactive": ("#2B2B2D", 0.12),
 }
 
 LIGHTS = {"close": "#FF5F57", "minimize": "#FEBC2E", "maximize": "#28C840"}
@@ -93,9 +93,26 @@ def glyph(kind):
            f'M{c+2.6},{c-2.6} L{c+2.6},{c+0.6} M{c+2.6},{c-2.6} L{c+0.6},{c-2.6}" {st}/>'  # restore
 
 
+def shade_hex(col, f):
+    """Scale a #RRGGBB color towards black (f < 1) or white (f > 1)."""
+    rgb = [int(col[i:i + 2], 16) for i in (1, 3, 5)]
+    rgb = [round(v * f) if f < 1 else round(v + (255 - v) * (f - 1)) for v in rgb]
+    return "#" + "".join(f"{min(255, max(0, v)):02X}" for v in rgb)
+
+
 def button(kind, color):
     c = BTN / 2
-    dot = lambda col, op=1: f'<circle cx="{c}" cy="{c}" r="{DOT}" fill="{col}" fill-opacity="{op}"/>'
+    n = iter(range(100))
+
+    def dot(col, op=1):
+        # Depth like macOS: lighter top, darker rim.
+        gid = f"l{kind}{next(n)}"
+        grad = (f'<defs><radialGradient id="{gid}" cx="{c}" cy="{c - DOT * 0.45}" r="{DOT * 1.3}" '
+                f'gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="{shade_hex(col, 1.25)}"/>'
+                f'<stop offset="1" stop-color="{col}"/></radialGradient></defs>')
+        return (f'{grad}<circle cx="{c}" cy="{c}" r="{DOT - 0.4}" fill="url(#{gid})" fill-opacity="{op}" '
+                f'stroke="{shade_hex(col, 0.72)}" stroke-width="0.8" stroke-opacity="{op}"/>')
+
     shade = f'<circle cx="{c}" cy="{c}" r="{DOT}" fill="#000" fill-opacity="0.2"/>'
     els = {
         "active": dot(color),

@@ -9,8 +9,8 @@ from pathlib import Path
 OUT = Path(__file__).resolve().parent.parent / "src/plasma/desktoptheme/golden-gate"
 
 PANEL_R = 14            # panel corner radius
-PANEL_OPACITY = 0.92    # adaptive panel, maximized windows
-PANEL_TRANSLUCENT = 0.70
+PANEL_OPACITY = 0.96    # solid/: opaque panel, adaptive with a maximized window
+PANEL_TRANSLUCENT = 0.70  # widgets/: translucent panel
 PANEL_MARGIN = 4
 TASK_R = 10
 TASK_MARGIN = 4
@@ -65,9 +65,11 @@ def panel(op):
 
 def main():
     (OUT / "widgets").mkdir(parents=True, exist_ok=True)
-    (OUT / "translucent/widgets").mkdir(parents=True, exist_ok=True)
-    (OUT / "widgets/panel-background.svg").write_text(panel(PANEL_OPACITY))
-    (OUT / "translucent/widgets/panel-background.svg").write_text(panel(PANEL_TRANSLUCENT))
+    # Plasma 6 draws the translucent panel from widgets/ and cross-fades the
+    # opaque one from solid/; without solid/ it falls back to Breeze's shape.
+    (OUT / "solid/widgets").mkdir(parents=True, exist_ok=True)
+    (OUT / "widgets/panel-background.svg").write_text(panel(PANEL_TRANSLUCENT))
+    (OUT / "solid/widgets/panel-background.svg").write_text(panel(PANEL_OPACITY))
     (OUT / "widgets/tasks.svg").write_text(
         svg("".join(frame(s, TASK_R, c, o, TASK_MARGIN) for s, (c, o) in TASKS.items())))
 
